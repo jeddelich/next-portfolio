@@ -1,9 +1,13 @@
 import Image from "next/image";
+
+// Contexts
 import { useModal } from "../contexts/ModalContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Home() {
 
   const { toggleModal } = useModal();
+  const { toggleTheme } = useTheme();
 
   return (
     <div>
@@ -19,8 +23,8 @@ export default function Home() {
       </a>
       <nav>
         <figure className="personal-logo--wrapper">
-          <img id="personal-logo" className="personal-logo--light" src="./assets/logo.png" alt="" />
-          <img id="personal-logo" className="personal-logo--dark" src="./assets/logo dark.png" alt="" />
+          <Image id="personal-logo" className="personal-logo--light" src="./assets/logo.png" alt="" />
+          <Image id="personal-logo" className="personal-logo--dark" src="./assets/logo dark.png" alt="" />
           <div
             className="personal-logo--effect"
             onClick={() => addProfilePicture()}
@@ -47,7 +51,7 @@ export default function Home() {
               >Contact
               </a>
           </li>
-          <li className="nav__link click" onClick={() => toggleContrast()}>
+          <li className="nav__link click" onClick={() => toggleTheme()}>
             <a
               href="#"
               className="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -59,9 +63,9 @@ export default function Home() {
       <header className="header">
         <div className="header__content">
           <h1 className="title">Hey</h1>
-          <h1 className="title orange">I'm Jed.</h1>
+          <h1 className="title orange">I&apos;m Jed.</h1>
           <p className="header__para">
-            I'm a <b className="orange">Frontend Software Engineer</b> with a strong
+            I&apos;m a <b className="orange">Frontend Software Engineer</b> with a strong
             passion for building websites that are both visually engaging and
             user-friendly.
             <br />
@@ -91,7 +95,7 @@ export default function Home() {
       <div className="modal">
         <div className="modal__half modal__about">
           <h3 className="modal__title modal__title--about">
-            Here's more about me.
+            Here&apos;s more about me.
           </h3>
           <h4 className="modal__subtitle modal__subtitle--about">
             Frontend Software Engineer
@@ -124,10 +128,10 @@ export default function Home() {
         <div className="modal__half modal__contact">
           <i className="fa-solid fa-times modal__exit click" onClick={() => toggleModal()}></i>
           <h3 className="modal__title modal__title--contact centered">
-            Let's have a chat!
+            Let&apos;s have a chat!
           </h3>
           <h4 className="modal__subtitle modal__subtitle--contact centered">
-            I'm currently open to new opportunities
+            I&apos;m currently open to new opportunities
           </h4>
           <form onSubmit={(event) => contact(event)} id="contact__form">
             <div className="form__item form__item--row">
