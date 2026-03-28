@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { useModal } from "../contexts/ModalContext";
 
 export default function Home() {
+
+  const { toggleModal } = useModal();
+
   return (
     <div>
   <section id="landing-page" onMouseMove={(event) => moveBackground(event)}>
