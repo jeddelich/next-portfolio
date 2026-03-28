@@ -2,64 +2,293 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <div>
+  <section id="landing-page" onMouseMove={(event) => moveBackground(event)}>
+      <a href="#">
+        <button className="mail__btn click" onClick={() => toggleModal()}>
+          <i className="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+      <a href="#projects" className="scroll">
+        <div className="scroll__icon--mouse click"></div>
+        <div className="fa-solid fa-arrow-down"></div>
+      </a>
+      <nav>
+        <figure className="personal-logo--wrapper">
+          <img id="personal-logo" className="personal-logo--light" src="./assets/logo.png" alt="" />
+          <img id="personal-logo" className="personal-logo--dark" src="./assets/logo dark.png" alt="" />
+          <div
+            className="personal-logo--effect"
+            onClick={() => addProfilePicture()}
+          ></div>
+        </figure>
+        <ul className="nav__link--list">
+          <li className="nav__link" onClick={() => toggleModal()} >
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
+              href="#"
+              className="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About
+              </a>
+          </li>
+          <li className="nav__link">
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              href="#projects"
+              className="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a>
+          </li>
+          <li className="nav__link" onClick={() => toggleModal()}>
+            <a
+              href="#"
+              className="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact
+              </a>
+          </li>
+          <li className="nav__link click" onClick={() => toggleContrast()}>
+            <a
+              href="#"
+              className="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i className="fa-solid fa-circle-half-stroke">
+                </i></a>
+          </li>
+        </ul>
+      </nav>
+      <header className="header">
+        <div className="header__content">
+          <h1 className="title">Hey</h1>
+          <h1 className="title orange">I'm Jed.</h1>
+          <p className="header__para">
+            I'm a <b className="orange">Frontend Software Engineer</b> with a strong
+            passion for building websites that are both visually engaging and
+            user-friendly.
+            <br />
+            Learn more <b className="orange cursor" onClick={() => toggleModal()}>about me!</b>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+        <div className="social__list">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.linkedin.com/in/jed-delich/"
             target="_blank"
-            rel="noopener noreferrer"
+            className="social__link click"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            <i className="fa-brands fa-linkedin"></i>
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/jeddelich"
             target="_blank"
-            rel="noopener noreferrer"
+            className="social__link click"
           >
-            Documentation
+            <i className="fa-brands fa-github"></i>
+          </a>
+          <a href="./assets/David Bragg Resume.pdf" target="_blank" className="social__link click">
+            <i className="fa-solid fa-file-pdf"></i>
           </a>
         </div>
-      </main>
+      </header>
+      <div className="modal">
+        <div className="modal__half modal__about">
+          <h3 className="modal__title modal__title--about">
+            Here's more about me.
+          </h3>
+          <h4 className="modal__subtitle modal__subtitle--about">
+            Frontend Software Engineer
+          </h4>
+          <p className="modal__para">
+            I learned how to code from all <span className="orange">the best engineers internationally</span> as a part of <span className="orange">the exclusive program</span> called Frontend Simplified.
+          </p>
+          <p className="modal__para">
+            As I expand <span className="orange">my expertise</span> daily in the languages below, I am <span className="orange">solving real problems</span> making a difference in the online world.  
+          </p>
+          <div className="modal__languages">
+            <figure className="modal__language">
+              <Image className="modal__language--img" src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png" alt="HTML logo" />
+              <span className="language__name">HTML</span>
+            </figure>
+            <figure className="modal__language">
+              <Image className="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/free-css-icon-svg-download-png-722685.png?f=webp" alt="CSS logo" />
+              <span className="language__name">CSS</span>
+            </figure>
+            <figure className="modal__language">
+              <Image className="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript logo" />
+              <span className="language__name">JavaScript</span>
+            </figure>
+            <figure className="modal__language">
+              <Image className="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" alt="React logo" />
+              <span className="language__name">React</span>
+            </figure>
+          </div>
+        </div>
+        <div className="modal__half modal__contact">
+          <i className="fa-solid fa-times modal__exit click" onClick={() => toggleModal()}></i>
+          <h3 className="modal__title modal__title--contact centered">
+            Let's have a chat!
+          </h3>
+          <h4 className="modal__subtitle modal__subtitle--contact centered">
+            I'm currently open to new opportunities
+          </h4>
+          <form onSubmit={(event) => contact(event)} id="contact__form">
+            <div className="form__item form__item--row">
+              <label className="form__item--label">Name:</label>
+              <input type="text" className="input" name="user_name"></input>
+            </div>
+            <div className="form__item form__item--row">
+              <label className="form__item--label">Email:</label>
+              <input type="email" className="input" name="user_email"></input>
+            </div>
+            <div className="form__item">
+              <label className="form__item--label centered">Message:</label>
+              <textarea type="text" className="input" name="message"></textarea>
+            </div>
+            <div className="form__submit--wrapper">
+              <button id="contact__submit" className="form__submit">
+                Send it my way
+              </button>
+            </div>
+          </form>
+          <div className="modal__overlay modal__overlay--loading">
+            <i className="fa-solid fa-spinner"></i>
+          </div>
+          <div className="modal__overlay modal__overlay--success">
+            Thanks for the message! 
+            <br />
+            Looking forward to speaking to you soon.
+          </div>
+        </div>
+      </div>
+      <Image src="./assets/semi circle.svg" className="shape shape--0" alt="semi circle" />
+      <i className="fa-solid fa-spiral shape shape--1"></i>
+      <Image src="./assets/squiggly.svg" className="shape shape--2" alt="squiggly" />
+      <i className="fa-solid fa-spiral shape shape--3"></i>
+      <Image src="./assets/triangle.svg" className="shape shape--4" alt="triangle" />
+      <i className="fa-solid fa-spiral shape shape--5"></i>
+      <Image src="./assets/squiggly.svg" className="shape shape--6" alt="squiggly" />
+      <i className="fa-solid fa-spiral shape shape--7"></i>
+      <Image src="./assets/semi circle.svg" className="shape shape--8" alt="circle" />
+    </section>
+
+    <section id="projects">
+      <div className="container">
+        <div className="row">
+          <h1 className="section__title">
+            Here are some of my <span className="orange">projects</span>
+          </h1>
+          <ul className="project__list">
+            <li className="project">
+              <div className="project__wrapper">
+                <Image
+                  src="./assets/treact website.png"
+                  alt="Treact Website"
+                  className="project__img"
+                />
+                <div className="project__wrapper--bg"></div>
+                <div className="project__description">
+                  <h3 className="project__description--title">Treact Website</h3>
+                  <h4 className="project__description--subtitle">
+                    Used HTML and CSS
+                  </h4>
+                  <p className="project__description--para">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Sequi obcaecati amet, tenetur omnis rem quasi ea nam a eaque
+                    consequuntur.
+                  </p>
+                  <div className="project__description--links">
+                    <a 
+                    href="https://github.com/jeddelich/treact-website" 
+                    className="project__description--link"
+                    target="_blank">
+                      <i className="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://jeddelich.github.io/treact-website/" 
+                    className="project__description--link"
+                    target="_blank">
+                      <i className="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li className="project">
+              <div className="project__wrapper">
+                <Image
+                  src="./assets/library website.png"
+                  alt="Library Website"
+                  className="project__img"
+                />
+                <div className="project__wrapper--bg"></div>
+                <div className="project__description">
+                  <h3 className="project__description--title">Library Website</h3>
+                  <h4 className="project__description--subtitle">
+                    Used HTML and CSS
+                  </h4>
+                  <p className="project__description--para">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Sequi obcaecati amet, tenetur omnis rem quasi ea nam a eaque
+                    consequuntur.
+                  </p>
+                  <div className="project__description--links">
+                    <a 
+                    href="https://github.com/jeddelich/e-commerce" 
+                    className="project__description--link"
+                    target="_blank">
+                      <i className="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                    href="https://jeddelich.github.io/e-commerce/"
+                    className="project__description--link"
+                    target="_blank">
+                      <i className="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div className="container">
+        <div className="row footer__row">
+          <figure className="footer__logo--wrapper">
+            <Image
+              className="footer__logo--img"
+              src="./assets/logo dark.png"
+              alt="Logo"
+            />
+          </figure>
+          <div className="footer__social--list">
+            <a
+              href="https://github.com/jeddelich"
+              className="footer__social--link link__hover-effect link__hover-effect--white"
+              target="_blank"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jed-delich/"
+              className="footer__social--link link__hover-effect link__hover-effect--white"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="#"
+              className="footer__social--link link__hover-effect link__hover-effect--white"
+              onClick={() => toggleModal()}
+            >
+              Contact
+            </a>
+            <a
+              href="./assets/David Bragg Resume.pdf"
+              className="footer__social--link link__hover-effect link__hover-effect--white"
+              target="_blank"
+            >
+              Resume
+            </a>
+          </div>
+          <div className="footer__copyright">Copyright &copy; 2025 Jed Delich</div>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 }
