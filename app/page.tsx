@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 
 // Contexts
 import { useModal } from "../contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
+
+import Navbar from "@/components/layout/Navbar";
 
 export default function Home() {
 
@@ -21,45 +25,7 @@ export default function Home() {
         <div className="scroll__icon--mouse click"></div>
         <div className="fa-solid fa-arrow-down"></div>
       </a>
-      <nav>
-        <figure className="personal-logo--wrapper">
-          <Image id="personal-logo" className="personal-logo--light" src="./assets/logo.png" alt="" />
-          <Image id="personal-logo" className="personal-logo--dark" src="./assets/logo dark.png" alt="" />
-          <div
-            className="personal-logo--effect"
-            onClick={() => addProfilePicture()}
-          ></div>
-        </figure>
-        <ul className="nav__link--list">
-          <li className="nav__link" onClick={() => toggleModal()} >
-            <a
-              href="#"
-              className="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >About
-              </a>
-          </li>
-          <li className="nav__link">
-            <a
-              href="#projects"
-              className="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Projects</a>
-          </li>
-          <li className="nav__link" onClick={() => toggleModal()}>
-            <a
-              href="#"
-              className="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Contact
-              </a>
-          </li>
-          <li className="nav__link click" onClick={() => toggleTheme()}>
-            <a
-              href="#"
-              className="nav__link--anchor link__hover-effect link__hover-effect--black"
-              ><i className="fa-solid fa-circle-half-stroke">
-                </i></a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <header className="header">
         <div className="header__content">
           <h1 className="title">Hey</h1>
@@ -87,7 +53,7 @@ export default function Home() {
           >
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="./assets/David Bragg Resume.pdf" target="_blank" className="social__link click">
+          <a href="/David Bragg Resume.pdf" target="_blank" className="social__link click">
             <i className="fa-solid fa-file-pdf"></i>
           </a>
         </div>
@@ -108,19 +74,19 @@ export default function Home() {
           </p>
           <div className="modal__languages">
             <figure className="modal__language">
-              <Image className="modal__language--img" src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png" alt="HTML logo" />
+              <Image className="modal__language--img" src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png" alt="HTML logo" width={100} height={100} />
               <span className="language__name">HTML</span>
             </figure>
             <figure className="modal__language">
-              <Image className="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/free-css-icon-svg-download-png-722685.png?f=webp" alt="CSS logo" />
+              <Image className="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/free-css-icon-svg-download-png-722685.png?f=webp" alt="CSS logo" width={100} height={100} />
               <span className="language__name">CSS</span>
             </figure>
             <figure className="modal__language">
-              <Image className="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript logo" />
+              <Image className="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript logo" width={100} height={100} />
               <span className="language__name">JavaScript</span>
             </figure>
             <figure className="modal__language">
-              <Image className="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" alt="React logo" />
+              <Image className="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" alt="React logo" width={100} height={100} />
               <span className="language__name">React</span>
             </figure>
           </div>
@@ -162,15 +128,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Image src="./assets/semi circle.svg" className="shape shape--0" alt="semi circle" />
+      <Image src="/semi circle.svg" className="shape shape--0" alt="semi circle" width={20} height={20} />
       <i className="fa-solid fa-spiral shape shape--1"></i>
-      <Image src="./assets/squiggly.svg" className="shape shape--2" alt="squiggly" />
+      <Image src="/squiggly.svg" className="shape shape--2" alt="squiggly" width={20} height={20} />
       <i className="fa-solid fa-spiral shape shape--3"></i>
-      <Image src="./assets/triangle.svg" className="shape shape--4" alt="triangle" />
+      <Image src="/triangle.svg" className="shape shape--4" alt="triangle" width={20} height={20} />
       <i className="fa-solid fa-spiral shape shape--5"></i>
-      <Image src="./assets/squiggly.svg" className="shape shape--6" alt="squiggly" />
+      <Image src="/squiggly.svg" className="shape shape--6" alt="squiggly" width={20} height={20} />
       <i className="fa-solid fa-spiral shape shape--7"></i>
-      <Image src="./assets/semi circle.svg" className="shape shape--8" alt="circle" />
+      <Image src="/semi circle.svg" className="shape shape--8" alt="circle" width={20} height={20} />
     </section>
 
     <section id="projects">
@@ -183,9 +149,11 @@ export default function Home() {
             <li className="project">
               <div className="project__wrapper">
                 <Image
-                  src="./assets/treact website.png"
+                  src="/treact website.png"
                   alt="Treact Website"
                   className="project__img"
+                  width={1200}
+                  height={700}
                 />
                 <div className="project__wrapper--bg"></div>
                 <div className="project__description">
@@ -217,9 +185,11 @@ export default function Home() {
             <li className="project">
               <div className="project__wrapper">
                 <Image
-                  src="./assets/library website.png"
+                  src="/library website.png"
                   alt="Library Website"
                   className="project__img"
+                  width={1200}
+                  height={700}
                 />
                 <div className="project__wrapper--bg"></div>
                 <div className="project__description">
@@ -259,8 +229,10 @@ export default function Home() {
           <figure className="footer__logo--wrapper">
             <Image
               className="footer__logo--img"
-              src="./assets/logo dark.png"
+              src="/logo dark.png"
               alt="Logo"
+              width={70}
+              height={70}
             />
           </figure>
           <div className="footer__social--list">
@@ -286,7 +258,7 @@ export default function Home() {
               Contact
             </a>
             <a
-              href="./assets/David Bragg Resume.pdf"
+              href="/David Bragg Resume.pdf"
               className="footer__social--link link__hover-effect link__hover-effect--white"
               target="_blank"
             >
