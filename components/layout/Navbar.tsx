@@ -1,6 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import { useModal } from "@/contexts/ModalContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 function Navbar() {
+  const { toggleModal } = useModal();
+  const { toggleTheme } = useTheme();
+
   return (
     <nav>
       <figure className="personal-logo--wrapper">
