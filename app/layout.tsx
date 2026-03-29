@@ -3,6 +3,10 @@ import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
+// Layout
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
 // Contexts
 import { ModalProvider } from "../contexts/ModalContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
@@ -44,7 +48,11 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <ThemeProvider>
-          <ModalProvider>{children}</ModalProvider>
+          <ModalProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ModalProvider>
         </ThemeProvider>
       </body>
     </html>

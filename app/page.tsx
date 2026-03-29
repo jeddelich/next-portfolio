@@ -6,9 +6,6 @@ import { useRef } from "react";
 // Contexts
 import { useModal } from "../contexts/ModalContext";
 
-// Layout
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Modal from "@/components/ui/Modal";
 import ProjectCard from "@/components/ui/ProjectCard";
 
@@ -55,7 +52,6 @@ export default function Home() {
               <div className="scroll__icon--mouse click"></div>
               <div className="fa-solid fa-arrow-down"></div>
             </a>
-            <Navbar />
             <header className="header">
               <div className="header__content">
                 <h1 className="title">Hey</h1>
@@ -174,7 +170,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }
