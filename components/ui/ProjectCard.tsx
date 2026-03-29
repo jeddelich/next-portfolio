@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Project } from "@/types/project";
 
 function ProjectCard({ project }: { project: Project }) {
   return (

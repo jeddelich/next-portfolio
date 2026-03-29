@@ -29,7 +29,6 @@ function Navbar() {
         />
         <div
           className="personal-logo--effect"
-          onClick={() => addProfilePicture()}
         ></div>
       </figure>
       <ul className="nav__link--list">

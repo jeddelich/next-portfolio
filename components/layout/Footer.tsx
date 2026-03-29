@@ -1,6 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useModal } from "@/contexts/ModalContext";
 
 function Footer() {
+
+const { toggleModal } = useModal();
+
   return (
     <footer>
       <div className="container">
