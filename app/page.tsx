@@ -10,6 +10,7 @@ import { useModal } from "../contexts/ModalContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Modal from "@/components/ui/Modal";
+import ProjectCard from "@/components/ui/ProjectCard";
 
 export default function Home() {
 
@@ -109,14 +110,17 @@ export default function Home() {
             Here are some of my <span className="orange">projects</span>
           </h1>
           <ul className="project__list">
-            <li className="project">
+            
+            <ProjectCard />
+
+            {/* <li className="project">
               <div className="project__wrapper">
                 <Image
                   src="/treact website.png"
                   alt="Treact Website"
                   className="project__img"
-                  width={1200}
-                  height={700}
+                  width={900}
+                  height={480}
                 />
                 <div className="project__wrapper--bg"></div>
                 <div className="project__description">
@@ -144,7 +148,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </li>
+            </li> */}
             <li className="project">
               <div className="project__wrapper">
                 <Image

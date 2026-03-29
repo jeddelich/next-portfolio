@@ -88,15 +88,15 @@ function Modal() {
         <form onSubmit={(event) => contact(event)} id="contact__form">
           <div className="form__item form__item--row">
             <label className="form__item--label">Name:</label>
-            <input type="text" className="input" name="user_name"></input>
+            <input type="text" className="input" name="user_name" required></input>
           </div>
           <div className="form__item form__item--row">
             <label className="form__item--label">Email:</label>
-            <input type="email" className="input" name="user_email"></input>
+            <input type="email" className="input" name="user_email" required></input>
           </div>
           <div className="form__item">
             <label className="form__item--label centered">Message:</label>
-            <textarea className="input" name="message"></textarea>
+            <textarea className="input" name="message" required></textarea>
           </div>
           <div className="form__submit--wrapper">
             <button id="contact__submit" className="form__submit">
