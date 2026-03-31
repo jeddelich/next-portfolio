@@ -10,6 +10,7 @@ import Modal from "@/components/ui/Modal";
 import ProjectCard from "@/components/ui/ProjectCard";
 
 import projects from "@/data/projects";
+import Countdown from "@/components/ui/Countdown";
 
 export default function Home() {
   const { toggleModal, isModalOpen } = useModal();
@@ -88,6 +89,10 @@ export default function Home() {
                   style={{ cursor: "not-allowed" }}
                 >
                   <i className="fa-solid fa-file-pdf"></i>
+                </div>
+                <div className="resume__countdown">
+                  <span style={{fontWeight: 500}}>Resume Coming Soon:</span>
+                <Countdown />
                 </div>
               </div>
               <div className=""></div>
