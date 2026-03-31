@@ -20,25 +20,59 @@ function Modal() {
           Frontend Software Engineer
         </h4>
         <p className="modal__para">
-          I learned how to code from all{" "}
-          <span className="orange">the best engineers internationally</span> as
-          a part of <span className="orange">the exclusive program</span> called
-          Frontend Simplified.
-        </p>
-        <p className="modal__para">
-          As I expand <span className="orange">my expertise</span> daily in the
-          languages below, I am{" "}
-          <span className="orange">solving real problems</span> making a
-          difference in the online world.
+          Originally in the field of counseling, I channeled my passion for
+          people and <span className="orange"> problem-solving</span> into frontend development. I&apos;m dedicated to building{" "}
+          <span className="orange">high-quality</span> user
+          experiences that make a difference in the world.
         </p>
         <div className="modal__languages">
           <figure className="modal__language">
             <Image
               className="modal__language--img"
+              src="/Next.js.svg"
+              alt="Next.js logo"
+              width={64}
+              height={64}
+            />
+            <span className="language__name">Next.js</span>
+          </figure>
+          <figure className="modal__language">
+            <Image
+              className="modal__language--img"
+              src="/git.svg"
+              alt="Git"
+              width={64}
+              height={64}
+            />
+            <span className="language__name">Git</span>
+          </figure>
+          <figure className="modal__language">
+            <Image
+              className="modal__language--img"
+              src="/vercel-icon (2).svg"
+              alt="Vercel logo"
+              width={64}
+              height={64}
+            />
+            <span className="language__name">Vercel</span>
+          </figure>
+          <figure className="modal__language">
+            <Image
+              className="modal__language--img"
+              src="/typescript.svg"
+              alt="TypeScript logo"
+              width={64}
+              height={64}
+            />
+            <span className="language__name">TypeScript</span>
+          </figure>
+          <figure className="modal__language">
+            <Image
+              className="modal__language--img"
               src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png"
               alt="HTML logo"
-              width={100}
-              height={100}
+              width={64}
+              height={64}
             />
             <span className="language__name">HTML</span>
           </figure>
@@ -47,18 +81,18 @@ function Modal() {
               className="modal__language--img"
               src="https://cdn.iconscout.com/icon/free/png-256/free-css-icon-svg-download-png-722685.png?f=webp"
               alt="CSS logo"
-              width={100}
-              height={100}
+              width={64}
+              height={64}
             />
             <span className="language__name">CSS</span>
           </figure>
           <figure className="modal__language">
             <Image
               className="modal__language--img"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
               alt="JavaScript logo"
-              width={100}
-              height={100}
+              width={64}
+              height={64}
             />
             <span className="language__name">JavaScript</span>
           </figure>
@@ -67,8 +101,8 @@ function Modal() {
               className="modal__language--img"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png"
               alt="React logo"
-              width={100}
-              height={100}
+              width={64}
+              height={64}
             />
             <span className="language__name">React</span>
           </figure>

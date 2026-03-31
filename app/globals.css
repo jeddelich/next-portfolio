@@ -461,7 +461,7 @@ MODAL
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 1100px;
-  height: 400px;
+  height: 420px;
   border-radius: 20px;
   overflow: hidden;  
   display: flex;
@@ -496,12 +496,11 @@ MODAL
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 15% 10%;
 }
 
 .modal__language {
-  width: 25%;
-  max-width: 100px;
-  padding: 12px 32px 12px 0;
+  width: 15%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -516,7 +515,7 @@ MODAL
 
 .modal__language:hover {
   filter: brightness(80%);
-  transform: scale(0.9);
+  transform: scale(0.9) translateY(-10%);
 }
 
 .language__name {
@@ -528,6 +527,7 @@ MODAL
 
 .modal__language--img {
   width: 100%;
+  object-fit: contain;
 }
 
 .modal__title {
@@ -541,7 +541,7 @@ MODAL
 }
 
 .modal__para {
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
   line-height: 1.75;
 }
 
