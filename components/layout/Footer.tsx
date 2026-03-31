@@ -42,13 +42,12 @@ const { toggleModal } = useModal();
             >
               Contact
             </a>
-            <a
-              href="/David Bragg Resume.pdf"
+            <div
               className="footer__social--link link__hover-effect link__hover-effect--white"
-              target="_blank"
+              style={{cursor: "not-allowed"}}
             >
               Resume
-            </a>
+            </div>
           </div>
           <div className="footer__copyright">
             Copyright &copy; 2025 Jed Delich

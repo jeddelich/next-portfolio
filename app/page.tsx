@@ -83,13 +83,12 @@ export default function Home() {
                 >
                   <i className="fa-brands fa-github"></i>
                 </a>
-                <a
-                  href="/David Bragg Resume.pdf"
-                  target="_blank"
+                <div
                   className="social__link click"
+                  style={{cursor: "not-allowed"}}
                 >
                   <i className="fa-solid fa-file-pdf"></i>
-                </a>
+                </div>
               </div>
             </header>
           </>

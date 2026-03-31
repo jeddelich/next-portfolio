@@ -37,24 +37,24 @@ const projects: Project[] = [
       text: "Live Demo",
     },
   },
-  {
-    img: {
-      src: "/library website.png",
-      alt: "Library Website",
-    },
-    title: "Library Website",
-    subtitle: "Used HTML and CSS",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi obcaecati amet, tenetur omnis rem quasi ea nam a eaque consequuntur.",
-    githubLink: {
-      href: "https://github.com/jeddelich/e-commerce",
-      text: "GitHub Repo",
-    },
-    vercelLink: {
-      href: "https://jeddelich.github.io/e-commerce/",
-      text: "Live Demo",
-    },
-  },
+  // {
+  //   img: {
+  //     src: "/library website.png",
+  //     alt: "Library Website",
+  //   },
+  //   title: "Library Website",
+  //   subtitle: "Used HTML and CSS",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi obcaecati amet, tenetur omnis rem quasi ea nam a eaque consequuntur.",
+  //   githubLink: {
+  //     href: "https://github.com/jeddelich/e-commerce",
+  //     text: "GitHub Repo",
+  //   },
+  //   vercelLink: {
+  //     href: "https://jeddelich.github.io/e-commerce/",
+  //     text: "Live Demo",
+  //   },
+  // },
 ];
 
 export default projects;
