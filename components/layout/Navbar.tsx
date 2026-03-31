@@ -5,8 +5,10 @@ import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
 
 function Navbar() {
-  const { toggleModal } = useModal();
+  const { toggleModal, isModalOpen } = useModal();
   const { toggleTheme } = useTheme();
+
+  if (isModalOpen) return null;
 
   return (
     <nav>

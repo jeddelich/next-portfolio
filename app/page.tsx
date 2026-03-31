@@ -90,6 +90,7 @@ export default function Home() {
                   <i className="fa-solid fa-file-pdf"></i>
                 </div>
               </div>
+              <div className=""></div>
             </header>
           </>
         )}
@@ -101,6 +102,7 @@ export default function Home() {
           src="/semi circle.svg"
           className="shape shape--0"
           alt="semi circle"
+          style={isModalOpen ? {visibility: "hidden"} : {}}
           width={20}
           height={20}
         />
@@ -115,22 +117,26 @@ export default function Home() {
           alt="squiggly"
           width={20}
           height={20}
+          style={isModalOpen ? {visibility: "hidden"} : {}}
         />
         <i
           ref={setShapeIconRef(3)}
           className="fa-solid fa-spiral shape shape--3"
+          style={isModalOpen ? {visibility: "hidden"} : {}}
         ></i>
         <Image
           ref={setShapeImageRef(4)}
           src="/triangle.svg"
           className="shape shape--4"
           alt="triangle"
+          style={isModalOpen ? {visibility: "hidden"} : {}}
           width={20}
           height={20}
         />
         <i
           ref={setShapeIconRef(5)}
           className="fa-solid fa-spiral shape shape--5"
+          style={isModalOpen ? {visibility: "hidden"} : {}}
         ></i>
         <Image
           ref={setShapeImageRef(6)}
@@ -139,10 +145,12 @@ export default function Home() {
           alt="squiggly"
           width={20}
           height={20}
+          style={isModalOpen ? {visibility: "hidden"} : {}}
         />
         <i
           ref={setShapeIconRef(7)}
           className="fa-solid fa-spiral shape shape--7"
+          style={isModalOpen ? {visibility: "hidden"} : {}}
         ></i>
         <Image
           ref={setShapeImageRef(8)}
@@ -151,6 +159,7 @@ export default function Home() {
           alt="circle"
           width={20}
           height={20}
+          style={isModalOpen ? {visibility: "hidden"} : {}}
         />
       </section>
 
