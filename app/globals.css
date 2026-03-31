@@ -245,9 +245,10 @@ LANDING PAGE
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 24px;
   right: 32px;
+  z-index: 100;
 }
 
 .mail__btn i {
