@@ -8,8 +8,10 @@ export interface Project {
   description: string;
   githubLink: {
     href: string;
+    text: string;
   };
   vercelLink: {
     href: string;
+    text: string;
   };
 }

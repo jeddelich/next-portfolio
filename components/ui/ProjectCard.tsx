@@ -24,6 +24,7 @@ function ProjectCard({ project }: { project: Project }) {
               target="_blank"
             >
               <i className="fa-brands fa-github"></i>
+              {project.githubLink.text}
             </a>
             <a
               href={project.vercelLink.href}
@@ -31,6 +32,7 @@ function ProjectCard({ project }: { project: Project }) {
               target="_blank"
             >
               <i className="fa-solid fa-link"></i>
+              {project.vercelLink.text}
             </a>
           </div>
         </div>

@@ -728,7 +728,7 @@ PROJECTS
 }
 
 .project__wrapper:hover .project__wrapper--bg {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .project__wrapper--bg {
@@ -750,10 +750,23 @@ PROJECTS
   margin-top: 8px;
 }
 
+.project__description--links {
+  display: flex;
+  gap: 1rem;
+}
+
 .project__description--link {
+  display: flex;
+  align-items: center;
   color: white;
   font-size: 20px;
   margin-right: 16px;
+  gap: 0.5rem;
+  transition: color 300ms ease;
+}
+
+.project__description--link:hover {
+  color: #f06449;
 }
 
 .project__description--para {
