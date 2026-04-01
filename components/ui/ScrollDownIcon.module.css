@@ -34,7 +34,7 @@
   }
 }
 
-.dark-theme .scroll__icon {
+:global(.dark-theme) .scroll__icon {
   border-color: white;
 }
 

@@ -1,34 +1,33 @@
 "use client";
 
-import Image from "next/image";
+import { useRef } from "react";
 import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
 
 function Navbar() {
   const { toggleModal, isModalOpen } = useModal();
   const { toggleTheme } = useTheme();
+  const themeToggleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
+
+  const handleThemeToggle = () => {
+    if (themeToggleTimeoutRef.current) {
+      return;
+    }
+
+    toggleTheme();
+    themeToggleTimeoutRef.current = setTimeout(() => {
+      themeToggleTimeoutRef.current = null;
+    }, 500);
+  };
 
   if (isModalOpen) return null;
 
   return (
     <nav>
       <figure className="personal-logo--wrapper">
-        <Image
-          id="personal-logo"
-          className="personal-logo--light"
-          src="/logo.png"
-          alt=""
-          width={80}
-          height={80}
-        />
-        <Image
-          id="personal-logo"
-          className="personal-logo--dark"
-          src="/logo dark.png"
-          alt=""
-          width={80}
-          height={80}
-        />
+        <div className="personal-logo"></div>
         <div
           className="personal-logo--effect"
         ></div>
@@ -58,7 +57,7 @@ function Navbar() {
             Contact
           </a>
         </li>
-        <li className="nav__link click" onClick={() => toggleTheme()}>
+        <li className="nav__link click" onClick={handleThemeToggle}>
           <a
             href="#"
             className="nav__link--anchor link__hover-effect link__hover-effect--black"
