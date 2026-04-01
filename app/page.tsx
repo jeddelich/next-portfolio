@@ -11,6 +11,9 @@ import Modal from "@/components/ui/Modal";
 import Countdown from "@/components/ui/Countdown";
 import Projects from "@/components/projects/Projects";
 
+// UI
+import ScrollDown from "@/components/ui/ScrollDownIcon";
+
 export default function Home() {
   const { toggleModal, isModalOpen } = useModal();
   const shapeRefs = useRef<(HTMLElement | null)[]>([]);
@@ -48,10 +51,7 @@ export default function Home() {
                 <i className="fa-solid fa-envelope"></i>
               </button>
             </a>
-            <a href="#projects" className="scroll">
-              <div className="scroll__icon--mouse click"></div>
-              <div className="fa-solid fa-arrow-down"></div>
-            </a>
+            <ScrollDown />
             <header className="header">
               <div className="header__content">
                 <h1 className="title">Hey</h1>
