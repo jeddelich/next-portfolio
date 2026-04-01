@@ -259,8 +259,6 @@ nav,
   }
 }
 
-
-
 /* 
 
 LANDING PAGE
@@ -292,6 +290,7 @@ LANDING PAGE
 }
 
 .social__list {
+  position: relative;
   margin-top: 0.5rem;
   display: flex;
   height: fit-content;
@@ -313,6 +312,7 @@ LANDING PAGE
 
 .social__link:nth-child(3):hover ~ .resume__countdown {
   opacity: 1;
+  transform: translateX(0);
 }
 
 .mail__btn {
@@ -339,9 +339,12 @@ LANDING PAGE
 }
 
 .resume__countdown {
+  position: absolute;
+  left: 0;
+  bottom: -56px;
   opacity: 0;
+  transform: translateX(20px);
   transition: all 300ms ease;
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -697,7 +700,7 @@ PROJECTS
   margin: 0 40px;
 }
 
-.project__list{
+.project__list {
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -849,9 +852,9 @@ SHAPES
   top: 15vh;
   left: 70vw;
   padding: 4px;
-    filter: invert(100%);
-    background-color: white;
-    border-radius: 50%;
+  filter: invert(100%);
+  background-color: white;
+  border-radius: 50%;
 }
 
 .dark-theme .shape--2 {
@@ -876,7 +879,6 @@ SHAPES
 .dark-theme .shape--5 {
   filter: invert(100%);
 }
-
 
 .shape--6 {
   top: 50vh;

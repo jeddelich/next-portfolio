@@ -93,7 +93,7 @@ export default function Home() {
                   <i className="fa-solid fa-file-pdf"></i>
                 </div>
                 <div className="resume__countdown">
-                  <span style={{ fontWeight: 500 }}>Resume Coming Soon:</span>
+                  <span style={{ fontWeight: 500 }}>Resume Arriving:</span>
                   <Countdown />
                 </div>
               </div>
