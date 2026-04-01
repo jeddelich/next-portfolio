@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 // Contexts
 import { useModal } from "../contexts/ModalContext";
@@ -23,26 +23,50 @@ export default function Home() {
       shapeRefs.current[index] = element;
     };
 
-  const setShapeIconRef = (index: number) => (element: HTMLElement | null) => {
-    shapeRefs.current[index] = element;
+  const getDirection = (index: number) => {
+    // Alternate directions while skipping every 5th source step.
+    const sourceStep = index + 1 + Math.floor(index / 4);
+    return sourceStep % 2 === 0 ? -1 : 1;
   };
 
-  const moveBackground = (event: React.MouseEvent<HTMLElement>) => {
-    const x = event.clientX / 40;
-    const y = event.clientY / 40;
-
+  const applyShapeTransforms = (x: number, y: number) => {
     shapeRefs.current.forEach((shape, index) => {
       if (!shape) {
         return;
       }
 
-      // Alternate directions while skipping every 5th source step.
-      const sourceStep = index + 1 + Math.floor(index / 4);
-      const direction = sourceStep % 2 === 0 ? -1 : 1;
+      const direction = getDirection(index);
 
-      shape.style.transform = `translate(${x * direction}px, ${y * direction}px)`;
+      // Deterministic jitter keeps first render organic without random flicker.
+      const jitterX = ((index * 13) % 13) - 2;
+      const jitterY = ((index * 17) % 13) - 2;
+
+      shape.style.transform = `translate(${x * direction + jitterX}px, ${y * direction + jitterY}px)`;
     });
   };
+
+  const moveBackground = (event: React.MouseEvent<HTMLElement>) => {
+    const x = event.clientX / 30;
+    const y = event.clientY / 30;
+
+    applyShapeTransforms(x, y);
+  };
+
+  useEffect(() => {
+    // Virtual cursor position for first frame, so shapes do not start in rigid columns.
+    shapeRefs.current.forEach((shape, index) => {
+      if (!shape) {
+        return;
+      }
+
+      const sourceStep = index + 1 + Math.floor(index / 4);
+      const direction = sourceStep % 2 === 0 ? -1 : 1;
+      const jitterX = ((index * 13) % 13) - 2;
+      const jitterY = ((index * 17) % 13) - 2;
+
+      shape.style.transform = `translate(${7 * direction + jitterX}px, ${-5 * direction + jitterY}px)`;
+    });
+  }, []);
 
   return (
     <div>
