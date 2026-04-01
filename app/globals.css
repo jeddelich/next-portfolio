@@ -282,6 +282,7 @@ LANDING PAGE
   padding: 0 48px;
   opacity: 0;
   animation: fade-in-left 1s 500ms ease forwards;
+  z-index: 1;
 }
 
 .header__para {
@@ -824,6 +825,7 @@ SHAPES
 .shape {
   position: fixed;
   height: 20px;
+  object-fit: contain;
   width: 20px;
   opacity: 0;
   animation: fade-in 1s 750ms ease forwards;
@@ -845,37 +847,65 @@ SHAPES
 
 .shape--2 {
   top: 15vh;
-  left: 80vw;
+  left: 70vw;
+  padding: 4px;
+    filter: invert(100%);
+    background-color: white;
+    border-radius: 50%;
+}
+
+.dark-theme .shape--2 {
+  filter: none;
 }
 
 .shape--3 {
-  top: 50vh;
-  left: 5vw;
+  top: 15vh;
+  left: 90vw;
 }
 
 .shape--4 {
   top: 50vh;
-  left: 50vw;
+  left: 5vw;
 }
 
 .shape--5 {
   top: 50vh;
-  left: 80vw;
+  left: 50vw;
 }
 
+.dark-theme .shape--5 {
+  filter: invert(100%);
+}
+
+
 .shape--6 {
-  top: 80vh;
-  left: 5vw;
+  top: 50vh;
+  left: 70vw;
 }
 
 .shape--7 {
-  top: 80vh;
-  left: 50vw;
+  top: 50vh;
+  left: 90vw;
 }
 
 .shape--8 {
   top: 80vh;
-  left: 80vw;
+  left: 5vw;
+}
+
+.shape--9 {
+  top: 80vh;
+  left: 50vw;
+}
+
+.shape--10 {
+  top: 80vh;
+  left: 70vw;
+}
+
+.shape--11 {
+  top: 80vh;
+  left: 90vw;
 }
 
 /* SMALL PHONES, TABLETS, BIG SMART PHONES */

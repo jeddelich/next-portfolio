@@ -28,15 +28,18 @@ export default function Home() {
   };
 
   const moveBackground = (event: React.MouseEvent<HTMLElement>) => {
-    const x = event.clientX / 20;
-    const y = event.clientY / 20;
+    const x = event.clientX / 40;
+    const y = event.clientY / 40;
 
     shapeRefs.current.forEach((shape, index) => {
       if (!shape) {
         return;
       }
-      const shouldInvert = index % 2 !== 0;
-      const direction = shouldInvert ? -1 : 1;
+
+      // Alternate directions while skipping every 5th source step.
+      const sourceStep = index + 1 + Math.floor(index / 4);
+      const direction = sourceStep % 2 === 0 ? -1 : 1;
+
       shape.style.transform = `translate(${x * direction}px, ${y * direction}px)`;
     });
   };
@@ -90,8 +93,8 @@ export default function Home() {
                   <i className="fa-solid fa-file-pdf"></i>
                 </div>
                 <div className="resume__countdown">
-                  <span style={{fontWeight: 500}}>Resume Coming Soon:</span>
-                <Countdown />
+                  <span style={{ fontWeight: 500 }}>Resume Coming Soon:</span>
+                  <Countdown />
                 </div>
               </div>
             </header>
@@ -102,64 +105,107 @@ export default function Home() {
 
         <Image
           ref={setShapeImageRef(0)}
-          src="/semi circle.svg"
+          src="/git.svg"
           className="shape shape--0"
           alt="semi circle"
           style={isModalOpen ? { visibility: "hidden" } : {}}
           width={20}
           height={20}
         />
-        <i
-          ref={setShapeIconRef(1)}
-          className="fa-solid fa-spiral shape shape--1"
+        <Image
+          ref={setShapeImageRef(1)}
+          src="/typescript.svg"
+          className="shape shape--1"
+          alt="semi circle"
           style={isModalOpen ? { visibility: "hidden" } : {}}
-        ></i>
+          width={20}
+          height={20}
+        />
         <Image
           ref={setShapeImageRef(2)}
-          src="/squiggly.svg"
+          src="/vercel-icon (2).svg"
           className="shape shape--2"
           alt="squiggly"
           width={20}
           height={20}
           style={isModalOpen ? { visibility: "hidden" } : {}}
         />
-        <i
-          ref={setShapeIconRef(3)}
-          className="fa-solid fa-spiral shape shape--3"
+        <Image
+          ref={setShapeImageRef(3)}
+          src="/tailwindcss.svg"
+          className="shape shape--3"
+          alt="squiggly"
+          width={20}
+          height={20}
           style={isModalOpen ? { visibility: "hidden" } : {}}
-        ></i>
+        />
         <Image
           ref={setShapeImageRef(4)}
-          src="/triangle.svg"
+          src="/framer-motion.svg"
           className="shape shape--4"
           alt="triangle"
           style={isModalOpen ? { visibility: "hidden" } : {}}
           width={20}
           height={20}
         />
-        <i
-          ref={setShapeIconRef(5)}
-          className="fa-solid fa-spiral shape shape--5"
+        <Image
+          ref={setShapeImageRef(5)}
+          src="/Next.js.svg"
+          className="shape shape--5"
+          alt="triangle"
           style={isModalOpen ? { visibility: "hidden" } : {}}
-        ></i>
+          width={20}
+          height={20}
+        />
         <Image
           ref={setShapeImageRef(6)}
-          src="/squiggly.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
           className="shape shape--6"
           alt="squiggly"
           width={20}
           height={20}
           style={isModalOpen ? { visibility: "hidden" } : {}}
         />
-        <i
-          ref={setShapeIconRef(7)}
-          className="fa-solid fa-spiral shape shape--7"
+        <Image
+          ref={setShapeImageRef(7)}
+          src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-logomark.svg"
+          className="shape shape--7"
+          alt="squiggly"
+          width={20}
+          height={20}
           style={isModalOpen ? { visibility: "hidden" } : {}}
-        ></i>
+        />
         <Image
           ref={setShapeImageRef(8)}
-          src="/semi circle.svg"
+          src="/stripe.svg"
           className="shape shape--8"
+          alt="circle"
+          width={20}
+          height={20}
+          style={isModalOpen ? { visibility: "hidden" } : {}}
+        />
+        <Image
+          ref={setShapeImageRef(9)}
+          src="/visual studio.svg"
+          className="shape shape--9"
+          alt="squiggly"
+          width={20}
+          height={20}
+          style={isModalOpen ? { visibility: "hidden" } : {}}
+        />
+        <Image
+          ref={setShapeImageRef(10)}
+          src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+          className="shape shape--10"
+          alt="squiggly"
+          width={20}
+          height={20}
+          style={isModalOpen ? { visibility: "hidden" } : {}}
+        />
+        <Image
+          ref={setShapeImageRef(11)}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png"
+          className="shape shape--11"
           alt="circle"
           width={20}
           height={20}
@@ -167,7 +213,7 @@ export default function Home() {
         />
       </section>
 
-    <Projects />
+      <Projects />
     </div>
   );
 }
