@@ -1,7 +1,26 @@
 import { Project } from "@/types/project";
 
 const projects: Project[] = [
-    {
+  {
+    img: {
+      src: "/summarist-ss.png",
+      alt: "Summarist",
+    }, 
+    title: "Summarist",
+    subtitle: "Next.js, TypeScript, HTML, CSS",
+    description:
+      "Summarist is a web application that utilizes the power of the OpenAI API to provide users with concise and accurate summaries of any article they choose. With a sleek and intuitive interface, Summarist allows users to easily input the URL of an article and receive a well-crafted summary in return. The application is built using Next.js and TypeScript, ensuring a seamless user experience and robust performance. Whether you're looking to quickly grasp the main points of a lengthy article or simply want to save time, Summarist is the perfect tool for you.",
+    githubLink: {
+      href: "https://github.com/jeddelich/summarist",
+      text: "GitHub Repo",
+    },
+    vercelLink: {
+      href: "https://summarist.vercel.app/",
+      text: "Live Demo",
+    },
+
+  },
+  {
     img: {
       src: "/nft-marketplace.png",
       alt: "NFT Marketplace",

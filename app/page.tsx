@@ -7,11 +7,9 @@ import { useRef } from "react";
 import { useModal } from "../contexts/ModalContext";
 
 import Modal from "@/components/ui/Modal";
-import ProjectCard from "@/components/ui/ProjectCard";
 
-import projects from "@/data/projects";
 import Countdown from "@/components/ui/Countdown";
-import Button from "@/components/ui/Button";
+import Projects from "@/components/projects/Projects";
 
 export default function Home() {
   const { toggleModal, isModalOpen } = useModal();
@@ -169,21 +167,7 @@ export default function Home() {
         />
       </section>
 
-      <section id="projects">
-        <div className="container">
-          <div className="row">
-            <h1 className="section__title">
-              Here are some of my <span className="orange">projects</span>
-            </h1>
-            <ul className="project__list">
-              {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </ul>
-            <Button text={`explore all ${projects.length} projects`}/>
-          </div>
-        </div>
-      </section>
+    <Projects />
     </div>
   );
 }
