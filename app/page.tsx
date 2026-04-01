@@ -95,7 +95,6 @@ export default function Home() {
                 <Countdown />
                 </div>
               </div>
-              <div className=""></div>
             </header>
           </>
         )}

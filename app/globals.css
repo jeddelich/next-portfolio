@@ -181,6 +181,124 @@ nav,
   border-top: 2px solid rgb(245, 245, 245);
 }
 
+/* ANIMATIONS */
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translate(-55%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes circle-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-shadow {
+  from {
+    box-shadow: none;
+    border-radius: none;
+  }
+  to {
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 /* 
 
 LANDING PAGE
@@ -201,17 +319,6 @@ LANDING PAGE
   max-width: 1000px;
   padding: 0 48px;
   animation: fade-in-left 1s ease;
-}
-
-@keyframes fade-in-left {
-  from {
-    opacity: 0;
-    transform: translate(-55%, -50%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
 }
 
 .header__para {
@@ -298,26 +405,6 @@ LANDING PAGE
   animation: scroll 1000ms infinite alternate-reverse;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(-3px);
-  }
-}
-
-@keyframes fade-up {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
 .fa-arrow-down {
   position: absolute;
   color: #242424;
@@ -326,33 +413,6 @@ LANDING PAGE
   opacity: 0;
   animation: blinking 12s linear infinite;
   cursor: default;
-}
-
-@keyframes blinking {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  85% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 .resume__countdown {
@@ -398,24 +458,6 @@ nav {
   width: 48px;
   height: 48px;
   color: #f06449;
-}
-
-@keyframes circle-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .nav__link--list,
@@ -500,17 +542,6 @@ MODAL
   animation: modal-shadow 500ms 1500ms ease forwards;
 }
 
-@keyframes modal-shadow {
-  from {
-    box-shadow: none;
-    border-radius: none;
-  }
-  to {
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.25);
-    border-radius: 20px;
-  }
-}
-
 .modal__half {
   width: 50%;
   padding: 20px 40px;
@@ -529,15 +560,6 @@ MODAL
   animation: slide-in-left 1s 500ms ease forwards;
 }
 
-@keyframes slide-in-left {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
 .modal__contact {
   background-color: #242424;
   color: white;
@@ -545,15 +567,6 @@ MODAL
   border-bottom-right-radius: 20px;
   transform: translateX(100%);
   animation: slide-in-right 1s 500ms ease forwards;
-}
-
-@keyframes slide-in-right {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
 }
 
 .modal__languages {
@@ -709,15 +722,6 @@ MODAL
 
 .fa-spinner {
   animation: spinner 750ms infinite linear;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .modal__exit {
