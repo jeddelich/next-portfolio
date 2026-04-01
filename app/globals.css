@@ -48,6 +48,9 @@ a {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .click {
@@ -318,7 +321,8 @@ LANDING PAGE
   width: 100%;
   max-width: 1000px;
   padding: 0 48px;
-  animation: fade-in-left 1s ease;
+  opacity: 0;
+  animation: fade-in-left 1s 500ms ease forwards;
 }
 
 .header__para {
@@ -774,7 +778,7 @@ PROJECTS
   position: relative;
   max-width: 900px;
   border-radius: 20px;
-  box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
+  box-shadow: 0 10px 20px 0 rgb(0, 0, 0, 0.25);
   overflow: hidden;
   margin: 0 40px;
 }
@@ -902,6 +906,8 @@ SHAPES
   position: fixed;
   height: 20px;
   width: 20px;
+  opacity: 0;
+  animation: fade-in 1s 750ms ease forwards;
 }
 
 .fa-spiral {

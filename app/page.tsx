@@ -11,6 +11,7 @@ import ProjectCard from "@/components/ui/ProjectCard";
 
 import projects from "@/data/projects";
 import Countdown from "@/components/ui/Countdown";
+import Button from "@/components/ui/Button";
 
 export default function Home() {
   const { toggleModal, isModalOpen } = useModal();
@@ -179,6 +180,7 @@ export default function Home() {
                 <ProjectCard key={index} project={project} />
               ))}
             </ul>
+            <Button text={`explore all ${projects.length} projects`}/>
           </div>
         </div>
       </section>
