@@ -770,10 +770,6 @@ PROJECTS
   justify-content: center;
 }
 
-.project:nth-child(2) {
-  margin-top: 80px;
-}
-
 .project__wrapper {
   position: relative;
   max-width: 900px;
@@ -781,6 +777,12 @@ PROJECTS
   box-shadow: 0 10px 20px 0 rgb(0, 0, 0, 0.25);
   overflow: hidden;
   margin: 0 40px;
+}
+
+.project__list{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 .project__wrapper:hover .project__description {
