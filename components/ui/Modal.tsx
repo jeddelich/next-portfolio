@@ -1,13 +1,44 @@
 "use client";
 
-import Image from "next/image";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 import { useModal } from "@/contexts/ModalContext";
 
 function Modal() {
   const { toggleModal } = useModal();
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [emailStatus, setEmailStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
-  const contact = (event: React.FormEvent<HTMLFormElement>) => {
+  const EMAILJS_SERVICE_ID =
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_ojz7iuk";
+  const EMAILJS_TEMPLATE_ID =
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_oyden5m";
+  const EMAILJS_PUBLIC_KEY =
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "R54J9NMfhG7qiMJoB";
+
+  const contact = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!formRef.current) {
+      return;
+    }
+
+    setEmailStatus("loading");
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+      setEmailStatus("success");
+      formRef.current.reset();
+    } catch {
+      setEmailStatus("error");
+    }
   };
 
   return (
@@ -49,7 +80,7 @@ function Modal() {
         <h4 className="modal__subtitle modal__subtitle--contact centered">
           I&apos;m currently open to new opportunities
         </h4>
-        <form onSubmit={(event) => contact(event)} id="contact__form">
+        <form ref={formRef} onSubmit={(event) => contact(event)} id="contact__form">
           <div className="form__item form__item--row">
             <label className="form__item--label">Name:</label>
             <input
@@ -73,18 +104,39 @@ function Modal() {
             <textarea className="input" name="message" required></textarea>
           </div>
           <div className="form__submit--wrapper">
-            <button id="contact__submit" className="form__submit">
-              Send it my way
+            <button
+              id="contact__submit"
+              className="form__submit"
+              disabled={emailStatus === "loading"}
+            >
+              {emailStatus === "loading" ? "Sending..." : "Send it my way"}
             </button>
           </div>
         </form>
-        <div className="modal__overlay modal__overlay--loading">
+        <div
+          className={`modal__overlay modal__overlay--loading ${
+            emailStatus === "loading" ? "modal__overlay--visible" : ""
+          }`}
+        >
           <i className="fa-solid fa-spinner"></i>
         </div>
-        <div className="modal__overlay modal__overlay--success">
-          Thanks for the message!
-          <br />
-          Looking forward to speaking to you soon.
+        <div
+          className={`modal__overlay modal__overlay--success ${
+            emailStatus === "success" || emailStatus === "error"
+              ? "modal__overlay--visible"
+              : ""
+          }`}
+          style={emailStatus === "error" ? { backgroundColor: "#a43f3f" } : {}}
+        >
+          {emailStatus === "success" ? (
+            <>
+              Thanks for the message!
+              <br />
+              Looking forward to speaking to you soon.
+            </>
+          ) : (
+            "Something went wrong. Please try again."
+          )}
         </div>
       </div>
     </div>

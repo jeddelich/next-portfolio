@@ -69,7 +69,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className={isModalOpen ? "modal-background" : ""} onClick={() => isModalOpen && toggleModal()}>
       <section id="landing-page" onMouseMove={(event) => moveBackground(event)}>
         {!isModalOpen && (
           <>

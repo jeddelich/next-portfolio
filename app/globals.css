@@ -93,6 +93,7 @@ input {
   border-top: none;
   border-left: none;
   border-right: none;
+  padding-bottom: 4px;
 }
 
 input:hover,
@@ -107,13 +108,16 @@ textarea:focus {
 
 textarea {
   resize: vertical;
-  height: 64px;
+  height: 80px;
+  padding: 8px;
+  line-height: 1.5;
   margin-top: 8px;
 }
 
 label {
   font-size: 14px;
   font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .link__hover-effect {
@@ -275,6 +279,11 @@ LANDING PAGE
 #landing-page {
   height: 100vh;
   position: relative;
+}
+
+.modal-background {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .header {

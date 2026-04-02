@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useModal } from "@/contexts/ModalContext";
-import Countdown from "../ui/Countdown";
 
 function Footer() {
-  const { toggleModal } = useModal();
+  const { toggleModal, isModalOpen } = useModal();
+
+if (isModalOpen) return null;
 
   return (
     <footer>
