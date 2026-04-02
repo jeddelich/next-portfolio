@@ -281,9 +281,14 @@ LANDING PAGE
   position: relative;
 }
 
-.modal-background {
+.modal-background-fixed {
   height: 100vh;
   overflow-y: hidden;
+}
+
+.modal-background {
+  inset: 0;
+  position: fixed;
 }
 
 .header {
@@ -327,15 +332,15 @@ LANDING PAGE
 }
 
 .social__link:nth-of-type(1):hover {
-  color: #0077B5;
+  color: #0077b5;
 }
 
 .social__link:nth-of-type(2):hover {
-  color: #6E7681;
+  color: #6e7681;
 }
 
 .social__link:nth-of-type(3):hover {
-  color: #E81123;
+  color: #e81123;
 }
 
 .social__link:nth-child(3):hover ~ .resume__countdown {

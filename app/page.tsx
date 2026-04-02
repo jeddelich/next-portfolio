@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Contexts
 import { useModal } from "../contexts/ModalContext";
@@ -17,6 +17,7 @@ import ScrollDown from "@/components/ui/ScrollDownIcon";
 export default function Home() {
   const { toggleModal, isModalOpen } = useModal();
   const shapeRefs = useRef<(HTMLElement | null)[]>([]);
+  const [isModalBackgroundFixed, setIsModalBackgroundFixed] = useState(false);
 
   const setShapeImageRef =
     (index: number) => (element: HTMLImageElement | null) => {
@@ -68,8 +69,21 @@ export default function Home() {
     });
   }, []);
 
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const timer = setTimeout(() => {
+      setIsModalBackgroundFixed(true);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+      setIsModalBackgroundFixed(false);
+    };
+  }, [isModalOpen]);
+
   return (
-    <div className={isModalOpen ? "modal-background" : ""} onClick={() => isModalOpen && toggleModal()}>
+    <div className={isModalBackgroundFixed ? "modal-background-fixed" : ""}>
       <section id="landing-page" onMouseMove={(event) => moveBackground(event)}>
         {!isModalOpen && (
           <>
@@ -121,6 +135,13 @@ export default function Home() {
         )}
 
         {isModalOpen && <Modal />}
+
+        {isModalOpen && isModalBackgroundFixed && (
+          <div
+            className="modal-background"
+            onClick={() => isModalOpen && toggleModal()}
+          ></div>
+        )}
 
         <Image
           ref={setShapeImageRef(0)}
