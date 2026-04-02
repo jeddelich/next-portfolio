@@ -7,9 +7,9 @@ const projects: Project[] = [
       alt: "Summarist",
     }, 
     title: "Summarist",
-    subtitle: "Next.js, TypeScript, HTML, CSS",
+    subtitle: "Next.js, TypeScript, JavaScript, HTML, CSS",
     description:
-      "Summarist is a web application that utilizes the power of the OpenAI API to provide users with concise and accurate summaries of any article they choose. With a sleek and intuitive interface, Summarist allows users to easily input the URL of an article and receive a well-crafted summary in return. The application is built using Next.js and TypeScript, ensuring a seamless user experience and robust performance. Whether you're looking to quickly grasp the main points of a lengthy article or simply want to save time, Summarist is the perfect tool for you.",
+      "Summarist is a subscription website featuring authentication with Firebase, Stripe integration, a search bar, and audio player. With a sleek and intuitive interface, Summarist allows users to scroll through the carousels of dynamic API book data and listen to audio summaries (premium ones if you have the monthly or annual plan). The application is built using Next.js and TypeScript, ensuring a seamless user experience and robust performance. Feel free to create a free account or use the guest login to check it out. (Stripe test card number: 4242 4242 4242 4242, any future expiration date, and any CVC)",
     githubLink: {
       href: "https://github.com/jeddelich/summarist",
       text: "GitHub Repo",

@@ -88,11 +88,6 @@ export default function Home() {
                   <b className="orange">Frontend Software Engineer</b> with a
                   strong passion for building websites that are both visually
                   engaging and user-friendly.
-                  <br />
-                  Learn more{" "}
-                  <b className="orange cursor" onClick={() => toggleModal()}>
-                    about me!
-                  </b>
                 </p>
               </div>
               <div className="social__list">
@@ -110,14 +105,14 @@ export default function Home() {
                 >
                   <i className="fa-brands fa-github"></i>
                 </a>
-                <div
+                <a
                   className="social__link click"
                   style={{ cursor: "not-allowed" }}
                 >
                   <i className="fa-solid fa-file-pdf"></i>
-                </div>
+                </a>
                 <div className="resume__countdown">
-                  <span style={{ fontWeight: 500 }}>Resume Arriving:</span>
+                  <span className="countdown__text">Resume Arriving:</span>
                   <Countdown />
                 </div>
               </div>

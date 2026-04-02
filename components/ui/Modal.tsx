@@ -20,93 +20,23 @@ function Modal() {
           Frontend Software Engineer
         </h4>
         <p className="modal__para">
-          Originally in the field of counseling, I channeled my passion for
-          people and <span className="orange"> problem-solving</span> into frontend development. I&apos;m dedicated to building{" "}
-          <span className="orange">high-quality</span> user
-          experiences that make a difference in the world.
+          Initially pursuing a career in counseling, I threw my passion for
+          people and <span className="orange">problem-solving</span> into
+          frontend development. Having traveled to over 35+ different countries,
+          I know how to{" "}
+          <span className="orange">
+            collaborate, communicate, and face challenges from a different
+            perspective.
+          </span>
         </p>
-        <div className="modal__languages">
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="/Next.js.svg"
-              alt="Next.js logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">Next.js</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="/git.svg"
-              alt="Git"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">Git</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="/vercel-icon (2).svg"
-              alt="Vercel logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">Vercel</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="/typescript.svg"
-              alt="TypeScript logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">TypeScript</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png"
-              alt="HTML logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">HTML</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="https://cdn.iconscout.com/icon/free/png-256/free-css-icon-svg-download-png-722685.png?f=webp"
-              alt="CSS logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">CSS</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-              alt="JavaScript logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">JavaScript</span>
-          </figure>
-          <figure className="modal__language">
-            <Image
-              className="modal__language--img"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png"
-              alt="React logo"
-              width={64}
-              height={64}
-            />
-            <span className="language__name">React</span>
-          </figure>
-        </div>
+        <p className="modal__para">
+          I am sure by now you have seen some of
+          <span className="orange"> my tech stack</span> floating around, and{" "}
+          <span className="orange">my personal projects</span> below, but feel
+          free to check out my resume for more, including{" "}
+          <span className="orange">my internship experience!</span> I would love
+          to connect more about how I could bring value to your team!
+        </p>
       </div>
       <div className="modal__half modal__contact">
         <i
@@ -122,11 +52,21 @@ function Modal() {
         <form onSubmit={(event) => contact(event)} id="contact__form">
           <div className="form__item form__item--row">
             <label className="form__item--label">Name:</label>
-            <input type="text" className="input" name="user_name" required></input>
+            <input
+              type="text"
+              className="input"
+              name="user_name"
+              required
+            ></input>
           </div>
           <div className="form__item form__item--row">
             <label className="form__item--label">Email:</label>
-            <input type="email" className="input" name="user_email" required></input>
+            <input
+              type="email"
+              className="input"
+              name="user_email"
+              required
+            ></input>
           </div>
           <div className="form__item">
             <label className="form__item--label centered">Message:</label>

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useModal } from "@/contexts/ModalContext";
+import Countdown from "../ui/Countdown";
 
 function Footer() {
-
-const { toggleModal } = useModal();
+  const { toggleModal } = useModal();
 
   return (
     <footer>
@@ -42,12 +42,12 @@ const { toggleModal } = useModal();
             >
               Contact
             </a>
-            <div
+            <a
+              href="#"
               className="footer__social--link link__hover-effect link__hover-effect--white"
-              style={{cursor: "not-allowed"}}
             >
               Resume
-            </div>
+            </a>
           </div>
           <div className="footer__copyright">
             Copyright &copy; 2025 Jed Delich

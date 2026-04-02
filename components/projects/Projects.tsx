@@ -22,7 +22,7 @@ function Projects() {
             ))}
           </ul>
           {projectsDisplayed < projects.length && (
-            <Button text={`More Projects ( ${Math.max(projects.length - projectsDisplayed)} )`} onClick={() => setProjectsDisplayed(projectsDisplayed + 2)} />
+            <Button text={`Explore More`} onClick={() => setProjectsDisplayed(projectsDisplayed + 2)} />
           )}
         </div>
       </div>
