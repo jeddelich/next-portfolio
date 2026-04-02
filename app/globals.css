@@ -203,6 +203,24 @@ nav,
   }
 }
 
+@keyframes drop-down-float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-56px);
+  }
+  1% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+  100% {
+        opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fade-up {
   from {
     transform: translateY(50px);
@@ -217,9 +235,11 @@ nav,
 @keyframes circle-spin {
   0% {
     transform: rotate(0deg);
+      opacity: 1;
   }
   100% {
     transform: rotate(360deg);
+      opacity: 1;
   }
 }
 
@@ -229,6 +249,21 @@ nav,
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fade-in-and-out {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -267,6 +302,18 @@ nav,
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -363,6 +410,8 @@ LANDING PAGE
   bottom: 24px;
   right: 32px;
   z-index: 100;
+  transform: scale(0);
+  animation: pop-up 750ms 2250ms ease forwards;
 }
 
 .mail__btn i {
@@ -420,14 +469,8 @@ nav {
   color: #f06449;
 }
 
-.nav__link--list,
-.mail__btn {
-  animation: fade-in 2s ease;
-}
-
 .personal-logo--effect:hover {
   animation: circle-spin 1s linear infinite;
-  opacity: 1;
 }
 
 .personal-logo--effect {
@@ -441,6 +484,8 @@ nav {
   border-radius: 50%;
   transition: opacity 700ms ease;
   opacity: 0;
+  animation: circle-spin 1s linear;
+  animation-iteration-count: 2;
 }
 
 .personal-logo {
@@ -463,6 +508,22 @@ nav {
 
 .nav__link {
   margin: 0 12px;
+}
+
+.nav__link:nth-of-type(1), .nav__link:nth-of-type(2), .nav__link:nth-of-type(3) {
+  opacity: 0;
+  transform: translateY(-56px);
+  animation: drop-down-float-up 2s forwards;
+}
+
+.nav__link:nth-of-type(1) {
+  animation-delay: 500ms;
+}
+.nav__link:nth-of-type(2) {
+  animation-delay: 750ms;
+}
+.nav__link:nth-of-type(3) {
+  animation-delay: 1000ms;
 }
 
 .nav__link--anchor {
