@@ -216,7 +216,7 @@ nav,
     transform: translateY(8px);
   }
   100% {
-        opacity: 1;
+    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -235,11 +235,11 @@ nav,
 @keyframes circle-spin {
   0% {
     transform: rotate(0deg);
-      opacity: 1;
+    opacity: 1;
   }
   100% {
     transform: rotate(360deg);
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -278,6 +278,15 @@ nav,
   }
 }
 
+@keyframes modal-shadow-column {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
 @keyframes modal-shadow-light {
   from {
     box-shadow: none;
@@ -286,6 +295,15 @@ nav,
   to {
     box-shadow: 0 20px 80px 0 rgba(255, 255, 255, 0.25);
     border-radius: 20px;
+  }
+}
+
+@keyframes modal-shadow-column-light {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 20px 80px 0 rgba(255, 255, 255, 0.25);
   }
 }
 
@@ -521,7 +539,9 @@ nav {
   margin: 0 12px;
 }
 
-.nav__link:nth-of-type(1), .nav__link:nth-of-type(2), .nav__link:nth-of-type(3) {
+.nav__link:nth-of-type(1),
+.nav__link:nth-of-type(2),
+.nav__link:nth-of-type(3) {
   opacity: 0;
   transform: translateY(-56px);
   animation: drop-down-float-up 2s forwards;
@@ -697,7 +717,7 @@ MODAL
 
 .form__submit {
   background-color: #f06449;
-  border: 2px solid #f06449;
+  border: none;
   border-radius: 2px;
   color: white;
   font-weight: 400;
@@ -715,13 +735,12 @@ MODAL
 }
 
 .form__submit:hover {
-  border-color: white;
-  background-color: transparent;
+  background-color: #d9534f;
 }
 
 .form__submit:active {
-  border-color: #f06449;
-  color: #f06449;
+  background-color: #c9302c;
+  transform: translateY(1px);
 }
 
 .modal__overlay {
@@ -1046,7 +1065,7 @@ SHAPES
     line-height: 1.5;
   }
   .modal__about .modal__subtitle {
-     margin: 8px 0 16px 0;
+    margin: 8px 0 16px 0;
   }
 }
 
@@ -1056,8 +1075,8 @@ SHAPES
   }
 
   .modal {
-    top: 0;
     left: 0;
+    top: 0;
     transform: none;
     height: 100dvh;
     max-height: none;
@@ -1066,6 +1085,7 @@ SHAPES
     border-radius: 0;
     overflow-y: auto;
     animation: none;
+    padding: 16px;
   }
 
   .modal__half {
@@ -1076,17 +1096,31 @@ SHAPES
 
   .modal__about,
   .modal__contact {
-    border-radius: 0;
+    opacity: 0;
     transform: none;
-    animation: fade-up 500ms ease forwards;
+    animation:
+      fade-up 500ms 750ms ease forwards,
+      modal-shadow-column 500ms 750ms ease forwards;
+  }
+
+  .dark-theme .modal__about,
+  .dark-theme .modal__contact {
+    animation:
+      fade-up 500ms 750ms ease forwards,
+      modal-shadow-column-light 500ms 750ms ease forwards;
   }
 
   .modal__about {
-    min-height: 55dvh;
+    min-height: 65dvh;
+    justify-content: center;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
   }
 
   .modal__contact {
     min-height: 75dvh;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
   }
 
   .modal__title,
@@ -1095,13 +1129,20 @@ SHAPES
     text-align: center;
   }
 
+  .modal__para {
+    padding: 0 4rem;
+  }
+
   .form__submit--wrapper {
     margin-bottom: 24px;
   }
 
-  input,
+  input {
+    width: 45%;
+  }
+
   textarea {
-    width: 85%;
+    width: 55%;
   }
 
   .modal__exit {
@@ -1169,8 +1210,8 @@ SHAPES
   .project__wrapper {
     margin: 0 20px;
   }
-  footer{
-  padding: 3rem 0 4rem 0;
+  footer {
+    padding: 3rem 0 4rem 0;
   }
 }
 
@@ -1181,6 +1222,7 @@ SHAPES
 
   .modal__para {
     margin-bottom: 0;
+    padding: 0 3rem;
   }
 
   .modal__half {
@@ -1192,7 +1234,7 @@ SHAPES
   }
 
   .modal__about {
-    min-height: 44dvh;
+    min-height: 55dvh;
     justify-content: center;
   }
 
@@ -1272,15 +1314,16 @@ SHAPES
     font-size: 20px;
   }
 
-  .footer__social--link{
+  .footer__social--link {
     font-size: 14px;
   }
   .modal__para {
     font-size: 14px;
-     line-height: 1.45;
+    line-height: 1.45;
+    padding: 0 1.25rem;
   }
   .modal__about {
-    min-height: 45dvh;
+    min-height: 52dvh;
   }
 
   .form__submit {
@@ -1288,8 +1331,28 @@ SHAPES
     padding: 6px 0;
     max-width: 120px;
   }
-  input{
-    width: 70%;
+  input {
+    width: 60%;
+  }
+
+  textarea {
+    width: 80%;
+  }
+
+  .modal__exit {
+    right: 14px;
+    font-size: 20px;
+  }
+  .modal__title {
+    font-size: 18px;
+  }
+  .modal__subtitle {
+    font-size: 12px;
+    margin: 8px 0 12px 0;
+  }
+
+  .modal__contact .modal__subtitle {
+    margin: 8px 0 32px 0;
   }
 }
 
@@ -1320,35 +1383,23 @@ SHAPES
     padding: 16px 12px;
   }
 
-  .modal__title {
+  .modal__exit {
+    top: 14px;
+    right: 12px;
     font-size: 18px;
   }
 
-  .modal__subtitle {
-    font-size: 12px;
-    margin: 8px 0 12px 0;
-  }
-
-    .modal__contact .modal__subtitle {
+  .modal__contact .modal__subtitle {
     margin: 8px 0 24px 0;
-}
+  }
 
   .modal__contact {
     min-height: 70dvh;
   }
 
-  .modal__about {
-    min-height: 46dvh;
-  }
-
   .modal__para {
     font-size: 14px;
     line-height: 1.45;
-  }
-
-  .modal__exit {
-    right: 14px;
-    font-size: 20px;
   }
 
   .form__item input {
