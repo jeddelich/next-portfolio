@@ -18,3 +18,10 @@
     background-color: #c9302c;
     transform: translateY(1px);
 }
+
+@media (max-width: 600px) {
+    .button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}

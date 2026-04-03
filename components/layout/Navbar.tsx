@@ -33,7 +33,7 @@ function Navbar() {
         ></div>
       </figure>
       <ul className="nav__link--list">
-        <li className="nav__link" onClick={() => toggleModal()}>
+        <li className="nav__link click" onClick={() => toggleModal()}>
           <a
             href="#"
             className="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -41,7 +41,7 @@ function Navbar() {
             About
           </a>
         </li>
-        <li className="nav__link">
+        <li className="nav__link click">
           <a
             href="#projects"
             className="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -49,7 +49,7 @@ function Navbar() {
             Projects
           </a>
         </li>
-        <li className="nav__link" onClick={() => toggleModal()}>
+        <li className="nav__link click" onClick={() => toggleModal()}>
           <a
             href="#"
             className="nav__link--anchor link__hover-effect link__hover-effect--black"

@@ -22,7 +22,7 @@ const projects: Project[] = [
   },
   {
     img: {
-      src: "/nft-marketplace.png",
+      src: "/nft-marketplace-ss.png",
       alt: "NFT Marketplace",
     },
     title: "NFT Marketplace",
