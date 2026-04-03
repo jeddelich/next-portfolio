@@ -273,7 +273,18 @@ nav,
     border-radius: none;
   }
   to {
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.25);
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+}
+
+@keyframes modal-shadow-light {
+  from {
+    box-shadow: none;
+    border-radius: none;
+  }
+  to {
+    box-shadow: 0 20px 80px 0 rgba(255, 255, 255, 0.25);
     border-radius: 20px;
   }
 }
@@ -397,6 +408,15 @@ LANDING PAGE
   transform: translateX(0);
 }
 
+.mail__btn--wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 32px;
+  z-index: 100;
+  transform: scale(0);
+  animation: pop-up 750ms 2250ms ease forwards;
+}
+
 .mail__btn {
   width: 48px;
   height: 48px;
@@ -408,12 +428,6 @@ LANDING PAGE
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 24px;
-  right: 32px;
-  z-index: 100;
-  transform: scale(0);
-  animation: pop-up 750ms 2250ms ease forwards;
 }
 
 .mail__btn i {
@@ -471,17 +485,12 @@ nav {
   color: #f06449;
 }
 
-.personal-logo--effect:hover {
-  animation: circle-spin 1s linear infinite;
-}
-
 .personal-logo--effect {
   position: absolute;
   top: 16px;
   left: 17px;
   width: 48px;
   height: 48px;
-  cursor: pointer;
   border-top: 2px solid #f06449;
   border-radius: 50%;
   transition: all 700ms ease;
@@ -562,6 +571,10 @@ MODAL
     z-index 750ms,
     box-shadow 500ms ease;
   animation: modal-shadow 500ms 1500ms ease forwards;
+}
+
+.dark-theme .modal {
+  animation: modal-shadow-light 500ms 1500ms ease forwards;
 }
 
 .modal__half {
@@ -1217,6 +1230,11 @@ SHAPES
     height: 40px;
     width: 40px;
     font-size: 20px;
+  }
+
+  .mail__btn--wrapper {
+    right: 24px;
+    bottom: 20px;
   }
 
   .project__description--para {

@@ -8,16 +8,32 @@ import { useModal } from "../contexts/ModalContext";
 
 import Modal from "@/components/ui/Modal";
 
-import Countdown from "@/components/ui/Countdown";
 import Projects from "@/components/projects/Projects";
 
 // UI
 import ScrollDown from "@/components/ui/ScrollDownIcon";
 
 export default function Home() {
+  const SHAPE_BREAKPOINT = 880;
   const { toggleModal, isModalOpen } = useModal();
   const shapeRefs = useRef<(HTMLElement | null)[]>([]);
   const [isModalBackgroundFixed, setIsModalBackgroundFixed] = useState(false);
+  const [isShapeMotionEnabled, setIsShapeMotionEnabled] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(`(min-width: ${SHAPE_BREAKPOINT}px)`);
+
+    const updateShapeMotion = () => {
+      setIsShapeMotionEnabled(mediaQuery.matches);
+    };
+
+    updateShapeMotion();
+    mediaQuery.addEventListener("change", updateShapeMotion);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateShapeMotion);
+    };
+  }, []);
 
   const setShapeImageRef =
     (index: number) => (element: HTMLImageElement | null) => {
@@ -31,6 +47,10 @@ export default function Home() {
   };
 
   const applyShapeTransforms = (x: number, y: number) => {
+    if (!isShapeMotionEnabled) {
+      return;
+    }
+
     shapeRefs.current.forEach((shape, index) => {
       if (!shape) {
         return;
@@ -47,6 +67,10 @@ export default function Home() {
   };
 
   const moveBackground = (event: React.MouseEvent<HTMLElement>) => {
+    if (!isShapeMotionEnabled || isModalOpen) {
+      return;
+    }
+
     const x = event.clientX / 30;
     const y = event.clientY / 30;
 
@@ -54,6 +78,10 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (!isShapeMotionEnabled) {
+      return;
+    }
+
     // Virtual cursor position for first frame, so shapes do not start in rigid columns.
     shapeRefs.current.forEach((shape, index) => {
       if (!shape) {
@@ -67,7 +95,7 @@ export default function Home() {
 
       shape.style.transform = `translate(${7 * direction + jitterX}px, ${-5 * direction + jitterY}px)`;
     });
-  }, []);
+  }, [isShapeMotionEnabled]);
 
   useEffect(() => {
     if (!isModalOpen) return;
@@ -84,10 +112,13 @@ export default function Home() {
 
   return (
     <div className={isModalBackgroundFixed ? "modal-background-fixed" : ""}>
-      <section id="landing-page" onMouseMove={(event) => moveBackground(event)}>
+      <section
+        id="landing-page"
+        onMouseMove={isShapeMotionEnabled ? (event) => moveBackground(event) : undefined}
+      >
         {!isModalOpen && (
           <>
-            <a href="#">
+            <a href="#" className="mail__btn--wrapper">
               <button className="mail__btn click" onClick={() => toggleModal()}>
                 <i className="fa-solid fa-envelope"></i>
               </button>
@@ -125,10 +156,6 @@ export default function Home() {
                 >
                   <i className="fa-solid fa-file-pdf"></i>
                 </a>
-                <div className="resume__countdown">
-                  <span className="countdown__text">Resume Arriving:</span>
-                  <Countdown />
-                </div>
               </div>
             </header>
           </>

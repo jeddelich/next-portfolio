@@ -28,7 +28,7 @@ function Navbar() {
     <nav>
       <figure className="personal-logo--wrapper">
         <div className="personal-logo"></div>
-        <div onClick={() => toggleModal()}
+        <div
           className="personal-logo--effect"
         ></div>
       </figure>
