@@ -324,12 +324,14 @@ LANDING PAGE
 */
 
 #landing-page {
-  height: 100vh;
+  min-height: 100dvh;
+  height: 100svh;
   position: relative;
 }
 
 .modal-background-fixed {
-  height: 100vh;
+  min-height: 100dvh;
+  height: 100svh;
   overflow-y: hidden;
 }
 
@@ -753,6 +755,15 @@ MODAL
   z-index: 100;
 }
 
+.modal__exit.modal__exit--about {
+  display: none;
+  color: #242424;
+}
+
+.modal__exit.modal__exit--contact {
+  display: block;
+}
+
 /* 
 
 PROJECTS
@@ -1017,33 +1028,52 @@ SHAPES
   left: 90vw;
 }
 
-/* SMALL PHONES, TABLETS, BIG SMART PHONES */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .modal__para {
+    line-height: 1.5;
+  }
+  .modal__about .modal__subtitle {
+     margin: 8px 0 16px 0;
+  }
+}
+
+@media (max-width: 880px) {
   .shape {
     visibility: hidden;
-  }
-
-  .title {
-    font-size: 48px;
-  }
-
-  .header__para {
-    font-size: 16px;
-    max-width: 325px;
   }
 
   .modal {
     top: 0;
     left: 0;
     transform: none;
-    height: auto;
+    height: 100dvh;
+    max-height: none;
     width: 100%;
-    flex-direction: column-reverse;
+    flex-direction: column;
     border-radius: 0;
+    overflow-y: auto;
+    animation: none;
   }
 
   .modal__half {
     width: 100%;
+    padding: 24px 28px;
+    justify-content: flex-start;
+  }
+
+  .modal__about,
+  .modal__contact {
+    border-radius: 0;
+    transform: none;
+    animation: fade-up 500ms ease forwards;
+  }
+
+  .modal__about {
+    min-height: 55dvh;
+  }
+
+  .modal__contact {
+    min-height: 75dvh;
   }
 
   .modal__title,
@@ -1058,7 +1088,32 @@ SHAPES
 
   input,
   textarea {
-    width: 75%;
+    width: 85%;
+  }
+
+  .modal__exit {
+    top: 18px;
+    right: 20px;
+  }
+
+  .modal__exit.modal__exit--about {
+    display: block;
+  }
+
+  .modal__exit.modal__exit--contact {
+    display: none;
+  }
+}
+
+/* SMALL PHONES, TABLETS, BIG SMART PHONES */
+@media (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .header__para {
+    font-size: 16px;
+    max-width: 325px;
   }
 
   .footer__social--list {
@@ -1107,6 +1162,31 @@ SHAPES
 }
 
 @media (max-width: 700px) {
+  .modal__para--secondary {
+    display: none;
+  }
+
+  .modal__para {
+    margin-bottom: 0;
+  }
+
+  .modal__half {
+    padding: 20px 18px;
+  }
+
+  .modal__title {
+    font-size: 22px;
+  }
+
+  .modal__about {
+    min-height: 44dvh;
+    justify-content: center;
+  }
+
+  .modal__contact {
+    min-height: 73dvh;
+  }
+
   .project__description--para {
     display: none;
   }
@@ -1177,6 +1257,22 @@ SHAPES
   .footer__social--link{
     font-size: 14px;
   }
+  .modal__para {
+    font-size: 14px;
+     line-height: 1.45;
+  }
+  .modal__about {
+    min-height: 45dvh;
+  }
+
+  .form__submit {
+    font-size: 14px;
+    padding: 6px 0;
+    max-width: 120px;
+  }
+  input{
+    width: 70%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1202,6 +1298,45 @@ SHAPES
 }
 
 @media (max-width: 320px) {
+  .modal__half {
+    padding: 16px 12px;
+  }
+
+  .modal__title {
+    font-size: 18px;
+  }
+
+  .modal__subtitle {
+    font-size: 12px;
+    margin: 8px 0 12px 0;
+  }
+
+    .modal__contact .modal__subtitle {
+    margin: 8px 0 24px 0;
+}
+
+  .modal__contact {
+    min-height: 70dvh;
+  }
+
+  .modal__about {
+    min-height: 46dvh;
+  }
+
+  .modal__para {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .modal__exit {
+    right: 14px;
+    font-size: 20px;
+  }
+
+  .form__item input {
+    margin-left: 10px;
+  }
+
   .project__wrapper {
     margin: 0 4px;
     border-radius: 12px;

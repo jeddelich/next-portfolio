@@ -44,6 +44,10 @@ function Modal() {
   return (
     <div className="modal">
       <div className="modal__half modal__about">
+        <i
+          className="fa-solid fa-times modal__exit modal__exit--about click"
+          onClick={() => toggleModal()}
+        ></i>
         <h3 className="modal__title modal__title--about">
           Here&apos;s more about me.
         </h3>
@@ -56,11 +60,11 @@ function Modal() {
           frontend development. Having traveled to over 35+ different countries,
           I know how to{" "}
           <span className="orange">
-            collaborate, communicate, and face challenges from a different
-            perspective.
+            learn, communicate, and face challenges from different
+            perspectives.
           </span>
         </p>
-        <p className="modal__para">
+        <p className="modal__para modal__para--secondary">
           I am sure by now you have seen some of
           <span className="orange"> my tech stack</span> floating around, and{" "}
           <span className="orange">my personal projects</span> below, but feel
@@ -71,7 +75,7 @@ function Modal() {
       </div>
       <div className="modal__half modal__contact">
         <i
-          className="fa-solid fa-times modal__exit click"
+          className="fa-solid fa-times modal__exit modal__exit--contact click"
           onClick={() => toggleModal()}
         ></i>
         <h3 className="modal__title modal__title--contact centered">
