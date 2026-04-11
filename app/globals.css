@@ -9,8 +9,34 @@ nextjs-portal {
   font-family: var(--font-roboto), sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  scrollbar-width: auto;
+  scrollbar-color: #242424;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  background: #242424e2;
+}
+
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background-color: #f06449;
+  border-radius: 0;
+  border: none;
+}
+
+body::-webkit-scrollbar-button,
+html::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 section {
