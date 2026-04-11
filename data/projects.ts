@@ -3,6 +3,23 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     img: {
+      src: "/netflix-clone-ss.png",
+      alt: "Netflix Clone",
+    },
+    title: "Netflix Clone",
+    subtitle: "Next.js, React, Typescript, Tailwind CSS, JavaScript, Zustand, Stripe",
+    description: "A clone of the Netflix website, built with React and styled-components.",
+    githubLink: {
+      href: "https://github.com/jeddelich/netflix-cloned",
+      text: "GitHub Repo",
+    },
+    vercelLink: {
+      href: "https://netflix-cloned-jed-delichs-projects.vercel.app/",
+      text: "Live Demo",
+    },
+  },
+  {
+    img: {
       src: "/summarist-ss.png",
       alt: "Summarist",
     }, 
@@ -55,25 +72,7 @@ const projects: Project[] = [
       href: "https://treact-website-react-jed-delichs-projects.vercel.app/",
       text: "Live Demo",
     },
-  },
-  // {
-  //   img: {
-  //     src: "/library website.png",
-  //     alt: "Library Website",
-  //   },
-  //   title: "Library Website",
-  //   subtitle: "Used HTML and CSS",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi obcaecati amet, tenetur omnis rem quasi ea nam a eaque consequuntur.",
-  //   githubLink: {
-  //     href: "https://github.com/jeddelich/e-commerce",
-  //     text: "GitHub Repo",
-  //   },
-  //   vercelLink: {
-  //     href: "https://jeddelich.github.io/e-commerce/",
-  //     text: "Live Demo",
-  //   },
-  // },
+  }
 ];
 
 export default projects;
