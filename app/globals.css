@@ -9,12 +9,6 @@ nextjs-portal {
   font-family: var(--font-roboto), sans-serif;
 }
 
-html,
-body {
-  scrollbar-width: auto;
-  scrollbar-color: #242424;
-}
-
 body::-webkit-scrollbar,
 html::-webkit-scrollbar {
   width: 12px;

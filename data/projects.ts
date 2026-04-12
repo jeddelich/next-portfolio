@@ -7,8 +7,8 @@ const projects: Project[] = [
       alt: "Netflix Clone",
     },
     title: "Netflix Clone",
-    subtitle: "Next.js, React, Typescript, Tailwind CSS, JavaScript, Zustand, Stripe",
-    description: "A clone of the Netflix website, built with React and styled-components.",
+    subtitle: "Next.js, React, Typescript, Tailwind CSS, JavaScript, Firebase, Zustand, Stripe, Material UI",
+    description: "This fully responsive clone of the popular streaming service, Netflix, was built entirely with Next.js, TypeScript, and Tailwind CSS, featuring dynamic API data, user authentication with Firebase, and Stripe integration for subscription management. With custom hooks, contexts, utils, and 15+ resuable components, this project demonstrates my ability to create a complex and feature-rich application with a sleek and modern design. Feel free to check it out using the Stripe test card number 4242 4242 4242 4242, any future expiration date, and any CVC.",
     githubLink: {
       href: "https://github.com/jeddelich/netflix-cloned",
       text: "GitHub Repo",
