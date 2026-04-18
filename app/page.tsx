@@ -152,7 +152,8 @@ export default function Home() {
                 </a>
                 <a
                   className="social__link click"
-                  style={{ cursor: "not-allowed" }}
+                  href="https://docs.google.com/document/d/1ERrjHAJd3pF_YNKKpFaNXXVOQ65JDc1v/edit?usp=sharing&ouid=114423874225935714907&rtpof=true&sd=true"
+                  target="_blank"
                 >
                   <i className="fa-solid fa-file-pdf"></i>
                 </a>

@@ -44,8 +44,9 @@ if (isModalOpen) return null;
               Contact
             </a>
             <a
-              href="#"
+              href="https://docs.google.com/document/d/1ERrjHAJd3pF_YNKKpFaNXXVOQ65JDc1v/edit?usp=sharing&ouid=114423874225935714907&rtpof=true&sd=true"
               className="footer__social--link link__hover-effect link__hover-effect--white"
+              target="_blank"
             >
               Resume
             </a>
