@@ -3,7 +3,7 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     img: {
-      src: "/netflix-clone-ss.png",
+      src: "/Netflix-clone-ss.png",
       alt: "Netflix Clone",
     },
     title: "Netflix Clone",
