@@ -15,7 +15,7 @@ if (isModalOpen) return null;
           <figure className="footer__logo--wrapper">
             <Image
               className="footer__logo--img"
-              src="/logo dark.png"
+              src="/branding/logo-dark.png"
               alt="Logo"
               width={70}
               height={70}

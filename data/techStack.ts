@@ -1,16 +1,16 @@
 const techStack: { src: string; alt: string }[] = [
-  { src: "/git.svg", alt: "semi circle" },
-  { src: "/typescript.svg", alt: "semi circle" },
-  { src: "/vercel-icon (2).svg", alt: "squiggly" },
-  { src: "/tailwindcss.svg", alt: "squiggly" },
-  { src: "/framer-motion.svg", alt: "triangle" },
-  { src: "/Next.js.svg", alt: "triangle" },
-  { src: "/JavaScript-logo.png", alt: "squiggly" },
-  { src: "/Firebase-logo.svg", alt: "squiggly" },
-  { src: "/stripe.svg", alt: "circle" },
-  { src: "/visual studio.svg", alt: "squiggly" },
-  { src: "/Figma-logo.svg", alt: "squiggly" },
-  { src: "/React-logo.svg", alt: "circle" },
+  { src: "/tech-stack/git.svg", alt: "Git" },
+  { src: "/tech-stack/typescript.svg", alt: "TypeScript" },
+  { src: "/tech-stack/vercel-icon-2.svg", alt: "Vercel" },
+  { src: "/tech-stack/tailwindcss.svg", alt: "Tailwind CSS" },
+  { src: "/tech-stack/framer-motion.svg", alt: "Framer Motion" },
+  { src: "/tech-stack/next-js.svg", alt: "Next.js" },
+  { src: "/tech-stack/javascript-logo.png", alt: "JavaScript" },
+  { src: "/tech-stack/firebase-logo.svg", alt: "Firebase" },
+  { src: "/tech-stack/stripe.svg", alt: "Stripe" },
+  { src: "/tech-stack/visual-studio.svg", alt: "Visual Studio" },
+  { src: "/tech-stack/figma-logo.svg", alt: "Figma" },
+  { src: "/tech-stack/react-logo.svg", alt: "React" },
 ];
 
 export default techStack;

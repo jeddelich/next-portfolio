@@ -3,7 +3,7 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     img: {
-      src: "/Netflix-clone-ss.png",
+      src: "/projects/netflix-clone-ss.png",
       alt: "Netflix Clone",
     },
     title: "Netflix Clone",
@@ -20,7 +20,7 @@ const projects: Project[] = [
   },
   {
     img: {
-      src: "/summarist-ss.png",
+      src: "/projects/summarist-ss.png",
       alt: "Summarist",
     }, 
     title: "Summarist",
@@ -39,7 +39,7 @@ const projects: Project[] = [
   },
   {
     img: {
-      src: "/nft-marketplace-ss.png",
+      src: "/projects/nft-marketplace-ss.png",
       alt: "NFT Marketplace",
     },
     title: "NFT Marketplace",
@@ -57,7 +57,7 @@ const projects: Project[] = [
   },
   {
     img: {
-      src: "/treact-react-website-ss.png",
+      src: "/projects/treact-react-website-ss.png",
       alt: "Treact Website",
     },
     title: "Treact Website",
