@@ -9,6 +9,7 @@ import { useModal } from "../contexts/ModalContext";
 import Modal from "@/components/ui/Modal";
 
 import Projects from "@/components/projects/Projects";
+import techStack from "@/data/techStack";
 
 // UI
 import ScrollDown from "@/components/ui/ScrollDownIcon";
@@ -171,114 +172,18 @@ export default function Home() {
           ></div>
         )}
 
-        <Image
-          ref={setShapeImageRef(0)}
-          src="/git.svg"
-          className="shape shape--0"
-          alt="semi circle"
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-          width={20}
-          height={20}
-        />
-        <Image
-          ref={setShapeImageRef(1)}
-          src="/typescript.svg"
-          className="shape shape--1"
-          alt="semi circle"
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-          width={20}
-          height={20}
-        />
-        <Image
-          ref={setShapeImageRef(2)}
-          src="/vercel-icon (2).svg"
-          className="shape shape--2"
-          alt="squiggly"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(3)}
-          src="/tailwindcss.svg"
-          className="shape shape--3"
-          alt="squiggly"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(4)}
-          src="/framer-motion.svg"
-          className="shape shape--4"
-          alt="triangle"
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-          width={20}
-          height={20}
-        />
-        <Image
-          ref={setShapeImageRef(5)}
-          src="/Next.js.svg"
-          className="shape shape--5"
-          alt="triangle"
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-          width={20}
-          height={20}
-        />
-        <Image
-          ref={setShapeImageRef(6)}
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-          className="shape shape--6"
-          alt="squiggly"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(7)}
-          src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-logomark.svg"
-          className="shape shape--7"
-          alt="squiggly"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(8)}
-          src="/stripe.svg"
-          className="shape shape--8"
-          alt="circle"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(9)}
-          src="/visual studio.svg"
-          className="shape shape--9"
-          alt="squiggly"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(10)}
-          src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-          className="shape shape--10"
-          alt="squiggly"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
-        <Image
-          ref={setShapeImageRef(11)}
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png"
-          className="shape shape--11"
-          alt="circle"
-          width={20}
-          height={20}
-          style={isModalOpen ? { visibility: "hidden" } : {}}
-        />
+        {techStack.map((tech, index) => (
+          <Image
+            key={index}
+            ref={setShapeImageRef(index)}
+            src={tech.src}
+            className={`shape shape--${index}`}
+            alt={tech.alt}
+            width={20}
+            height={20}
+            style={isModalOpen ? { visibility: "hidden" } : {}}
+          />
+        ))}
       </section>
 
       <Projects />
