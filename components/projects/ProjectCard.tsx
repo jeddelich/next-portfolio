@@ -1,26 +1,27 @@
 import Image from "next/image";
 import { Project } from "@/types/project";
+import styles from "./ProjectCard.module.css";
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <li className="project">
-      <div className="project__wrapper">
+    <li className={styles.project}>
+      <div className={styles.project__wrapper}>
         <Image
           src={project.img.src}
           alt={project.img.alt}
-          className="project__img"
+          className={styles.project__img}
           width={900}
           height={480}
         />
-        <div className="project__wrapper--bg"></div>
-        <div className="project__description">
-          <h3 className="project__description--title">{project.title}</h3>
-          <h4 className="project__description--subtitle">{project.subtitle}</h4>
-          <p className="project__description--para">{project.description}</p>
-          <div className="project__description--links">
+        <div className={styles.project__wrapperBg}></div>
+        <div className={styles.project__description}>
+          <h3 className={styles.project__descriptionTitle}>{project.title}</h3>
+          <h4 className={styles.project__descriptionSubtitle}>{project.subtitle}</h4>
+          <p className={styles.project__descriptionPara}>{project.description}</p>
+          <div className={styles.project__descriptionLinks}>
             <a
               href={project.githubLink.href}
-              className="project__description--link"
+              className={styles.project__descriptionLink}
               target="_blank"
             >
               <i className="fa-brands fa-github"></i>
@@ -28,7 +29,7 @@ function ProjectCard({ project }: { project: Project }) {
             </a>
             <a
               href={project.vercelLink.href}
-              className="project__description--link"
+              className={styles.project__descriptionLink}
               target="_blank"
             >
               <i className="fa-solid fa-link"></i>

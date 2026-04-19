@@ -1,0 +1,10 @@
+.modalBackgroundFixed {
+  min-height: 100dvh;
+  height: 100svh;
+  overflow-y: hidden;
+}
+
+.modalBackground {
+  inset: 0;
+  position: fixed;
+}

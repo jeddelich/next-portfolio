@@ -3,6 +3,7 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useModal } from "@/contexts/ModalContext";
+import styles from "./Modal.module.css";
 
 function Modal() {
   const { toggleModal } = useModal();
@@ -42,19 +43,19 @@ function Modal() {
   };
 
   return (
-    <div className="modal">
-      <div className="modal__half modal__about">
+    <div className={styles.modal}>
+      <div className={`${styles.modal__half} ${styles.modal__about}`}>
         <i
-          className="fa-solid fa-times modal__exit modal__exit--about click"
+          className={`fa-solid fa-times ${styles.modal__exit} ${styles.modal__exitAbout} click`}
           onClick={() => toggleModal()}
         ></i>
-        <h3 className="modal__title modal__title--about">
+        <h3 className={styles.modal__title}>
           Here&apos;s more about me.
         </h3>
-        <h4 className="modal__subtitle modal__subtitle--about">
+        <h4 className={styles.modal__subtitle}>
           Frontend Software Engineer
         </h4>
-        <p className="modal__para">
+        <p className={styles.modal__para}>
           Initially pursuing a career in counseling, I threw my passion for
           people and <span className="orange">problem-solving</span> into
           frontend development. Having traveled to over 35+ different countries,
@@ -64,7 +65,7 @@ function Modal() {
             perspectives.
           </span>
         </p>
-        <p className="modal__para modal__para--secondary">
+        <p className={`${styles.modal__para} ${styles.modal__paraSecondary}`}>
           I am sure by now you have seen some of
           <span className="orange"> my tech stack</span> floating around, and{" "}
           <span className="orange">my personal projects</span> below, but feel
@@ -73,19 +74,19 @@ function Modal() {
           to connect more about how I could bring value to your team!
         </p>
       </div>
-      <div className="modal__half modal__contact">
+      <div className={`${styles.modal__half} ${styles.modal__contact}`}>
         <i
-          className="fa-solid fa-times modal__exit modal__exit--contact click"
+          className={`fa-solid fa-times ${styles.modal__exit} ${styles.modal__exitContact} click`}
           onClick={() => toggleModal()}
         ></i>
-        <h3 className="modal__title modal__title--contact centered">
+        <h3 className={`${styles.modal__title} ${styles.centered}`}>
           Let&apos;s have a chat!
         </h3>
-        <h4 className="modal__subtitle modal__subtitle--contact centered">
+        <h4 className={`${styles.modal__subtitle} ${styles.centered}`}>
           I&apos;m currently open to new opportunities
         </h4>
         <form ref={formRef} onSubmit={(event) => contact(event)} id="contact__form">
-          <div className="form__item form__item--row">
+          <div className={`${styles.form__item} ${styles.form__itemRow}`}>
             <label className="form__item--label">Name:</label>
             <input
               type="text"
@@ -94,7 +95,7 @@ function Modal() {
               required
             ></input>
           </div>
-          <div className="form__item form__item--row">
+          <div className={`${styles.form__item} ${styles.form__itemRow}`}>
             <label className="form__item--label">Email:</label>
             <input
               type="email"
@@ -103,14 +104,14 @@ function Modal() {
               required
             ></input>
           </div>
-          <div className="form__item">
-            <label className="form__item--label centered">Message:</label>
+          <div className={styles.form__item}>
+            <label className={`form__item--label ${styles.centered}`}>Message:</label>
             <textarea className="input" name="message" required></textarea>
           </div>
-          <div className="form__submit--wrapper">
+          <div className={styles.form__submitWrapper}>
             <button
               id="contact__submit"
-              className="form__submit"
+              className={styles.form__submit}
               disabled={emailStatus === "loading"}
             >
               {emailStatus === "loading" ? "Sending..." : "Send it my way"}
@@ -118,16 +119,16 @@ function Modal() {
           </div>
         </form>
         <div
-          className={`modal__overlay modal__overlay--loading ${
-            emailStatus === "loading" ? "modal__overlay--visible" : ""
+          className={`${styles.modal__overlay} ${styles.modal__overlayLoading} ${
+            emailStatus === "loading" ? styles.modal__overlayVisible : ""
           }`}
         >
           <i className="fa-solid fa-spinner"></i>
         </div>
         <div
-          className={`modal__overlay modal__overlay--success ${
+          className={`${styles.modal__overlay} ${styles.modal__overlaySuccess} ${
             emailStatus === "success" || emailStatus === "error"
-              ? "modal__overlay--visible"
+              ? styles.modal__overlayVisible
               : ""
           }`}
           style={emailStatus === "error" ? { backgroundColor: "#a43f3f" } : {}}

@@ -7,6 +7,7 @@ import ScrollDown from "@/components/ui/ScrollDownIcon";
 import { useModal } from "@/contexts/ModalContext";
 import { useLogoMotion } from "@/hooks/useLogoMotion";
 import TechStackLogos, { type TechItem } from "@/components/ui/TechStackLogos";
+import styles from "./LandingClientShell.module.css";
 
 type LandingClientShellProps = {
   techStack: TechItem[];
@@ -23,13 +24,13 @@ function LandingClientShell({ techStack, children }: LandingClientShellProps) {
 
   return (
     <section
-      id="landing-page"
+      className={styles.landingPage}
       onMouseMove={isLogoMotionEnabled ? handleMouseMove : undefined}
     >
       {!isModalOpen && (
         <>
-          <a href="#" className="mail__btn--wrapper">
-            <button className="mail__btn click" onClick={() => toggleModal()}>
+          <a href="#" className={styles.mailBtnWrapper}>
+            <button className={`${styles.mailBtn} click`} onClick={() => toggleModal()}>
               <i className="fa-solid fa-envelope"></i>
             </button>
           </a>

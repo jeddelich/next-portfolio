@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useModal } from "@/contexts/ModalContext";
+import styles from "./Footer.module.css";
 
 function Footer() {
   const { toggleModal, isModalOpen } = useModal();
@@ -9,49 +10,49 @@ function Footer() {
 if (isModalOpen) return null;
 
   return (
-    <footer>
+    <footer className={styles.footer}>
       <div className="container">
-        <div className="row footer__row">
-          <figure className="footer__logo--wrapper">
+        <div className={`row ${styles.footerRow}`}>
+          <figure className={styles.footerLogoWrapper}>
             <Image
-              className="footer__logo--img"
+              className={styles.footerLogoImg}
               src="/branding/logo-dark.png"
               alt="Logo"
               width={70}
               height={70}
             />
           </figure>
-          <div className="footer__social--list">
+          <div className={styles.footerSocialList}>
             <a
               href="https://github.com/jeddelich"
-              className="footer__social--link link__hover-effect link__hover-effect--white"
+              className={`${styles.footerSocialLink} link__hover-effect link__hover-effect--white`}
               target="_blank"
             >
               Github
             </a>
             <a
               href="https://www.linkedin.com/in/jed-delich/"
-              className="footer__social--link link__hover-effect link__hover-effect--white"
+              className={`${styles.footerSocialLink} link__hover-effect link__hover-effect--white`}
               target="_blank"
             >
               LinkedIn
             </a>
             <a
               href="#"
-              className="footer__social--link link__hover-effect link__hover-effect--white"
+              className={`${styles.footerSocialLink} link__hover-effect link__hover-effect--white`}
               onClick={() => toggleModal()}
             >
               Contact
             </a>
             <a
               href="https://docs.google.com/document/d/1ERrjHAJd3pF_YNKKpFaNXXVOQ65JDc1v/edit?usp=sharing&ouid=114423874225935714907&rtpof=true&sd=true"
-              className="footer__social--link link__hover-effect link__hover-effect--white"
+              className={`${styles.footerSocialLink} link__hover-effect link__hover-effect--white`}
               target="_blank"
             >
               Resume
             </a>
           </div>
-          <div className="footer__copyright">
+          <div className={styles.footerCopyright}>
             Copyright &copy; 2025 Jed Delich
           </div>
         </div>

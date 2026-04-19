@@ -1,0 +1,100 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logo {
+  position: fixed;
+  height: 20px;
+  object-fit: contain;
+  width: 20px;
+  opacity: 0;
+  animation: fade-in 1s 750ms ease forwards;
+  z-index: 2;
+}
+
+.logo0 {
+  top: 15vh;
+  left: 5vw;
+}
+
+.logo1 {
+  top: 15vh;
+  left: 50vw;
+}
+
+.logo2 {
+  top: 15vh;
+  left: 70vw;
+  padding: 4px;
+  filter: invert(100%);
+  background-color: white;
+  border-radius: 50%;
+}
+
+:global(.dark-theme) .logo2 {
+  filter: none;
+}
+
+.logo3 {
+  top: 15vh;
+  left: 90vw;
+}
+
+.logo4 {
+  top: 50vh;
+  left: 5vw;
+}
+
+.logo5 {
+  top: 50vh;
+  left: 50vw;
+}
+
+:global(.dark-theme) .logo5 {
+  filter: invert(100%);
+}
+
+.logo6 {
+  top: 50vh;
+  left: 70vw;
+}
+
+.logo7 {
+  top: 50vh;
+  left: 90vw;
+}
+
+.logo8 {
+  top: 80vh;
+  left: 5vw;
+}
+
+.logo9 {
+  top: 80vh;
+  left: 50vw;
+}
+
+.logo10 {
+  top: 80vh;
+  left: 70vw;
+}
+
+.logo11 {
+  top: 80vh;
+  left: 90vw;
+}
+
+.faSpiral {
+  color: #3ddc97;
+}
+
+@media (max-width: 880px) {
+  .logo {
+    visibility: hidden;
+  }
+}

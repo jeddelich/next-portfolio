@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import styles from "./Navbar.module.css";
 
 function Navbar() {
   const { toggleModal, isModalOpen } = useModal();
@@ -25,42 +26,40 @@ function Navbar() {
   if (isModalOpen) return null;
 
   return (
-    <nav>
-      <figure className="personal-logo--wrapper">
-        <div className="personal-logo"></div>
-        <div
-          className="personal-logo--effect"
-        ></div>
+    <nav className={styles.nav}>
+      <figure className={styles.personalLogoWrapper}>
+        <div className={styles.personalLogo}></div>
+        <div className={styles.personalLogoEffect}></div>
       </figure>
-      <ul className="nav__link--list">
-        <li className="nav__link click" onClick={() => toggleModal()}>
+      <ul className={styles.navLinkList}>
+        <li className={`${styles.navLink} click`} onClick={() => toggleModal()}>
           <a
             href="#"
-            className="nav__link--anchor link__hover-effect link__hover-effect--black"
+            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
           >
             About
           </a>
         </li>
-        <li className="nav__link click">
+        <li className={`${styles.navLink} click`}>
           <a
             href="#projects"
-            className="nav__link--anchor link__hover-effect link__hover-effect--black"
+            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
           >
             Projects
           </a>
         </li>
-        <li className="nav__link click" onClick={() => toggleModal()}>
+        <li className={`${styles.navLink} click`} onClick={() => toggleModal()}>
           <a
             href="#"
-            className="nav__link--anchor link__hover-effect link__hover-effect--black"
+            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
           >
             Contact
           </a>
         </li>
-        <li className="nav__link click" onClick={handleThemeToggle}>
+        <li className={`${styles.navLink} click`} onClick={handleThemeToggle}>
           <a
             href="#"
-            className="nav__link--anchor link__hover-effect link__hover-effect--black"
+            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
           >
             <i className="fa-solid fa-circle-half-stroke"></i>
           </a>

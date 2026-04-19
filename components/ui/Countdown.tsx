@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./Countdown.module.css";
 
 const EXPIRY_DATE = new Date("2026-04-02T23:59:59").getTime();
 
@@ -24,11 +25,11 @@ function Countdown() {
   return (
     <>
       {timeLeft > 0 ? (
-        <div className="time__left">
+        <div className={styles.timeLeft}>
           {hours}h {minutes}m {seconds}s
         </div>
       ) : (
-        <div className="time__left">Resume</div>
+        <div className={styles.timeLeft}>Resume</div>
       )}
     </>
   );

@@ -1,0 +1,73 @@
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.landingPage {
+  min-height: 100dvh;
+  height: 100svh;
+  position: relative;
+}
+
+.mailBtnWrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 32px;
+  z-index: 100;
+  transform: scale(0);
+  animation: pop-up 750ms 2250ms ease forwards;
+}
+
+.mailBtn {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mailBtn i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resumeCountdown {
+  position: absolute;
+  left: 0;
+  bottom: -4rem;
+  opacity: 0;
+  font-size: 18px;
+  transform: translateX(20px);
+  transition: all 300ms ease;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  gap: 0.25rem;
+  color: var(--color-dark);
+}
+
+@media (max-width: 480px) {
+  .mailBtn {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+  }
+
+  .mailBtnWrapper {
+    right: 24px;
+    bottom: 20px;
+  }
+}

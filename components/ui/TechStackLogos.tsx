@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import styles from "./TechStackLogos.module.css";
 
 export type TechItem = {
   src: string;
@@ -25,7 +26,7 @@ function TechStackLogos({
           key={index}
           ref={setLogoImageRef(index)}
           src={tech.src}
-          className={`logo logo--${index}`}
+          className={`${styles.logo} ${styles[`logo${index}` as keyof typeof styles]}`}
           alt={tech.alt}
           width={20}
           height={20}

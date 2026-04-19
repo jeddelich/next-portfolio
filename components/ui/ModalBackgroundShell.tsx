@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 
 import { useModal } from "@/contexts/ModalContext";
+import styles from "./ModalBackgroundShell.module.css";
 
 type ModalBackgroundShellProps = {
   children: ReactNode;
@@ -29,10 +30,10 @@ function ModalBackgroundShell({ children }: ModalBackgroundShellProps) {
   }, [isModalOpen]);
 
   return (
-    <div className={isModalBackgroundFixed ? "modal-background-fixed" : ""}>
+    <div className={isModalBackgroundFixed ? styles.modalBackgroundFixed : ""}>
       {children}
       {isModalOpen && isModalBackgroundFixed && (
-        <div className="modal-background" onClick={() => toggleModal()}></div>
+        <div className={styles.modalBackground} onClick={() => toggleModal()}></div>
       )}
     </div>
   );

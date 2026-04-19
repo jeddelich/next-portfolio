@@ -1,0 +1,11 @@
+.projects {
+  z-index: 2;
+  position: relative;
+  scroll-margin-top: -4rem;
+}
+
+.project__list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
