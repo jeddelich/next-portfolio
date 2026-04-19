@@ -7,25 +7,25 @@ export type TechItem = {
   alt: string;
 };
 
-type TechStackShapesProps = {
+type TechStackLogosProps = {
   techStack: TechItem[];
   isModalOpen: boolean;
-  setShapeImageRef: (index: number) => (element: HTMLImageElement | null) => void;
+  setLogoImageRef: (index: number) => (element: HTMLImageElement | null) => void;
 };
 
-function TechStackShapes({
+function TechStackLogos({
   techStack,
   isModalOpen,
-  setShapeImageRef,
-}: TechStackShapesProps) {
+  setLogoImageRef,
+}: TechStackLogosProps) {
   return (
     <>
       {techStack.map((tech, index) => (
         <Image
           key={index}
-          ref={setShapeImageRef(index)}
+          ref={setLogoImageRef(index)}
           src={tech.src}
-          className={`shape shape--${index}`}
+          className={`logo logo--${index}`}
           alt={tech.alt}
           width={20}
           height={20}
@@ -36,4 +36,4 @@ function TechStackShapes({
   );
 }
 
-export default TechStackShapes;
+export default TechStackLogos;

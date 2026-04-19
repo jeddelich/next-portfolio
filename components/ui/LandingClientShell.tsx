@@ -5,9 +5,9 @@ import type { ReactNode } from "react";
 import Modal from "@/components/ui/Modal";
 import ScrollDown from "@/components/ui/ScrollDownIcon";
 import { useModal } from "@/contexts/ModalContext";
-import { useShapeMotion } from "@/components/ui/useShapeMotion";
-import type { TechItem } from "@/components/ui/TechStackShapes";
-import TechStackShapes from "@/components/ui/TechStackShapes";
+import { useLogoMotion } from "@/hooks/useLogoMotion";
+import type { TechItem } from "@/components/ui/TechStackLogos";
+import TechStackLogos from "@/components/ui/TechStackLogos";
 
 type LandingClientShellProps = {
   techStack: TechItem[];
@@ -16,16 +16,16 @@ type LandingClientShellProps = {
 
 function LandingClientShell({ techStack, children }: LandingClientShellProps) {
   const { toggleModal, isModalOpen } = useModal();
-  const { isShapeMotionEnabled, handleMouseMove, setShapeImageRef } =
-    useShapeMotion({
-      shapeCount: techStack.length,
+  const { isLogoMotionEnabled, handleMouseMove, setLogoImageRef } =
+    useLogoMotion({
+      logoCount: techStack.length,
       isPaused: isModalOpen,
     });
 
   return (
     <section
       id="landing-page"
-      onMouseMove={isShapeMotionEnabled ? handleMouseMove : undefined}
+      onMouseMove={isLogoMotionEnabled ? handleMouseMove : undefined}
     >
       {!isModalOpen && (
         <>
@@ -41,10 +41,10 @@ function LandingClientShell({ techStack, children }: LandingClientShellProps) {
 
       {isModalOpen && <Modal />}
 
-      <TechStackShapes
+      <TechStackLogos
         techStack={techStack}
         isModalOpen={isModalOpen}
-        setShapeImageRef={setShapeImageRef}
+        setLogoImageRef={setLogoImageRef}
       />
     </section>
   );
