@@ -10,11 +10,11 @@ const projects: Project[] = [
     subtitle: "Next.js, React, Typescript, Tailwind CSS, JavaScript, Firebase, Zustand, Stripe, Material UI",
     description: "This fully responsive clone of the popular streaming service, Netflix, was built entirely with Next.js, TypeScript, and Tailwind CSS, featuring dynamic API data, user authentication with Firebase, and Stripe integration for subscription management. With custom hooks, contexts, utils, and 15+ resuable components, this project demonstrates my ability to create a complex and feature-rich application with a sleek and modern design. Feel free to check it out using the Stripe test card number 4242 4242 4242 4242, any future expiration date, and any CVC.",
     githubLink: {
-      href: "https://github.com/jeddelich/netflix-cloned",
+      href: "https://github.com/jeddelich/netflix-clone",
       text: "GitHub Repo",
     },
     vercelLink: {
-      href: "https://netflix-cloned-jed-delichs-projects.vercel.app/",
+      href: "https://netflix.jeddelich.com/login",
       text: "Live Demo",
     },
   },
@@ -32,7 +32,7 @@ const projects: Project[] = [
       text: "GitHub Repo",
     },
     vercelLink: {
-      href: "https://summarist.vercel.app/",
+      href: "https://summarist.jeddelich.com/",
       text: "Live Demo",
     },
 
@@ -51,7 +51,7 @@ const projects: Project[] = [
       text: "GitHub Repo",
     },
     vercelLink: {
-      href: "https://jed-internship-jed-delichs-projects.vercel.app/",
+      href: "https://nft.jeddelich.com/",
       text: "Live Demo",
     },
   },
@@ -65,11 +65,11 @@ const projects: Project[] = [
     description:
       "I originally created Treact as a static single-page website using vanilla JavaScript to showcase the flexbox layouts and responsiveness. I later rebuilt it with React and fully componentized it as an exercise to make it more maintainable and reusable. The project features a clean and modern design, with smooth animations and transitions. Feel free to check it out!",
     githubLink: {
-      href: "https://github.com/jeddelich/treact-website",
+      href: "https://github.com/jeddelich/treact-website-react",
       text: "GitHub Repo",
     },
     vercelLink: {
-      href: "https://treact-website-react-jed-delichs-projects.vercel.app/",
+      href: "https://treact.jeddelich.com/",
       text: "Live Demo",
     },
   }

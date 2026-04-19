@@ -6,8 +6,7 @@ import Modal from "@/components/ui/Modal";
 import ScrollDown from "@/components/ui/ScrollDownIcon";
 import { useModal } from "@/contexts/ModalContext";
 import { useLogoMotion } from "@/hooks/useLogoMotion";
-import type { TechItem } from "@/components/ui/TechStackLogos";
-import TechStackLogos from "@/components/ui/TechStackLogos";
+import TechStackLogos, { type TechItem } from "@/components/ui/TechStackLogos";
 
 type LandingClientShellProps = {
   techStack: TechItem[];
