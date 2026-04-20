@@ -34,6 +34,15 @@
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 :global(.dark-theme) .scroll__icon {
   border-color: white;
 }
@@ -61,6 +70,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+  opacity: 0;
+  animation: fade-in 500ms ease 6s forwards;
 }
 
 .scroll__icon {
@@ -95,6 +106,5 @@
 
 .scroll {
   visibility: visible;
-  opacity: 1;
   transition: all 600ms 600ms;
 }
