@@ -38,6 +38,10 @@
   border-color: white;
 }
 
+:global(.dark-theme) .arrow {
+  color: white;
+}
+
 .click {
   transition: all 300ms ease;
   cursor: pointer;

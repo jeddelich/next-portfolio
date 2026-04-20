@@ -1,6 +1,5 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useModal } from "@/contexts/ModalContext";
 import styles from "./Modal.module.css";
@@ -29,6 +28,7 @@ function Modal() {
     setEmailStatus("loading");
 
     try {
+      const { default: emailjs } = await import("@emailjs/browser");
       await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -45,10 +45,17 @@ function Modal() {
   return (
     <div className={styles.modal}>
       <div className={`${styles.modal__half} ${styles.modal__about}`}>
-        <i
-          className={`fa-solid fa-times ${styles.modal__exit} ${styles.modal__exitAbout} click`}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 384 512"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          className={`${styles.modal__exit} ${styles.modal__exitAbout} click`}
           onClick={() => toggleModal()}
-        ></i>
+        >
+          <path d="M55.1 73.4c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 119.8l91.6-91.7c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L237.3 165l91.6 91.6c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L192 210.3l-91.6 91.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L146.7 165 55.1 73.4z" />
+        </svg>
         <h3 className={styles.modal__title}>
           Here&apos;s more about me.
         </h3>
@@ -75,10 +82,17 @@ function Modal() {
         </p>
       </div>
       <div className={`${styles.modal__half} ${styles.modal__contact}`}>
-        <i
-          className={`fa-solid fa-times ${styles.modal__exit} ${styles.modal__exitContact} click`}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 384 512"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          className={`${styles.modal__exit} ${styles.modal__exitContact} click`}
           onClick={() => toggleModal()}
-        ></i>
+        >
+          <path d="M55.1 73.4c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 119.8l91.6-91.7c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L237.3 165l91.6 91.6c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L192 210.3l-91.6 91.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L146.7 165 55.1 73.4z" />
+        </svg>
         <h3 className={`${styles.modal__title} ${styles.centered}`}>
           Let&apos;s have a chat!
         </h3>
@@ -123,7 +137,16 @@ function Modal() {
             emailStatus === "loading" ? styles.modal__overlayVisible : ""
           }`}
         >
-          <i className="fa-solid fa-spinner"></i>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 512 512"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            className={styles.spinnerIcon}
+          >
+            <path d="M304 48c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48zm0 416c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48zM96 256c0 26.5-21.5 48-48 48S0 282.5 0 256s21.5-48 48-48 48 21.5 48 48zm464 0c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48zM143.4 112.6c18.7 18.7 18.7 49.1 0 67.9s-49.1 18.7-67.9 0-18.7-49.1 0-67.9 49.1-18.7 67.9 0zm293.1 293.1c18.7 18.7 18.7 49.1 0 67.9s-49.1 18.7-67.9 0-18.7-49.1 0-67.9 49.1-18.7 67.9 0z" />
+          </svg>
         </div>
         <div
           className={`${styles.modal__overlay} ${styles.modal__overlaySuccess} ${

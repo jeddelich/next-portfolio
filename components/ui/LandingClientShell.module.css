@@ -38,7 +38,7 @@
   align-items: center;
 }
 
-.mailBtn i {
+.mailBtn svg {
   display: flex;
   align-items: center;
   justify-content: center;

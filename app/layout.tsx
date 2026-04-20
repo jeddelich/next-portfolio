@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto } from "next/font/google";
-import Script from "next/script";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
 // Layout
@@ -10,16 +9,6 @@ import Footer from "@/components/layout/Footer";
 // Contexts
 import { ModalProvider } from "../contexts/ModalContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -47,14 +36,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} h-full antialiased`}
+      className={`${roboto.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Script
-          src="https://kit.fontawesome.com/b6ac0a8ac4.js"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <ThemeProvider>
           <ModalProvider>
             <Navbar />

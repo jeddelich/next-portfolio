@@ -277,7 +277,7 @@
   display: flex;
 }
 
-:global(.fa-spinner) {
+.spinnerIcon {
   animation: spinner 750ms infinite linear;
 }
 

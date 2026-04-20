@@ -111,12 +111,12 @@
 }
 
 :global(.dark-theme) .navLinkAnchor,
-:global(.dark-theme .fa-circle-half-stroke) {
+:global(.dark-theme) .themeIcon {
   color: white;
 }
 
-:global(.dark-theme .fa-arrow-down) {
-  color: white;
+.themeIcon {
+  display: block;
 }
 
 @media (max-width: 480px) {
