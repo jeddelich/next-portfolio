@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Project } from "@/types/project";
 import styles from "./ProjectCard.module.css";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   return (
     <li className={styles.project}>
       <div className={styles.project__wrapper}>
@@ -12,6 +12,10 @@ function ProjectCard({ project }: { project: Project }) {
           className={styles.project__img}
           width={900}
           height={480}
+          sizes="(max-width: 480px) 95vw, (max-width: 768px) 92vw, 800px"
+          priority={priority}
+          fetchPriority={priority ? "high" : "auto"}
+          loading={priority ? "eager" : "lazy"}
         />
         <div className={styles.project__wrapperBg}></div>
         <div className={styles.project__description}>

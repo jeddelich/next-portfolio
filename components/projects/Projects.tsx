@@ -19,7 +19,7 @@ function Projects() {
           </h1>
           <ul className={styles.project__list}>
             {projects.slice(0, projectsDisplayed).map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={index} project={project} priority={index === 0} />
             ))}
           </ul>
           {projectsDisplayed < projects.length && (
