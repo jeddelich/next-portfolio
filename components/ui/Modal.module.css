@@ -282,9 +282,15 @@
 }
 
 .modal__exit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 30px;
   right: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
   color: white;
   font-size: 24px;
   z-index: 100;

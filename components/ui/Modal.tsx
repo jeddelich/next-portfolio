@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useModal } from "@/contexts/ModalContext";
 import styles from "./Modal.module.css";
 
 function Modal() {
-  const { toggleModal } = useModal();
+  const { closeModal } = useModal();
   const formRef = useRef<HTMLFormElement | null>(null);
   const [emailStatus, setEmailStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -17,6 +17,20 @@ function Modal() {
     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_oyden5m";
   const EMAILJS_PUBLIC_KEY =
     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "R54J9NMfhG7qiMJoB";
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [closeModal]);
 
   const contact = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -45,10 +59,14 @@ function Modal() {
   return (
     <div className={styles.modal}>
       <div className={`${styles.modal__half} ${styles.modal__about}`}>
-        <i
-          className={`fa-solid fa-times ${styles.modal__exit} ${styles.modal__exitAbout} click`}
-          onClick={() => toggleModal()}
-        ></i>
+        <button
+          type="button"
+          aria-label="Close modal"
+          className={`${styles.modal__exit} ${styles.modal__exitAbout} click`}
+          onClick={closeModal}
+        >
+          <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
         <h3 className={styles.modal__title}>
           Here&apos;s more about me.
         </h3>
@@ -75,10 +93,14 @@ function Modal() {
         </p>
       </div>
       <div className={`${styles.modal__half} ${styles.modal__contact}`}>
-        <i
-          className={`fa-solid fa-times ${styles.modal__exit} ${styles.modal__exitContact} click`}
-          onClick={() => toggleModal()}
-        ></i>
+        <button
+          type="button"
+          aria-label="Close modal"
+          className={`${styles.modal__exit} ${styles.modal__exitContact} click`}
+          onClick={closeModal}
+        >
+          <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
         <h3 className={`${styles.modal__title} ${styles.centered}`}>
           Let&apos;s have a chat!
         </h3>

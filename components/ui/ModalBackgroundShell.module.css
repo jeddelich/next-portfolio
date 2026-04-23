@@ -7,4 +7,5 @@
 .modalBackground {
   inset: 0;
   position: fixed;
+  z-index: 50;
 }
