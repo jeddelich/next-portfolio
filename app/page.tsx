@@ -35,7 +35,7 @@ export default function Home() {
             </a>
             <a
               className={`${styles.socialLink} click`}
-              href="https://docs.google.com/document/d/1ERrjHAJd3pF_YNKKpFaNXXVOQ65JDc1v/edit?usp=sharing&ouid=114423874225935714907&rtpof=true&sd=true"
+              href="Jed_Delich_Resume.pdf"
               target="_blank"
             >
               <i className="fa-solid fa-file-pdf"></i>
