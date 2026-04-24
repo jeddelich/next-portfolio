@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import dynamic from "next/dynamic";
 
 import ScrollDown from "@/components/ui/ScrollDownIcon";
 import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import useHasScrolled from "@/hooks/useHasScrolled";
 import { useLogoMotion } from "@/hooks/useLogoMotion";
 import TechStackLogos, { type TechItem } from "@/components/ui/TechStackLogos";
 import styles from "./LandingClientShell.module.css";
@@ -22,25 +23,12 @@ type LandingClientShellProps = {
 function LandingClientShell({ techStack, children }: LandingClientShellProps) {
   const { toggleModal, isModalOpen } = useModal();
   const { darkMode } = useTheme();
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const hasScrolled = useHasScrolled();
   const { isLogoMotionEnabled, handleMouseMove, setLogoImageRef } =
     useLogoMotion({
       logoCount: techStack.length,
       isPaused: isModalOpen,
     });
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 0);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <section
