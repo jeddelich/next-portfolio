@@ -11,6 +11,16 @@
   font-family: var(--font-roboto), sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body::-webkit-scrollbar,
 html::-webkit-scrollbar {
   width: 12px;

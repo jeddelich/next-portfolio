@@ -49,6 +49,7 @@
 
 .click {
   cursor: pointer;
+  transition: transform 300ms ease;
 }
 
 
