@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 
 import ScrollDown from "@/components/ui/ScrollDownIcon";
@@ -29,6 +29,10 @@ function LandingClientShell({ techStack, children }: LandingClientShellProps) {
       logoCount: techStack.length,
       isPaused: isModalOpen,
     });
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   return (
     <section
