@@ -2,25 +2,30 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Project } from "@/types/project";
 import styles from "./ProjectCard.module.css";
 
 function ProjectCard({ project, priority = false, index = 0 }: { project: Project; priority?: boolean; index?: number }) {
   const fromLeft = index % 2 === 0;
+  const [isEntranceComplete, setIsEntranceComplete] = useState(false);
 
   return (
     <motion.li
       className={styles.project}
       initial={{ opacity: 0, x: fromLeft ? -80 : 80, scale: 0.5 }}
       whileInView={{ opacity: 1, x: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.35 }}
+      onAnimationComplete={() => setIsEntranceComplete(true)}
       transition={{
         opacity: { duration: 0.45, ease: "easeOut" },
         x: { duration: 0.55, ease: "easeOut" },
         scale: { duration: 0.45, delay: 0.5, ease: "easeOut" },
       }}
     >
-      <div className={styles.project__wrapper}>
+      <div
+        className={`${styles.project__wrapper} ${isEntranceComplete ? styles.project__wrapperHoverEnabled : ""}`}
+      >
         <Image
           src={project.img.src}
           alt={project.img.alt}
