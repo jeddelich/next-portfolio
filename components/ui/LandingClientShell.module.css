@@ -16,6 +16,56 @@
   position: relative;
 }
 
+.landingPage::before{
+  content: "";
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-dark) 10%, transparent) 0%,
+    color-mix(in srgb, var(--color-dark) 6%, transparent) 38%,
+    color-mix(in srgb, var(--color-dark) 2%, transparent) 68%,
+    transparent 100%
+  );
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 280ms ease;
+  z-index: 500;
+}
+
+.landingPageDark::before {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-light) 12%, transparent) 0%,
+    color-mix(in srgb, var(--color-light) 7%, transparent) 38%,
+    color-mix(in srgb, var(--color-light) 2%, transparent) 68%,
+    transparent 100%
+  );
+}
+
+.landingPageScrolled::before {
+  opacity: 1;
+}
+
+.landingPage::after{
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-dark);
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  z-index: 10;
+}
+
+.landingPageDark::after {
+  background-color: var(--color-light);
+}
+
+
+
 .mailBtnWrapper {
   position: fixed;
   bottom: 24px;
