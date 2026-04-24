@@ -21,7 +21,7 @@ type LandingClientShellProps = {
 };
 
 function LandingClientShell({ techStack, children }: LandingClientShellProps) {
-  const { toggleModal, isModalOpen } = useModal();
+  const { isModalOpen, isModalReady, openModal } = useModal();
   const { darkMode } = useTheme();
   const hasScrolled = useHasScrolled();
   const { isLogoMotionEnabled, handleMouseMove, setLogoImageRef } =
@@ -42,7 +42,7 @@ useEffect(() => {
       {!isModalOpen && (
         <>
           <a href="#" className={styles.mailBtnWrapper}>
-            <button className={`${styles.mailBtn} click`} onClick={() => toggleModal()}>
+            <button className={`${styles.mailBtn} click`} onClick={openModal}>
               <i className="fa-solid fa-envelope"></i>
             </button>
           </a>
@@ -51,7 +51,7 @@ useEffect(() => {
         </>
       )}
 
-      {isModalOpen && <Modal />}
+      {isModalOpen && isModalReady && <Modal />}
 
       <TechStackLogos
         techStack={techStack}

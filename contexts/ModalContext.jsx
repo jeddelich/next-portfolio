@@ -5,14 +5,38 @@ const ModalContext = createContext();
 
 export function ModalProvider({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalReady, setIsModalReady] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-  const toggleModal = () => setIsModalOpen((prev) => !prev);
+  const openModal = () => {
+    setIsModalReady(false);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalReady(false);
+    setIsModalOpen(false);
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => {
+      if (prev) {
+        setIsModalReady(false);
+      }
+
+      return !prev;
+    });
+  };
 
   return (
     <ModalContext.Provider
-      value={{ isModalOpen, openModal, closeModal, toggleModal }}
+      value={{
+        isModalOpen,
+        isModalReady,
+        setIsModalReady,
+        openModal,
+        closeModal,
+        toggleModal,
+      }}
     >
       {children}
     </ModalContext.Provider>

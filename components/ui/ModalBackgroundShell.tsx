@@ -11,23 +11,31 @@ type ModalBackgroundShellProps = {
 };
 
 function ModalBackgroundShell({ children }: ModalBackgroundShellProps) {
-  const { isModalOpen, toggleModal } = useModal();
+  const { isModalOpen, setIsModalReady, toggleModal } = useModal();
   const [isModalBackgroundFixed, setIsModalBackgroundFixed] = useState(false);
 
   useEffect(() => {
     if (!isModalOpen) {
+      setIsModalReady(false);
       return;
     }
 
-    const timer = setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+
+    const lockFrame = window.requestAnimationFrame(() => {
       setIsModalBackgroundFixed(true);
-    }, 2000);
+
+      window.requestAnimationFrame(() => {
+        setIsModalReady(true);
+      });
+    });
 
     return () => {
-      clearTimeout(timer);
+      window.cancelAnimationFrame(lockFrame);
+      setIsModalReady(false);
       setIsModalBackgroundFixed(false);
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, setIsModalReady]);
 
   return (
     <div className={isModalBackgroundFixed ? styles.modalBackgroundFixed : ""}>
