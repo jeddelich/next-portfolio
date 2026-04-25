@@ -32,7 +32,7 @@ function Navbar() {
         <div className={styles.personalLogoEffect}></div>
       </figure>
       <ul className={styles.navLinkList}>
-        <li className={`${styles.navLink} click`} onClick={() => toggleModal()}>
+        <li className={styles.navLink} onClick={() => toggleModal()}>
           <a
             href="#"
             className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
@@ -40,7 +40,7 @@ function Navbar() {
             About
           </a>
         </li>
-        <li className={`${styles.navLink} click`}>
+        <li className={styles.navLink}>
           <a
             href="#projects"
             className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
@@ -48,7 +48,7 @@ function Navbar() {
             Projects
           </a>
         </li>
-        <li className={`${styles.navLink} click`} onClick={() => toggleModal()}>
+        <li className={styles.navLink} onClick={() => toggleModal()}>
           <a
             href="#"
             className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
@@ -59,7 +59,7 @@ function Navbar() {
         <li className={`${styles.navLink} click`} onClick={handleThemeToggle}>
           <a
             href="#"
-            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
+            className={`${styles.navLinkAnchor} `}
           >
             <i className="fa-solid fa-circle-half-stroke"></i>
           </a>
