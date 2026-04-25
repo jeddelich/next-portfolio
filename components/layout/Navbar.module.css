@@ -58,7 +58,7 @@
   border-radius: 50%;
   transition: all 700ms ease;
   opacity: 0;
-  animation: circle-spin 1s linear;
+  animation: circle-spin 800ms linear;
   animation-iteration-count: 3;
 }
 

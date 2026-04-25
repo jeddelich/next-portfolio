@@ -72,7 +72,7 @@
   right: 32px;
   z-index: 100;
   transform: scale(0);
-  animation: pop-up 750ms 2250ms ease forwards;
+  animation: pop-up 700ms 1750ms ease forwards;
 }
 
 .mailBtn {
