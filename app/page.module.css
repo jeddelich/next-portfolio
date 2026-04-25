@@ -36,7 +36,7 @@
   display: flex;
   height: fit-content;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .socialLink {
@@ -44,22 +44,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 24px;
+  font-size: 28px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-}
-
-.socialLink:nth-of-type(1):hover {
-  color: #0077b5;
-}
-
-.socialLink:nth-of-type(2):hover {
-  color: #6e7681;
-}
-
-.socialLink:nth-of-type(3):hover {
-  color: #e81123;
 }
 
 :global(.dark-theme) .headerPara,
@@ -71,6 +59,14 @@
   .headerPara {
     font-size: 16px;
     max-width: 325px;
+  }
+  .socialLink {
+    font-size: 24px;
+    width: 28px;
+    height: 28px;
+  }
+  .socialList {
+    gap: 1.25rem;
   }
 }
 
