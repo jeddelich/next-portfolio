@@ -61,7 +61,9 @@ function Navbar() {
             href="#"
             className={`${styles.navLinkAnchor} `}
           >
-            <i className="fa-solid fa-circle-half-stroke"></i>
+            <i
+              className={`fa-solid fa-circle-half-stroke ${styles.themeToggleIcon}`}
+            ></i>
           </a>
         </li>
       </ul>
