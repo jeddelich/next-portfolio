@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import useHasScrolled from "@/hooks/useHasScrolled";
 import styles from "./Navbar.module.css";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -13,6 +14,7 @@ const jetBrainsMono = JetBrains_Mono({
 function Navbar() {
   const { toggleModal, isModalOpen } = useModal();
   const { darkMode, toggleTheme } = useTheme();
+  const hasScrolled = useHasScrolled();
   const themeToggleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
     null
   );
@@ -31,7 +33,7 @@ function Navbar() {
   if (isModalOpen) return null;
 
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${hasScrolled ? styles.navScrolled : ""}`}>
       <figure className={styles.personalLogoWrapper}>
         <div className={styles.personalLogo}></div>
         <div className={styles.personalLogoEffect}></div>
