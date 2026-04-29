@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { JetBrains_Mono } from "next/font/google";
+import { Fraunces, JetBrains_Mono } from "next/font/google";
 import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import useHasScrolled from "@/hooks/useHasScrolled";
@@ -9,6 +9,12 @@ import styles from "./Navbar.module.css";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const navBackdropStyle = {
@@ -42,10 +48,12 @@ function Navbar() {
       className={`${styles.nav} ${hasScrolled ? styles.navScrolled : ""}`}
       style={navBackdropStyle}
     >
-      <figure className={styles.personalLogoWrapper}>
-        <div className={styles.personalLogo}></div>
-        <div className={styles.personalLogoEffect}></div>
-      </figure>
+      <a href="#top" className={styles.navLogo}>
+        <span className={styles.navLogoMark}>JD</span>
+        <span className={`${styles.navLogoText} ${fraunces.className}`}>
+          Jed Delich
+        </span>
+      </a>
       <ul className={styles.navLinkList}>
         <li className={styles.navLink}>
           <a
