@@ -120,6 +120,32 @@
   font-weight: 700;
 }
 
+.numberedNavLink {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: rgba(36, 36, 36, 0.75);
+  transition: color 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.numberedNavLink span {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+.numberedNavLink:hover {
+  color: var(--color-dark);
+  background: rgba(36, 36, 36, 0.05);
+}
+
+.numberedNavLinkNum {
+  color: var(--color-primary);
+  font-size: 11px;
+}
+
 .themeToggleIcon {
   font-size: 24px;
   opacity: 0;
@@ -166,8 +192,13 @@
 
 :global(.dark-theme) .navLinkAnchor,
 :global(.dark-theme .fa-circle-half-stroke),
-:global(.dark-theme) .themeToggleButton {
+:global(.dark-theme) .themeToggleButton,
+:global(.dark-theme) .numberedNavLink {
   color: white;
+}
+
+:global(.dark-theme) .numberedNavLink:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 :global(.dark-theme .fa-arrow-down) {

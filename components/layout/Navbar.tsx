@@ -1,9 +1,14 @@
 "use client";
 
 import { useRef } from "react";
+import { JetBrains_Mono } from "next/font/google";
 import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import styles from "./Navbar.module.css";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+});
 
 function Navbar() {
   const { toggleModal, isModalOpen } = useModal();
@@ -32,28 +37,39 @@ function Navbar() {
         <div className={styles.personalLogoEffect}></div>
       </figure>
       <ul className={styles.navLinkList}>
-        <li className={styles.navLink} onClick={() => toggleModal()}>
+        <li className={styles.navLink}>
           <a
-            href="#"
-            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
+            href="#about"
+            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
+            onClick={(event) => {
+              event.preventDefault();
+              toggleModal();
+            }}
           >
-            About
+            <span className={styles.numberedNavLinkNum}>01.</span>
+            <span>About</span>
           </a>
         </li>
         <li className={styles.navLink}>
           <a
             href="#projects"
-            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
+            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
-            Projects
+            <span className={styles.numberedNavLinkNum}>02.</span>
+            <span>Projects</span>
           </a>
         </li>
-        <li className={styles.navLink} onClick={() => toggleModal()}>
+        <li className={styles.navLink}>
           <a
-            href="#"
-            className={`${styles.navLinkAnchor} link__hover-effect link__hover-effect--black`}
+            href="#contact"
+            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
+            onClick={(event) => {
+              event.preventDefault();
+              toggleModal();
+            }}
           >
-            Contact
+            <span className={styles.numberedNavLinkNum}>03.</span>
+            <span>Contact</span>
           </a>
         </li>
         <button
