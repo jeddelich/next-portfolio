@@ -27,6 +27,15 @@
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .nav {
   position: absolute;
   top: 0;
@@ -44,16 +53,16 @@
 
 .personalLogoWrapper {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
 }
 
 .personalLogoEffect {
   position: absolute;
-  top: 16px;
-  left: 17px;
-  width: 48px;
-  height: 48px;
+  top: 18px;
+  left: 19px;
+  width: 52px;
+  height: 52px;
   border-top: 2px solid var(--color-primary);
   border-radius: 50%;
   transition: all 700ms ease;
@@ -63,8 +72,8 @@
 }
 
 .personalLogo {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   background-image: url("/branding/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -106,13 +115,15 @@
 }
 
 .navLinkAnchor {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--color-dark);
   font-weight: 700;
 }
 
 .themeToggleIcon {
-  font-size: 20px;
+  font-size: 24px;
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
 }
 
 :global(.dark-theme) .navLinkAnchor,

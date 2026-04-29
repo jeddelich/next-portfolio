@@ -6,21 +6,19 @@ import { useState } from "react";
 import { Project } from "@/types/project";
 import styles from "./ProjectCard.module.css";
 
-function ProjectCard({ project, priority = false, index = 0 }: { project: Project; priority?: boolean; index?: number }) {
-  const fromLeft = index % 2 === 0;
+function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   const [isEntranceComplete, setIsEntranceComplete] = useState(false);
 
   return (
     <motion.li
       className={styles.project}
-      initial={{ opacity: 0, x: fromLeft ? -80 : 80, scale: 0.5 }}
-      whileInView={{ opacity: 1, x: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.35 }}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.35 }}
       onAnimationComplete={() => setIsEntranceComplete(true)}
       transition={{
-        opacity: { duration: 0.45, ease: "easeOut" },
-        x: { duration: 0.55, ease: "easeOut" },
-        scale: { duration: 0.45, delay: 0.5, ease: "easeOut" },
+        duration: 0.45,
+        ease: "easeOut",
       }}
     >
       <div
