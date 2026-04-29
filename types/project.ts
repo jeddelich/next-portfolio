@@ -4,7 +4,7 @@ export interface Project {
     alt: string;
   };
   title: string;
-  subtitle: string;
+  subtitle: string[];
   description: string;
   githubLink: {
     href: string;

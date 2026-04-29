@@ -32,8 +32,14 @@ function ProjectCard({ project, priority = false }: { project: Project; priority
         />
         </div>
         <div className={styles.project__description}>
-          <h3 className={styles.project__descriptionTitle}>{project.title}</h3>
-          <h4 className={styles.project__descriptionSubtitle}>{project.subtitle}</h4>
+          <div className={styles.project__descriptionHeader}>
+            <h3 className={styles.project__descriptionTitle}>{project.title}</h3>
+              {project.subtitle.map((tool) => (
+                <li key={tool} className={styles.project__descriptionSubtitle}>
+                  {tool}
+                </li>
+              ))}
+          </div>
           <p className={styles.project__descriptionPara}>{project.description}</p>
           <div className={styles.project__descriptionLinks}>
             <a

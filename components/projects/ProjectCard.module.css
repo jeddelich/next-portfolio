@@ -16,6 +16,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 20px 0 rgb(0, 0, 0, 0.25);
+  height: fit-content;
 }
 
 .project__img {
@@ -32,14 +33,30 @@
   padding-right: 0.25rem;
 }
 
+.project__descriptionHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .project__descriptionTitle {
   font-size: clamp(1.7rem, 2.4vw, 2.4rem);
   line-height: 1.15;
 }
 
 .project__descriptionSubtitle {
-  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgb(37, 40, 54, 0.12);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6fb 100%);
   color: #4a4f64;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .project__descriptionLinks {
