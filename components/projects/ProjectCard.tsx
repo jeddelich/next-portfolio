@@ -5,40 +5,50 @@ import { motion } from "framer-motion";
 import { Project } from "@/types/project";
 import styles from "./ProjectCard.module.css";
 
-function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
+function ProjectCard({
+  project,
+  priority = false,
+  reverse = false,
+}: {
+  project: Project;
+  priority?: boolean;
+  reverse?: boolean;
+}) {
   return (
     <motion.li
       className={styles.project}
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{opacity: 0.5}}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.35 }}
       transition={{
         duration: 0.45,
         ease: "easeOut",
       }}
     >
-      <div className={styles.project__wrapper}>
+      <div className={`${styles.project__wrapper} ${reverse ? styles.project__wrapperReverse : ""}`}>
         <div className={styles.project__media}>
-        <Image
-          src={project.img.src}
-          alt={project.img.alt}
-          className={styles.project__img}
-          width={900}
-          height={480}
-          sizes="(max-width: 480px) 95vw, (max-width: 768px) 92vw, 800px"
-          priority={priority}
-          fetchPriority={priority ? "high" : "auto"}
-          loading={priority ? "eager" : "lazy"}
-        />
+          <Image
+            src={project.img.src}
+            alt={project.img.alt}
+            className={styles.project__img}
+            width={900}
+            height={480}
+            sizes="(max-width: 480px) 95vw, (max-width: 768px) 92vw, 800px"
+            priority={priority}
+            fetchPriority={priority ? "high" : "auto"}
+            loading={priority ? "eager" : "lazy"}
+          />
         </div>
         <div className={styles.project__description}>
           <div className={styles.project__descriptionHeader}>
             <h3 className={styles.project__descriptionTitle}>{project.title}</h3>
+            <ul className={styles.project__descriptionSubtitleList} aria-label={`${project.title} tech stack`}>
               {project.subtitle.map((tool) => (
                 <li key={tool} className={styles.project__descriptionSubtitle}>
                   {tool}
                 </li>
               ))}
+            </ul>
           </div>
           <p className={styles.project__descriptionPara}>{project.description}</p>
           <div className={styles.project__descriptionLinks}>
