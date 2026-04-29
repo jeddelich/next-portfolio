@@ -11,6 +11,11 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const navBackdropStyle = {
+  backdropFilter: "saturate(180%) blur(14px)",
+  WebkitBackdropFilter: "saturate(180%) blur(14px)",
+};
+
 function Navbar() {
   const { toggleModal, isModalOpen } = useModal();
   const { darkMode, toggleTheme } = useTheme();
@@ -33,7 +38,10 @@ function Navbar() {
   if (isModalOpen) return null;
 
   return (
-    <nav className={`${styles.nav} ${hasScrolled ? styles.navScrolled : ""}`}>
+    <nav
+      className={`${styles.nav} ${hasScrolled ? styles.navScrolled : ""}`}
+      style={navBackdropStyle}
+    >
       <figure className={styles.personalLogoWrapper}>
         <div className={styles.personalLogo}></div>
         <div className={styles.personalLogoEffect}></div>
