@@ -7,7 +7,7 @@ import styles from "./Navbar.module.css";
 
 function Navbar() {
   const { toggleModal, isModalOpen } = useModal();
-  const { toggleTheme } = useTheme();
+  const { darkMode, toggleTheme } = useTheme();
   const themeToggleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
     null
   );
@@ -56,16 +56,43 @@ function Navbar() {
             Contact
           </a>
         </li>
-        <li className={`${styles.navLink} click`} onClick={handleThemeToggle}>
-          <a
-            href="#"
-            className={`${styles.navLinkAnchor} `}
-          >
-            <i
-              className={`fa-solid fa-circle-half-stroke ${styles.themeToggleIcon}`}
-            ></i>
-          </a>
-        </li>
+        <button
+          type="button"
+          className={`${styles.themeToggleButton} theme-toggle`}
+          onClick={handleThemeToggle}
+          aria-label="Toggle theme"
+        >
+          {darkMode ? (
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+          ) : (
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          )}
+        </button>
       </ul>
     </nav>
   );
