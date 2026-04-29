@@ -3,6 +3,24 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     img: {
+      src: "/projects/skinstric.ai-ss.png",
+      alt: "Skinstric AI",
+    },
+    title: "Skinstric AI",
+    subtitle: ["Next.js", "React", "TypeScript", "JavaScript", "CSS3", "HTML5"],
+    description:
+      "Frontend Software Engineer (Intern), remote, March 2026 to present. Shipped responsive pages for a real-time AI skin analysis platform, built reusable components, engineered a validated multi-step form flow, and implemented camera capture and file upload for client-side image processing.",
+    githubLink: {
+      href: "https://github.com/jeddelich/skinstric.ai",
+      text: "GitHub Repo",
+    },
+    vercelLink: {
+      href: "https://skinstric-ai-orpin.vercel.app/",
+      text: "Live Demo",
+    },
+  },
+  {
+    img: {
       src: "/projects/netflix-clone-ss.png",
       alt: "Netflix Clone",
     },

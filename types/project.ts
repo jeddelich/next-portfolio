@@ -1,16 +1,16 @@
 export interface Project {
-  img: {
+  img?: {
     src: string;
     alt: string;
   };
   title: string;
-  subtitle: string[];
+  subtitle?: string[];
   description: string;
-  githubLink: {
+  githubLink?: {
     href: string;
     text: string;
   };
-  vercelLink: {
+  vercelLink?: {
     href: string;
     text: string;
   };
