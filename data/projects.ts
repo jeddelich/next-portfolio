@@ -7,9 +7,9 @@ const projects: Project[] = [
       alt: "Skinstric AI",
     },
     title: "Skinstric AI",
-    subtitle: ["Next.js", "React", "TypeScript", "JavaScript", "CSS3", "HTML5"],
+    subtitle: ["Next.js", "React", "TypeScript", "JavaScript", "CSS3", "HTML5", "Figma", "Git"],
     description:
-      "Frontend Software Engineer (Intern), remote, March 2026 to present. Shipped responsive pages for a real-time AI skin analysis platform, built reusable components, engineered a validated multi-step form flow, and implemented camera capture and file upload for client-side image processing.",
+      "Frontend Software Engineer (Intern), remote, March 2026. Shipped 5 responsive pages for a real-time AI skin analysis platform, built 10+ reusable components, engineered a validated multi-step form flow, and implemented camera capture and file upload for client-side image processing.",
     githubLink: {
       href: "https://github.com/jeddelich/skinstric.ai",
       text: "GitHub Repo",
