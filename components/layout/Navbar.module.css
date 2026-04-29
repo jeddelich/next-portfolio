@@ -54,6 +54,10 @@
   border-bottom: 1px solid transparent;
 }
 
+:global(.dark-theme) .nav {
+  background-color: var(--color-dark);
+}
+
 .navScrolled {
   border-bottom-color: rgba(36, 36, 36, 0.1);
 }
@@ -209,6 +213,7 @@
 }
 
 :global(.dark-theme) .numberedNavLink:hover {
+  color: white;
   background: rgba(255, 255, 255, 0.08);
 }
 
