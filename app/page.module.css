@@ -24,6 +24,43 @@
   z-index: 1;
 }
 
+.header__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.header__content > *:not(.heroGridBg) {
+  position: relative;
+  z-index: 1;
+}
+
+.heroGridBg {
+  position: absolute;
+  inset: -7rem;
+  background-image:
+    linear-gradient(rgba(36, 36, 36, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 36, 36, 0.18) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    black 30%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    black 30%,
+    transparent 80%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .headerPara {
   font-size: 20px;
   line-height: 2;
@@ -53,6 +90,12 @@
 :global(.dark-theme) .headerPara,
 :global(.dark-theme) .socialLink {
   color: white;
+}
+
+:global(.dark-theme) .heroGridBg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
 }
 
 @media (max-width: 768px) {

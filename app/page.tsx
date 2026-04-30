@@ -9,7 +9,8 @@ export default function Home() {
     <ModalBackgroundShell>
       <LandingClientShell techStack={techStack}>
         <header className={styles.header}>
-          <div className="header__content">
+          <div className={styles.header__content}>
+            <div className={styles.heroGridBg} aria-hidden="true"></div>
             <h1 className="title">Hey</h1>
             <h1 className="title orange">I&apos;m Jed.</h1>
             <p className={styles.headerPara}>
