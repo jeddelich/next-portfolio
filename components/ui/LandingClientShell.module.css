@@ -10,9 +10,9 @@
   height: 20px;
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--color-dark) 10%, transparent) 0%,
-    color-mix(in srgb, var(--color-dark) 6%, transparent) 38%,
-    color-mix(in srgb, var(--color-dark) 2%, transparent) 68%,
+    color-mix(in srgb, var(--color-dark) 6%, transparent) 0%,
+    color-mix(in srgb, var(--color-dark) 3%, transparent) 50%,
+    color-mix(in srgb, var(--color-dark) 1%, transparent) 75%,
     transparent 100%
   );
   position: absolute;
@@ -26,9 +26,9 @@
 .landingPageDark::before {
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--color-light) 12%, transparent) 0%,
-    color-mix(in srgb, var(--color-light) 7%, transparent) 38%,
-    color-mix(in srgb, var(--color-light) 2%, transparent) 68%,
+    color-mix(in srgb, var(--color-light) 6%, transparent) 0%,
+    color-mix(in srgb, var(--color-light) 3%, transparent) 50%,
+    color-mix(in srgb, var(--color-light) 1%, transparent) 75%,
     transparent 100%
   );
 }
@@ -42,6 +42,7 @@
   width: 100%;
   height: 2px;
   background-color: var(--color-dark);
+  opacity: 0.3;
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -50,6 +51,7 @@
 
 .landingPageDark::after {
   background-color: var(--color-light);
+  opacity: 0.3;
 }
 .resumeCountdown {
   position: absolute;
