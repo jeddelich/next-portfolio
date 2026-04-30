@@ -145,7 +145,7 @@
   gap: 1rem;
   opacity: 0;
   visibility: visible;
-  animation: fade-in 600ms ease 6s forwards;
+  animation: fade-in 600ms ease 1s forwards;
   transition:
     opacity 320ms ease,
     transform 320ms ease,

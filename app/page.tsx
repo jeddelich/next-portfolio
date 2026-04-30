@@ -14,9 +14,9 @@ export default function Home() {
             <h1 className="title">Hey</h1>
             <h1 className="title orange">I&apos;m Jed.</h1>
             <p className={styles.headerPara}>
-              I&apos;m a <b className="orange">Frontend Software Engineer</b> with
-              a strong passion for building websites that are both visually
-              engaging and user-friendly.
+              I build optimized, accessible, user experiences
+              with React, Next.js, and TypeScript — turning complex product
+              requirements into intuitive interfaces.
             </p>
           </div>
           <div className={styles.socialList}>

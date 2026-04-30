@@ -63,8 +63,8 @@
 
 .headerPara {
   font-size: 20px;
-  line-height: 2;
   max-width: 400px;
+  color: #5a5a52;
 }
 
 .socialList {
@@ -77,14 +77,19 @@
 }
 
 .socialLink {
-  color: var(--color-dark);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 28px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: rgba(36, 36, 36, 0.75);
+  border-radius: 8px;
+  font-size: 24px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
 :global(.dark-theme) .headerPara,
