@@ -8,13 +8,13 @@ function ScrollDown() {
   const hasScrolled = useHasScrolled();
 
   return (
-    <a
-      href="#projects"
-      className={`${styles.scroll} ${hasScrolled ? styles.scrollHidden : ""}`}
+    <div
+      className={`${styles.heroScrollCue} ${hasScrolled ? styles.scrollHidden : ""}`}
+      aria-hidden="true"
     >
-      <div className={`${styles.scroll__icon} ${styles.click}`}></div>
-      <div className={`fa-solid fa-arrow-down ${styles.arrow}`}></div>
-    </a>
+      <span>scroll down</span>
+      <span className={styles.scrollLine}></span>
+    </div>
   );
 }
 

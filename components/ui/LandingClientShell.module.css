@@ -1,15 +1,3 @@
-@keyframes pop-up {
-  0% {
-    transform: scale(0);
-  }
-  75% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .landingPage {
   min-height: 100dvh;
   height: 100svh;
@@ -22,9 +10,9 @@
   height: 20px;
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--color-dark) 10%, transparent) 0%,
-    color-mix(in srgb, var(--color-dark) 6%, transparent) 38%,
-    color-mix(in srgb, var(--color-dark) 2%, transparent) 68%,
+    color-mix(in srgb, var(--color-dark) 6%, transparent) 0%,
+    color-mix(in srgb, var(--color-dark) 3%, transparent) 50%,
+    color-mix(in srgb, var(--color-dark) 1%, transparent) 75%,
     transparent 100%
   );
   position: absolute;
@@ -38,9 +26,9 @@
 .landingPageDark::before {
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--color-light) 12%, transparent) 0%,
-    color-mix(in srgb, var(--color-light) 7%, transparent) 38%,
-    color-mix(in srgb, var(--color-light) 2%, transparent) 68%,
+    color-mix(in srgb, var(--color-light) 6%, transparent) 0%,
+    color-mix(in srgb, var(--color-light) 3%, transparent) 50%,
+    color-mix(in srgb, var(--color-light) 1%, transparent) 75%,
     transparent 100%
   );
 }
@@ -54,6 +42,7 @@
   width: 100%;
   height: 2px;
   background-color: var(--color-dark);
+  opacity: 0.3;
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -62,38 +51,8 @@
 
 .landingPageDark::after {
   background-color: var(--color-light);
+  opacity: 0.3;
 }
-
-
-
-.mailBtnWrapper {
-  position: fixed;
-  bottom: 24px;
-  right: 32px;
-  z-index: 100;
-  transform: scale(0);
-  animation: pop-up 700ms 1750ms ease forwards;
-}
-
-.mailBtn {
-  width: 48px;
-  height: 48px;
-  font-size: 24px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  border: none;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mailBtn i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .resumeCountdown {
   position: absolute;
   left: 0;
@@ -110,14 +69,4 @@
 }
 
 @media (max-width: 480px) {
-  .mailBtn {
-    height: 40px;
-    width: 40px;
-    font-size: 20px;
-  }
-
-  .mailBtnWrapper {
-    right: 24px;
-    bottom: 20px;
-  }
 }

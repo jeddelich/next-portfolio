@@ -1,7 +1,7 @@
 .projects {
   z-index: 2;
   position: relative;
-  scroll-margin-top: -4rem;
+  scroll-margin-top: 32px;
 }
 
 .project__list {

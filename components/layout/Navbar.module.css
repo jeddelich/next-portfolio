@@ -16,17 +16,6 @@
   }
 }
 
-@keyframes circle-spin {
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(360deg);
-    opacity: 1;
-  }
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -37,61 +26,72 @@
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 80px;
-  padding: 24px;
-  z-index: 1;
-  visibility: visible;
-  opacity: 1;
-  transition: all 600ms 600ms;
+  padding: 20px 32px;
+  z-index: 9999;
+  --bg: var(--color-light);
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.personalLogoWrapper {
-  position: relative;
-  width: 88px;
-  height: 88px;
+:global(.dark-theme) .nav {
+  --bg: var(--color-dark);
 }
 
-.personalLogoEffect {
-  position: absolute;
-  top: 18px;
-  left: 19px;
-  width: 52px;
-  height: 52px;
-  border-top: 2px solid var(--color-primary);
-  border-radius: 50%;
-  transition: all 700ms ease;
+.navScrolled {
+  border-bottom-color: rgba(36, 36, 36, 0.1);
+}
+
+:global(.dark-theme) .navScrolled {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.navLogo {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-dark);
   opacity: 0;
-  animation: circle-spin 800ms linear;
-  animation-iteration-count: 3;
+  animation: fade-in 1s ease forwards;
 }
 
-.personalLogo {
-  width: 88px;
-  height: 88px;
-  background-image: url("/branding/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: all 300ms ease;
-  position: absolute;
+.navLogoText {
+  font-weight: 400;
 }
 
-:global(.dark-theme) .personalLogo {
-  background-image: url("/branding/logo-dark.png");
+.navLogoMark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: var(--color-light);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0;
 }
 
 .navLinkList {
   display: flex;
   align-items: center;
-}
-
-.navLink {
-  margin: 0 12px;
 }
 
 .navLink:nth-of-type(1),
@@ -120,15 +120,95 @@
   font-weight: 700;
 }
 
+.numberedNavLink {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: rgba(36, 36, 36, 0.75);
+  transition: color 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.numberedNavLink span {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+.numberedNavLink:hover {
+  color: var(--color-dark);
+  background: rgba(36, 36, 36, 0.05);
+}
+
+.numberedNavLinkNum {
+  color: var(--color-primary);
+  font-size: 11px;
+}
+
 .themeToggleIcon {
   font-size: 24px;
   opacity: 0;
   animation: fade-in 1s ease forwards;
 }
 
+.themeToggleButton {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-dark);
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
+}
+
+
+:global(.theme-toggle) {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  margin-left: 12px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+:global(.theme-toggle:hover) {
+  border-color: rgba(36, 36, 36, 0.15);
+  background: rgba(36, 36, 36, 0.03);
+}
+
+:global(.dark-theme .theme-toggle) {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:global(.dark-theme .theme-toggle:hover) {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgb(32, 32, 32);
+}
+
 :global(.dark-theme) .navLinkAnchor,
-:global(.dark-theme .fa-circle-half-stroke) {
+:global(.dark-theme .fa-circle-half-stroke),
+:global(.dark-theme) .themeToggleButton,
+:global(.dark-theme) .numberedNavLink {
   color: white;
+}
+
+:global(.dark-theme) .navLogo {
+  color: white;
+}
+
+:global(.dark-theme) .navLogoMark {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+:global(.dark-theme) .numberedNavLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 :global(.dark-theme .fa-arrow-down) {
