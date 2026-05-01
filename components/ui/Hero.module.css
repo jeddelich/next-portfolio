@@ -9,6 +9,30 @@
   }
 }
 
+.heroTitle {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 400;
+  font-size: 64px;
+  margin-bottom: 1rem;
+  text-align: left;
+  line-height: 0.8;
+  color: var(--color-dark);
+}
+
+:global(.dark-theme) .heroTitle {
+  color: white;
+}
+
+.hero {
+  position: absolute;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   position: absolute;
   top: 50%;
@@ -24,7 +48,7 @@
   z-index: 1;
 }
 
-.header__content {
+.headerContent {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -33,14 +57,14 @@
   width: fit-content;
 }
 
-.header__content > *:not(.heroGridBg) {
+.headerContent > *:not(.heroGridBg) {
   position: relative;
   z-index: 1;
 }
 
 .heroGridBg {
   position: absolute;
-  inset: -7rem;
+  inset: -10rem;
   background-image:
     linear-gradient(rgba(36, 36, 36, 0.18) 1px, transparent 1px),
     linear-gradient(90deg, rgba(36, 36, 36, 0.18) 1px, transparent 1px);
@@ -61,15 +85,22 @@
   z-index: 0;
 }
 
+:global(.dark-theme) .heroGridBg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+}
+
 .headerPara {
   font-size: 20px;
-  max-width: 400px;
+  max-width: 350px;
   color: #5a5a52;
+  margin-top: 1rem;
 }
 
 .socialList {
   position: relative;
-  margin-top: 1rem;
+  margin: 1rem 0;
   display: flex;
   height: fit-content;
   align-items: center;
@@ -83,6 +114,8 @@
   place-items: center;
   color: rgba(36, 36, 36, 0.75);
   border-radius: 8px;
+  border: none;
+  background: none;
   font-size: 24px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
@@ -97,13 +130,10 @@
   color: white;
 }
 
-:global(.dark-theme) .heroGridBg {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
-}
-
 @media (max-width: 768px) {
+  .heroTitle {
+    font-size: 48px;
+  }
   .headerPara {
     font-size: 16px;
     max-width: 325px;
@@ -119,6 +149,18 @@
 }
 
 @media (max-width: 480px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+  .heroTitle {
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+  }
   .headerPara {
     font-size: 14px;
   }

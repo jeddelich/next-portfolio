@@ -93,7 +93,7 @@
   color: #3ddc97;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1024px) {
   .logo {
     visibility: hidden;
   }

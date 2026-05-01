@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Roboto } from "next/font/google";
+import { Fraunces, JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -19,6 +19,13 @@ const roboto = Roboto({
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["300", "700"],
+  style: ["italic", "normal"],
 });
 
 export const metadata: Metadata = {
@@ -56,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${jetBrainsMono.variable} h-full antialiased`}
+      className={`${roboto.variable} ${jetBrainsMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Script
