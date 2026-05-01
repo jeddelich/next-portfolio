@@ -83,6 +83,8 @@
   place-items: center;
   color: rgba(36, 36, 36, 0.75);
   border-radius: 8px;
+  border: none;
+  background: none;
   font-size: 24px;
   transition: color 0.2s ease, transform 0.2s ease;
 }

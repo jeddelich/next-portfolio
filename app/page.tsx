@@ -1,4 +1,5 @@
 import LandingClientShell from "@/components/ui/LandingClientShell";
+import MailButton from "@/components/ui/MailButton";
 import ModalBackgroundShell from "@/components/ui/ModalBackgroundShell";
 import Projects from "@/components/projects/Projects";
 import techStack from "@/data/techStack";
@@ -41,6 +42,7 @@ export default function Home() {
             >
               <i className="fa-solid fa-file-pdf"></i>
             </a>
+            <MailButton />
           </div>
         </header>
       </LandingClientShell>
