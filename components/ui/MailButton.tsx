@@ -1,14 +1,17 @@
 "use client";
 
 import { useModal } from "@/contexts/ModalContext";
-import styles from "@/app/page.module.css";
 
-function MailButton() {
+type MailButtonProps = {
+  heroStyles?: string;
+};
+
+function MailButton({ heroStyles }: MailButtonProps) {
   const { openModal } = useModal();
 
   return (
     <button
-      className={`${styles.socialLink} click`}
+      className={`${heroStyles ?? ""} click`}
       onClick={openModal}
       aria-label="Open contact form"
     >

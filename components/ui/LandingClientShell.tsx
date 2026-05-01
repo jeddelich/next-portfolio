@@ -17,7 +17,7 @@ const Modal = dynamic(() => import("@/components/ui/Modal"), {
 
 type LandingClientShellProps = {
   techStack: TechItem[];
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 function LandingClientShell({ techStack, children }: LandingClientShellProps) {
