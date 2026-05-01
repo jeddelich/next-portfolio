@@ -116,6 +116,37 @@
   border-color: rgb(255, 255, 255, 0.24);
 }
 
+.workLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-dark);
+  padding-bottom: 8px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+:global(.dark-theme) .workLink {
+  color: var(--color-light);
+  border-bottom-color: var(--color-light);
+}
+
+.workLink:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.workLink svg {
+    transition: transform 0.2s ease;
+}
+
+.workLink:hover svg {
+    transform: translate(2px, -2px);
+}
+
 @media (max-width: 1024px) {
   .project__wrapper {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
