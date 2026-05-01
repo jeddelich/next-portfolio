@@ -51,17 +51,17 @@ function ProjectCard({
         <div className={styles.project__description}>
           <div className={styles.project__descriptionHeader}>
             <h3 className={styles.project__descriptionTitle}>{project.title}</h3>
-            {hasSubtitle && project.subtitle && (
-              <ul className={styles.project__descriptionSubtitleList} aria-label={`${project.title} tech stack`}>
-                {project.subtitle.map((tool) => (
-                  <li key={tool} className={styles.project__descriptionSubtitle}>
-                    {tool}
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
           <p className={styles.project__descriptionPara}>{project.description}</p>
+          {hasSubtitle && project.subtitle && (
+            <ul className={styles.project__descriptionSubtitleList} aria-label={`${project.title} tech stack`}>
+              {project.subtitle.map((tool) => (
+                <li key={tool} className={styles.project__descriptionSubtitle}>
+                  {tool}
+                </li>
+              ))}
+            </ul>
+          )}
           {(hasGithubLink || hasVercelLink) && (
             <div className={styles.project__descriptionLinks}>
               {hasGithubLink && project.githubLink && (

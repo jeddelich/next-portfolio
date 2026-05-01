@@ -11,7 +11,7 @@
 }
 
 :global(.dark-theme) .footer {
-  border-top: 2px solid var(--color-light);
+  border-top: 2px solid color-mix(in srgb, var(--color-light) 30%, transparent);
 }
 
 .footerRow {
