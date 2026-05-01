@@ -15,9 +15,11 @@ function Projects() {
       <Marquee />
       <div className="container">
         <div className="row">
-          <h1 className="section__title">
-            Here are some of my <span className="orange">projects</span>
-          </h1>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionEyebrow}>02 — Selected Projects</span>
+            <h2 className={styles.sectionTitle}>Things I&apos;ve built.</h2>
+            <span className={styles.sectionRule} aria-hidden="true"></span>
+          </div>
           <ul className={styles.project__list}>
             {projects.slice(0, projectsDisplayed).map((project, index) => (
               <ProjectCard
