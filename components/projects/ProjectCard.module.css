@@ -42,6 +42,7 @@
   color: #252836;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   justify-content: center;
   padding-right: 0.25rem;
 }
@@ -57,6 +58,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
+  margin: 8px 0 12px 0;
 }
 
 .project__descriptionTitle {
@@ -67,15 +69,15 @@
 .project__descriptionSubtitle {
   display: inline-flex;
   align-items: center;
-  min-height: 2.1rem;
-  padding: 0.45rem 0.8rem;
-  border: 1px solid rgb(37, 40, 54, 0.12);
-  border-radius: 999px;
-  background: linear-gradient(180deg, #ffffff 0%, #f4f6fb 100%);
-  color: #4a4f64;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--color-light);
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .project__descriptionLinks {
@@ -98,7 +100,7 @@
 }
 
 .project__descriptionPara {
-  margin: 16px 0;
+  margin: 0;
   color: #353a50;
   line-height: 1.6;
 }
@@ -112,8 +114,40 @@
 }
 
 :global(.dark-theme) .project__descriptionSubtitle {
-  background: linear-gradient(180deg, #2a3144 0%, #1f2433 100%);
-  border-color: rgb(255, 255, 255, 0.24);
+  background: var(--color-dark);
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+.workLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-dark);
+  padding-bottom: 8px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+:global(.dark-theme) .workLink {
+  color: var(--color-light);
+  border-bottom-color: var(--color-light);
+}
+
+.workLink:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.workLink svg {
+    transition: transform 0.2s ease;
+}
+
+.workLink:hover svg {
+    transform: translate(2px, -2px);
 }
 
 @media (max-width: 1024px) {
@@ -135,8 +169,8 @@
   .project__wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "media"
-      "description";
+      "description"
+      "media";
   }
 
   .project__description {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, JetBrains_Mono, Roboto } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -18,6 +18,11 @@ const roboto = Roboto({
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -63,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${jetBrainsMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${roboto.variable} ${inter.variable} ${jetBrainsMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Script
