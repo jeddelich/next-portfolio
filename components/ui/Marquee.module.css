@@ -1,0 +1,46 @@
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  border-top: 1px solid #e6e4dc;
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.marqueeItem {
+  font-family: var(--font-fraunces), serif;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  color: #5a5a52;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin-right: 64px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.marqueeItem::after {
+  content: "\2726";
+  color: var(--color-primary);
+  font-size: 16px;
+  font-style: normal;
+}
+
+:global(.dark-theme) .marqueeItem {
+  color: #a8a89e;
+}

@@ -14,9 +14,9 @@ export default function Home() {
             <h1 className="title">Hey</h1>
             <h1 className="title orange">I&apos;m Jed.</h1>
             <p className={styles.headerPara}>
-              I build optimized, accessible, user experiences
-              with React, Next.js, and TypeScript — turning complex product
-              requirements into intuitive interfaces.
+              I build optimized, accessible, user experiences with React,
+              Next.js, and TypeScript — turning complex product requirements
+              into intuitive interfaces.
             </p>
           </div>
           <div className={styles.socialList}>
@@ -44,7 +44,6 @@ export default function Home() {
           </div>
         </header>
       </LandingClientShell>
-
       <Projects />
     </ModalBackgroundShell>
   );

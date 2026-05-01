@@ -3,15 +3,16 @@
 import ProjectCard from "@/components/projects/ProjectCard";
 import projects from "@/data/projects";
 import Button from "@/components/ui/Button";
+import Marquee from "@/components/ui/Marquee";
 import { useState } from "react";
 import styles from "./Projects.module.css";
 
 function Projects() {
-
-    const [projectsDisplayed, setProjectsDisplayed] = useState<number>(2);
+  const [projectsDisplayed, setProjectsDisplayed] = useState<number>(2);
 
   return (
     <section id="projects" className={styles.projects}>
+      <Marquee />
       <div className="container">
         <div className="row">
           <h1 className="section__title">
@@ -28,7 +29,10 @@ function Projects() {
             ))}
           </ul>
           {projectsDisplayed < projects.length && (
-            <Button text={`Explore More`} onClick={() => setProjectsDisplayed(projectsDisplayed + 2)} />
+            <Button
+              text={`Explore More`}
+              onClick={() => setProjectsDisplayed(projectsDisplayed + 2)}
+            />
           )}
         </div>
       </div>
