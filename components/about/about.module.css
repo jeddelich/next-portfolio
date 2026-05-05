@@ -1,0 +1,24 @@
+.about {
+  z-index: 2;
+  position: relative;
+}
+
+.aboutContent {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aboutContent p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .aboutContent p {
+    font-size: 1rem;
+  }
+}
