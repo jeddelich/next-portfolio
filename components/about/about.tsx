@@ -1,9 +1,11 @@
 import SectionHeader from "@/components/ui/SectionHeader";
+import Marquee from "@/components/ui/Marquee";
 import styles from "./about.module.css";
 
 function About() {
   return (
     <section id="about" className={styles.about}>
+      <Marquee />
       <div className="container">
         <div className="row">
           <SectionHeader eyebrow="01 — About" title="A little about me." />

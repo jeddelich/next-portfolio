@@ -3,7 +3,6 @@
 import ProjectCard from "@/components/projects/ProjectCard";
 import projects from "@/data/projects";
 import Button from "@/components/ui/Button";
-import Marquee from "@/components/ui/Marquee";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { useState } from "react";
 import styles from "./Projects.module.css";
@@ -13,7 +12,6 @@ function Projects() {
 
   return (
     <section id="projects" className={styles.projects}>
-      <Marquee />
       <div className="container">
         <div className="row">
           <SectionHeader
