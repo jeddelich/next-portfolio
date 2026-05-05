@@ -54,11 +54,9 @@
 }
 
 .aboutCardImg {
-  height: 180px;
+  height: 320px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #252836 0%, #3a4058 100%);
-  display: grid;
-  place-items: center;
+  background: #1a1a2e;
   position: relative;
   overflow: hidden;
   margin-bottom: 16px;

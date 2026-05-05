@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Marquee from "@/components/ui/Marquee";
 import styles from "./about.module.css";
@@ -45,23 +46,31 @@ function About() {
             </div>
             <aside className={styles.aboutCard}>
               <div className={styles.aboutCardImg}>
-                <span
+                   <span
                   className={styles.aboutCardImgTape}
                   aria-hidden="true"
+                  style={{ zIndex: 100 }}
                 ></span>
-                <span className={styles.aboutCardImgGlyph}>JD</span>
+                <Image
+                  src="/about-me-selfie.png"
+                  alt="Jed Delich"
+                  fill
+                  style={{ objectFit: "contain", objectPosition: "center", filter: "grayscale(25%)" }}
+                  sizes="(max-width: 900px) 100vw, 380px"
+                  priority
+                />
               </div>
               <div className={styles.aboutCardStats}>
                 <div>
-                  <div className={styles.statNum}>5+</div>
-                  <div className={styles.statLabel}>Years building</div>
-                </div>
-                <div>
-                  <div className={styles.statNum}>20+</div>
-                  <div className={styles.statLabel}>Shipped projects</div>
+                  <div className={styles.statNum}>14+</div>
+                  <div className={styles.statLabel}>Technical Proficiencies</div>
                 </div>
                 <div>
                   <div className={styles.statNum}>12+</div>
+                  <div className={styles.statLabel}>Shipped projects</div>
+                </div>
+                <div>
+                  <div className={styles.statNum}>10+</div>
                   <div className={styles.statLabel}>Production apps</div>
                 </div>
                 <div>
