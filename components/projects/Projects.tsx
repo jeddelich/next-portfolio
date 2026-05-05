@@ -4,6 +4,7 @@ import ProjectCard from "@/components/projects/ProjectCard";
 import projects from "@/data/projects";
 import Button from "@/components/ui/Button";
 import Marquee from "@/components/ui/Marquee";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { useState } from "react";
 import styles from "./Projects.module.css";
 
@@ -15,11 +16,10 @@ function Projects() {
       <Marquee />
       <div className="container">
         <div className="row">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionEyebrow}>02 — Selected Projects</span>
-            <h2 className={styles.sectionTitle}>Things I&apos;ve built.</h2>
-            <span className={styles.sectionRule} aria-hidden="true"></span>
-          </div>
+          <SectionHeader
+            eyebrow="02 — Selected Projects"
+            title="Things I've built."
+          />
           <ul className={styles.project__list}>
             {projects.slice(0, projectsDisplayed).map((project, index) => (
               <ProjectCard
