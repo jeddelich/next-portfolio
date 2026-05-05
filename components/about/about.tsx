@@ -8,7 +8,7 @@ function About() {
       <Marquee />
       <div className="container">
         <div className="row">
-          <SectionHeader eyebrow="01 — About" title="A little about me." />
+          <SectionHeader eyebrow="01 — About" title="Get to know me." />
           <div className={styles.aboutContent}>
             <p>
               I design and build web experiences with a focus on performance,

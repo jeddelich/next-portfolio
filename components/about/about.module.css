@@ -1,6 +1,7 @@
 .about {
   z-index: 2;
   position: relative;
+  scroll-margin-top: -64px;
 }
 
 .aboutContent {
