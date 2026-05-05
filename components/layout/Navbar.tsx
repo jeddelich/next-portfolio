@@ -59,10 +59,6 @@ function Navbar() {
           <a
             href="#about"
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-            onClick={(event) => {
-              event.preventDefault();
-              toggleModal();
-            }}
           >
             <span className={styles.numberedNavLinkNum}>01.</span>
             <span>About</span>
