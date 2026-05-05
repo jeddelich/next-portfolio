@@ -4,22 +4,150 @@
   scroll-margin-top: -64px;
 }
 
-.aboutContent {
+.aboutGrid {
   width: 100%;
-  max-width: 760px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 1rem;
 }
 
-.aboutContent p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  text-align: center;
+.aboutProse p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #353a50;
+  margin: 0 0 20px;
+}
+
+.aboutProse p:first-child {
+  font-family: "Fraunces", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #252836;
+  letter-spacing: -0.01em;
+}
+
+.aboutProse strong {
+  color: #252836;
+  font-weight: 600;
+}
+
+.accentLink {
+  color: var(--color-primary);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+  transition: border-color 0.2s ease;
+}
+
+.accentLink:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+.aboutCard {
+  border: 1px solid rgba(36, 36, 36, 0.12);
+  border-radius: 16px;
+  background: var(--color-light);
+  padding: 18px;
+  position: sticky;
+  top: 110px;
+}
+
+.aboutCardImg {
+  height: 180px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #252836 0%, #3a4058 100%);
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.aboutCardImgTape {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 70px;
+  height: 18px;
+  border-radius: 4px;
+  background: rgba(245, 245, 245, 0.6);
+}
+
+.aboutCardImgGlyph {
+  font-family: "Fraunces", serif;
+  font-size: 42px;
+  color: var(--color-light);
+  letter-spacing: 0.02em;
+}
+
+.aboutCardStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 10px;
+}
+
+.statNum {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #252836;
+}
+
+.statLabel {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #4a5068;
+}
+
+:global(.dark-theme) .aboutProse p {
+  color: #d7d7d7;
+}
+
+:global(.dark-theme) .aboutProse p:first-child,
+:global(.dark-theme) .aboutProse strong,
+:global(.dark-theme) .statNum {
+  color: #ffffff;
+}
+
+:global(.dark-theme) .aboutCard {
+  background: #202020;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(.dark-theme) .statLabel {
+  color: #c5c5c5;
+}
+
+@media (max-width: 1024px) {
+  .aboutGrid {
+    gap: 40px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutCard {
+    position: static;
+  }
 }
 
 @media (max-width: 768px) {
-  .aboutContent p {
-    font-size: 1rem;
+  .aboutProse p {
+    font-size: 16px;
+  }
+
+  .aboutProse p:first-child {
+    font-size: 21px;
+  }
+
+  .aboutCardStats {
+    grid-template-columns: 1fr 1fr;
   }
 }
+
