@@ -27,6 +27,7 @@ function LandingClientShell({ techStack, children }: LandingClientShellProps) {
   const { isLogoMotionEnabled, handleMouseMove, setLogoImageRef } =
     useLogoMotion({
       logoCount: techStack.length,
+      breakpoint: 1025,
       isPaused: isModalOpen,
     });
 

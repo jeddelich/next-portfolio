@@ -92,14 +92,21 @@
 .navLinkList {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .navLink:nth-of-type(1),
 .navLink:nth-of-type(2),
-.navLink:nth-of-type(3) {
+.navLink:nth-of-type(3),
+.navLink:nth-of-type(4) {
   opacity: 0;
   transform: translateY(-56px);
   animation: drop-down-float-up 2s forwards;
+}
+
+.navLink:nth-of-type(5) {
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
 }
 
 .navLink:nth-of-type(1) {
@@ -112,6 +119,10 @@
 
 .navLink:nth-of-type(3) {
   animation-delay: 1000ms;
+}
+
+.navLink:nth-of-type(4) {
+  animation-delay: 1250ms;
 }
 
 .navLinkAnchor {
@@ -139,6 +150,57 @@
 .numberedNavLink:hover {
   color: var(--color-dark);
   background: rgba(36, 36, 36, 0.05);
+}
+
+.numberedNavLinkDisabled {
+  cursor: not-allowed;
+  position: relative;
+}
+
+.numberedNavLinkDisabled::after {
+  content: "Section in development. Check resume";
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  background: var(--color-dark);
+  color: var(--color-light);
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10000;
+}
+
+.numberedNavLinkDisabled:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+:global(.dark-theme) .numberedNavLinkDisabled::after {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+.navCta {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  margin: 0 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.numberedNavLink.navCta:hover {
+  background: var(--color-primary);
+  color: var(--color-light);
+}
+
+:global(.dark-theme) .numberedNavLink.navCta:hover {
+  background: var(--color-primary);
+  color: var(--color-light);
 }
 
 .numberedNavLinkNum {
@@ -215,8 +277,158 @@
   color: white;
 }
 
+.burgerMenu {
+  display: none;
+  position: relative;
+  width: 24px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+.burgerMenu span {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-dark);
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.burgerMenu span:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.burgerMenu span:nth-child(2) {
+  transform: translateY(0);
+}
+
+.burgerMenu span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+:global(.dark-theme) .burgerMenu span {
+  background: white;
+}
+
+.burgerMenuOpen span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.burgerMenuOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerMenuOpen span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 9997;
+}
+
+.mobileMenu {
+  position: relative;
+  width: 50vw;
+  max-width: 50vw;
+  background: var(--color-light);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  padding: 20px 32px;
+  animation: fade-in 0.3s ease;
+  z-index: 9998;
+}
+
+:global(.dark-theme) .mobileMenu {
+  background: var(--color-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileMenuList li {
+  width: 100%;
+}
+
+.mobileMenuList li a {
+  display: block;
+}
+
+.mobileMenuCta {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(36, 36, 36, 0.1);
+}
+
+:global(.dark-theme) .mobileMenuCta {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .navCta {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
+  .mobileMenuOverlay {
+    display: flex;
+  }
+
+  .burgerMenu {
+    display: flex;
+    align-items: center;
+  }
+
   .navLink {
+    display: none;
+  }
+
+  .numberedNavLinkNum {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileMenu {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  :global(.modal) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  .navLogoText {
     display: none;
   }
 }

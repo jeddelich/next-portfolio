@@ -125,11 +125,11 @@
 .scrollHidden {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
   transform: translateX(-50%) translateY(8px);
 }
 
 .heroScrollCue {
+  --bg: var(--color-light);
   position: absolute;
   bottom: 1rem;
   left: 50%;
@@ -143,6 +143,8 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  z-index: 999;
   opacity: 0;
   visibility: visible;
   animation: fade-in 600ms ease 1s forwards;
@@ -181,7 +183,9 @@
 }
 
 :global(.dark-theme) .heroScrollCue {
+  --bg: var(--color-dark);
   color: rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 :global(.dark-theme) .scrollLine {
@@ -190,4 +194,11 @@
     rgba(255, 255, 255, 0.55),
     rgba(255, 255, 255, 0)
   );
+}
+
+@media (max-width: 1024px) {
+  .heroScrollCue {
+    border: none;
+    padding: 0.5 0;
+  }
 }
