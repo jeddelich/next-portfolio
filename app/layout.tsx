@@ -19,6 +19,7 @@ const roboto = Roboto({
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
