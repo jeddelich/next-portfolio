@@ -66,24 +66,43 @@ function Navbar() {
         </li>
         <li className={styles.navLink}>
           <a
+            href="#tech-stack"
+            className={`${styles.numberedNavLink} ${styles.numberedNavLinkDisabled} ${jetBrainsMono.className}`}
+            aria-disabled="true"
+          >
+            <span className={styles.numberedNavLinkNum}>02.</span>
+            <span>Stack</span>
+          </a>
+        </li>
+        <li className={styles.navLink}>
+          <a
             href="#projects"
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
-            <span className={styles.numberedNavLinkNum}>02.</span>
-            <span>Projects</span>
+            <span className={styles.numberedNavLinkNum}>03.</span>
+            <span>Work</span>
+          </a>
+        </li>
+        <li className={styles.navLink}>
+          <a
+            href="#experience"
+            className={`${styles.numberedNavLink} ${styles.numberedNavLinkDisabled} ${jetBrainsMono.className}`}
+            aria-disabled="true"
+          >
+            <span className={styles.numberedNavLinkNum}>04.</span>
+            <span>Experience</span>
           </a>
         </li>
         <li className={styles.navLink}>
           <a
             href="#contact"
-            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
+            className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
             onClick={(event) => {
               event.preventDefault();
               toggleModal();
             }}
           >
-            <span className={styles.numberedNavLinkNum}>03.</span>
-            <span>Contact</span>
+            <span>Get in touch ↗</span>
           </a>
         </li>
         <button

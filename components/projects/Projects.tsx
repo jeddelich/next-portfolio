@@ -15,7 +15,7 @@ function Projects() {
       <div className="container">
         <div className="row">
           <SectionHeader
-            eyebrow="02 — Selected Projects"
+            eyebrow="02 — Selected Work"
             title="Things I've built."
           />
           <ul className={styles.project__list}>

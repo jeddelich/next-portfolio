@@ -96,10 +96,16 @@
 
 .navLink:nth-of-type(1),
 .navLink:nth-of-type(2),
-.navLink:nth-of-type(3) {
+.navLink:nth-of-type(3),
+.navLink:nth-of-type(4) {
   opacity: 0;
   transform: translateY(-56px);
   animation: drop-down-float-up 2s forwards;
+}
+
+.navLink:nth-of-type(5) {
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
 }
 
 .navLink:nth-of-type(1) {
@@ -112,6 +118,10 @@
 
 .navLink:nth-of-type(3) {
   animation-delay: 1000ms;
+}
+
+.navLink:nth-of-type(4) {
+  animation-delay: 1250ms;
 }
 
 .navLinkAnchor {
@@ -139,6 +149,22 @@
 .numberedNavLink:hover {
   color: var(--color-dark);
   background: rgba(36, 36, 36, 0.05);
+}
+
+.numberedNavLinkDisabled {
+  cursor: not-allowed;
+}
+
+.navCta {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  margin: 0 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navCta:hover {
+  background: var(--color-primary);
+  color: var(--color-light);
 }
 
 .numberedNavLinkNum {
