@@ -51,3 +51,23 @@
   color: var(--color-primary);
   transform: translateY(-2px);
 }
+
+@media (max-width:1024px) {
+  .footerInner {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width:768px) {
+  .footerInner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width:564px) {
+  .footerInner{
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
