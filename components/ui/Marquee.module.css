@@ -44,3 +44,44 @@
 :global(.dark-theme) .marqueeItem {
   color: var(--color-light);
 }
+
+@media (max-width: 1024px) {
+  .marqueeItem {
+    font-size: 21px;
+    gap: 48px;
+    margin-right: 48px;
+  }
+
+  .marqueeItem::after {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marqueeTrack {
+    will-change: transform;
+  }
+
+  .marqueeItem {
+    font-size: 18px;
+    gap: 32px;
+    margin-right: 32px;
+    letter-spacing: -0.005em;
+  }
+
+  .marqueeItem::after {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marqueeItem {
+    font-size: 16px;
+    gap: 20px;
+    margin-right: 20px;
+  }
+
+  .marqueeItem::after {
+    font-size: 12px;
+  }
+}
