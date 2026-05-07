@@ -53,6 +53,25 @@
   transform: translateY(-2px);
 }
 
+:global(.dark-theme) .footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  background: var(--color-dark);
+}
+
+:global(.dark-theme) .footerMeta {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+:global(.dark-theme) .socialLink {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+:global(.dark-theme) .socialLink:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 @media (max-width:1024px) {
   .footerInner {
     padding: 0 32px;
