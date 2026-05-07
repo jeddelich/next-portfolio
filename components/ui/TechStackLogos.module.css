@@ -30,14 +30,6 @@
 .logo2 {
   top: 15vh;
   left: 70vw;
-  padding: 4px;
-  filter: invert(100%);
-  background-color: white;
-  border-radius: 50%;
-}
-
-:global(.dark-theme) .logo2 {
-  filter: none;
 }
 
 .logo3 {
@@ -48,6 +40,14 @@
 .logo4 {
   top: 50vh;
   left: 5vw;
+  padding: 4px;
+  filter: invert(100%);
+  background-color: white;
+  border-radius: 50%;
+}
+
+:global(.dark-theme) .logo4 {
+  filter: none;
 }
 
 .logo5 {
@@ -95,6 +95,12 @@
 
 @media (max-width: 1024px) {
   .logo {
-    visibility: hidden;
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logo0, .logo4, .logo8 {
+    display: none;
   }
 }

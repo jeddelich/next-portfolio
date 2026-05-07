@@ -57,6 +57,18 @@
   width: fit-content;
 }
 
+.heroTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.headerMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .headerContent > *:not(.heroGridBg) {
   position: relative;
   z-index: 1;
@@ -117,7 +129,9 @@
   border: none;
   background: none;
   font-size: 24px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .socialLink:hover {
@@ -130,13 +144,63 @@
   color: white;
 }
 
+@media (min-width: 769px) and (max-width: 1023px) {
+  .header {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  .headerContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .heroTitle {
+    font-size: 56px;
+  }
+
+  .headerMeta {
+    width: min(360px, 45%);
+    align-items: flex-start;
+  }
+
+  .headerPara {
+    margin-top: 0;
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .socialList {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
   .heroTitle {
     font-size: 48px;
+    width: 100%;
+    text-align: center;
+  }
+  .heroTitles,
+  .headerMeta {
+    align-items: center;
   }
   .headerPara {
     font-size: 16px;
     max-width: 325px;
+    text-align: center;
   }
   .socialLink {
     font-size: 24px;
@@ -146,20 +210,17 @@
   .socialList {
     gap: 1.25rem;
   }
+  .headerContent {
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
-    .header{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-    }
+  .header{
+    padding: 0 32px;
+  }
   .heroTitle {
     font-size: 40px;
-    width: 100%;
-    text-align: center;
   }
   .headerPara {
     font-size: 14px;
