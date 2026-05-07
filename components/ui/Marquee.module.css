@@ -25,7 +25,7 @@
   font-size: 24px;
   font-weight: 300;
   font-style: italic;
-  color: #5a5a52;
+  color: #242424;
   display: flex;
   align-items: center;
   gap: 64px;
@@ -42,5 +42,5 @@
 }
 
 :global(.dark-theme) .marqueeItem {
-  color: #a8a89e;
+  color: var(--color-light);
 }
