@@ -54,7 +54,7 @@ function Footer() {
             <i className="fa-solid fa-file-pdf" aria-hidden="true"></i>
           </a>
           <a
-            href="mailto:jeddelich@gmail.com"
+            href="#contact"
             className={styles.socialLink}
             aria-label="Email"
           >

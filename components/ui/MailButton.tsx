@@ -1,22 +1,16 @@
-"use client";
-
-import { useModal } from "@/contexts/ModalContext";
-
 type MailButtonProps = {
   heroStyles?: string;
 };
 
 function MailButton({ heroStyles }: MailButtonProps) {
-  const { openModal } = useModal();
-
   return (
-    <button
+    <a
+      href="#contact"
       className={`${heroStyles ?? ""} click`}
-      onClick={openModal}
-      aria-label="Open contact form"
+      aria-label="Go to contact section"
     >
       <i className="fa-solid fa-envelope"></i>
-    </button>
+    </a>
   );
 }
 

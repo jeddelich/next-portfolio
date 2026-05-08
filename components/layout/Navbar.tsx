@@ -142,10 +142,6 @@ function Navbar() {
           <a
             href="#contact"
             className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
-            onClick={(event) => {
-              event.preventDefault();
-              toggleModal();
-            }}
           >
             <span>Get in touch ↗</span>
           </a>
