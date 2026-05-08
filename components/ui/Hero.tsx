@@ -1,4 +1,5 @@
 import MailButton from "@/components/ui/MailButton";
+import StatusBar from "@/components/ui/StatusBar";
 import styles from "./Hero.module.css";
 
 function Hero() {
@@ -7,10 +8,7 @@ function Hero() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.heroGridBg} aria-hidden="true"></div>
-          <div className={styles.heroEyebrow}>
-            <span className={styles.heroStatusDot} aria-hidden="true"></span>
-            <span>Available for new projects · Summer 2026</span>
-          </div>
+          <StatusBar />
           <div className={styles.heroTitles}>
             <div className={styles.heroTitle}>Jed Delich,</div>
             <div className={`orange ${styles.heroTitle}`} style={{ fontStyle: "italic" }}>
