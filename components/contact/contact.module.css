@@ -56,13 +56,22 @@
     font-weight: 300;
 }
 
+:global(.dark-theme) .contactTitle {
+    color: var(--color-light);
+}
+
 :global(.dark-theme) .contactSub {
-    color: color-mix(in srgb, var(--color-light) 65%, transparent);
+    color: var(--color-light);
 }
 
 :global(.dark-theme) .contactEmail {
     color: var(--color-light);
     border-bottom-color: color-mix(in srgb, var(--color-light) 35%, transparent);
+}
+
+:global(.dark-theme) .contactEmail:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 @media (max-width: 1024px) {
