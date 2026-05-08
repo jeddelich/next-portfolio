@@ -47,30 +47,19 @@
 .aboutCard {
   border: 1px solid rgba(36, 36, 36, 0.12);
   border-radius: 16px;
-  background: var(--color-light);
-  padding: 18px;
+  background: #efefef;
+  padding: 32px;
   position: sticky;
   top: 110px;
 }
 
 .aboutCardImg {
-  height: 320px;
+  height: 260px;
   border-radius: 12px;
-  background: #1a1a2e;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
-  margin-bottom: 16px;
-}
-
-.aboutCardImgTape {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-2deg);
-  width: 70px;
-  height: 18px;
-  border-radius: 4px;
-  background: rgba(245, 245, 245, 0.6);
+  margin-bottom: 32px;
 }
 
 .aboutCardImgGlyph {
@@ -84,18 +73,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px 10px;
+  padding-top: 24px;
+  border-top: 1px solid #2424241a;
 }
 
 .statNum {
-  font-size: 24px;
-  font-weight: 700;
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 500;
   line-height: 1.1;
   color: #252836;
 }
 
 .statLabel {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  text-transform: uppercase;
   margin-top: 4px;
-  font-size: 13px;
+  letter-spacing: 0.02em;
+  font-size: 11px;
+  font-weight: 400;
   color: #4a5068;
 }
 
@@ -110,12 +106,20 @@
 }
 
 :global(.dark-theme) .aboutCard {
-  background: #202020;
+  background: #1c1c1c;
   border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(.dark-theme) .aboutCardStats {
+  border-top-color: rgba(255, 255, 255, 0.14);
 }
 
 :global(.dark-theme) .statLabel {
   color: #c5c5c5;
+}
+
+:global(.dark-theme) .aboutCardImg {
+  filter: brightness(95%);
 }
 
 @media (max-width: 1024px) {
@@ -149,3 +153,20 @@
   }
 }
 
+@media (max-width: 480px) {
+  .aboutProse p {
+    font-size: 15px;
+  }
+
+  .aboutProse p:first-child {
+    font-size: 18px;
+  }
+
+  .aboutCardImg {
+    height: 148px;
+  }
+
+  .statNum {
+    font-size: 20px;
+  }
+}
