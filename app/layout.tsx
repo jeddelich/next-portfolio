@@ -8,7 +8,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 // Contexts
-import { ModalProvider } from "../contexts/ModalContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
 
 const roboto = Roboto({
@@ -19,6 +18,7 @@ const roboto = Roboto({
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
@@ -77,11 +77,9 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <ThemeProvider>
-          <ModalProvider>
-            <Navbar />
-            {children}
-            <Footer />
-          </ModalProvider>
+          <Navbar />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -1,0 +1,103 @@
+.contact {
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    z-index: 999;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.contactTitle {
+    font-family: var(--font-fraunces), serif;
+    font-size: 80px;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 0 0 32px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contactSub {
+    color: color-mix(in srgb, var(--color-dark) 65%, transparent);
+    font-size: 18px;
+    max-width: 460px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+}
+
+.contactEmail {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-fraunces), serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--color-dark);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-dark) 35%, transparent);
+    padding-bottom: 12px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contactEmail:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.contactTitle em {
+    font-style: italic;
+    color: var(--color-primary);
+    font-family: var(--font-fraunces), serif;
+    font-weight: 300;
+}
+
+:global(.dark-theme) .contactTitle {
+    color: var(--color-light);
+}
+
+:global(.dark-theme) .contactSub {
+    color: var(--color-light);
+}
+
+:global(.dark-theme) .contactEmail {
+    color: var(--color-light);
+    border-bottom-color: color-mix(in srgb, var(--color-light) 35%, transparent);
+}
+
+:global(.dark-theme) .contactEmail:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+    .contactTitle {
+        font-size: 60px;
+        max-width: 600px;
+    }
+    .contactSub {
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactTitle {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactTitle {
+        font-size: 36px;
+    }
+    .contactSub {
+        font-size: 16px;
+    }
+    .contactEmail {
+        font-size: 20px;
+    }
+}

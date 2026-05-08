@@ -46,16 +46,11 @@ function About() {
             </div>
             <aside className={styles.aboutCard}>
               <div className={styles.aboutCardImg}>
-                   <span
-                  className={styles.aboutCardImgTape}
-                  aria-hidden="true"
-                  style={{ zIndex: 100 }}
-                ></span>
                 <Image
-                  src="/about-me-selfie.png"
+                  src="/about-me-picture.png"
                   alt="Jed Delich"
                   fill
-                  style={{ objectFit: "contain", objectPosition: "center", filter: "grayscale(25%)" }}
+                  style={{ objectFit: "contain", objectPosition: "bottom", filter: "grayscale(25%)" }}
                   sizes="(max-width: 900px) 100vw, 380px"
                   priority
                 />
@@ -63,14 +58,14 @@ function About() {
               <div className={styles.aboutCardStats}>
                 <div>
                   <div className={styles.statNum}>14+</div>
-                  <div className={styles.statLabel}>Technical Proficiencies</div>
+                  <div className={styles.statLabel}>Tech Proficiencies</div>
                 </div>
                 <div>
                   <div className={styles.statNum}>12+</div>
                   <div className={styles.statLabel}>Shipped projects</div>
                 </div>
                 <div>
-                  <div className={styles.statNum}>10+</div>
+                  <div className={styles.statNum}>8+</div>
                   <div className={styles.statLabel}>Production apps</div>
                 </div>
                 <div>

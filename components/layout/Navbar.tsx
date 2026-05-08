@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Fraunces, JetBrains_Mono } from "next/font/google";
-import { useModal } from "@/contexts/ModalContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import useHasScrolled from "@/hooks/useHasScrolled";
 import styles from "./Navbar.module.css";
@@ -23,7 +22,6 @@ const navBackdropStyle = {
 };
 
 function Navbar() {
-  const { toggleModal, isModalOpen } = useModal();
   const { darkMode, toggleTheme } = useTheme();
   const hasScrolled = useHasScrolled();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,9 +42,7 @@ function Navbar() {
     }, 500);
   };
 
-  const handleContactClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-    toggleModal();
+  const handleContactClick = () => {
     setMenuOpen(false);
   };
 
@@ -85,8 +81,6 @@ function Navbar() {
       document.removeEventListener("touchstart", handlePointerDown);
     };
   }, [menuOpen]);
-
-  if (isModalOpen) return null;
 
   return (
     <nav
@@ -142,10 +136,6 @@ function Navbar() {
           <a
             href="#contact"
             className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
-            onClick={(event) => {
-              event.preventDefault();
-              toggleModal();
-            }}
           >
             <span>Get in touch ↗</span>
           </a>
