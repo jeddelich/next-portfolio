@@ -1,4 +1,3 @@
-import MailButton from "@/components/ui/MailButton";
 import StatusBar from "@/components/ui/StatusBar";
 import styles from "./Hero.module.css";
 
@@ -22,31 +21,6 @@ function Hero() {
               and TypeScript — turning complex product requirements into intuitive
               interfaces.
             </p>
-
-            <div className={styles.socialList}>
-              <a
-                href="https://www.linkedin.com/in/jed-delich/"
-                target="_blank"
-                className={`${styles.socialLink} click`}
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/jeddelich"
-                target="_blank"
-                className={`${styles.socialLink} click`}
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a
-                className={`${styles.socialLink} click`}
-                href="Jed_Delich_Resume.pdf"
-                target="_blank"
-              >
-                <i className="fa-solid fa-file-pdf"></i>
-              </a>
-              <MailButton heroStyles={styles.socialLink} />
-            </div>
           </div>
         </div>
       </header>

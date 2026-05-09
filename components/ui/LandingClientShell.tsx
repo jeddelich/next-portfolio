@@ -7,6 +7,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import useHasScrolled from "@/hooks/useHasScrolled";
 import { useLogoMotion } from "@/hooks/useLogoMotion";
 import TechStackLogos, { type TechItem } from "@/components/ui/TechStackLogos";
+import FloatingQuickLinks from "@/components/ui/FloatingQuickLinks";
 import styles from "./LandingClientShell.module.css";
 
 type LandingClientShellProps = {
@@ -35,6 +36,7 @@ function LandingClientShell({ techStack, children }: LandingClientShellProps) {
     >
       <>
         <ScrollDown />
+        <FloatingQuickLinks />
         {children}
       </>
 
