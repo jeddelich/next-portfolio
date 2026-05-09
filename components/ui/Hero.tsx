@@ -7,7 +7,6 @@ function Hero() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.heroGridBg} aria-hidden="true"></div>
-          <StatusBar />
           <div className={styles.heroTitles}>
             <div className={styles.heroTitle}>Jed Delich,</div>
             <div className={`orange ${styles.heroTitle}`} style={{ fontStyle: "italic" }}>
@@ -16,6 +15,7 @@ function Hero() {
             <div className={styles.heroTitle}>Engineer</div>
           </div>
           <div className={styles.headerMeta}>
+          <StatusBar />
             <p className={styles.headerPara}>
               I build optimized, accessible, user experiences with React, Next.js,
               and TypeScript — turning complex product requirements into intuitive
