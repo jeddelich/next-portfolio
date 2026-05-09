@@ -1,0 +1,41 @@
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, #2ecc71 25%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, #2ecc71 10%, transparent);
+  }
+}
+
+.heroStatusBar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  color: #5a5a52;
+  padding: 6px 14px 6px 10px;
+  border: 1px solid #e6e4dc;
+  border-radius: 100px;
+  background: #ffffff;
+  margin: 1rem 0;
+}
+
+.heroStatusDot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+:global(.dark-theme) .heroStatusBar {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: color-mix(in srgb, var(--color-dark) 78%, black 22%);
+}

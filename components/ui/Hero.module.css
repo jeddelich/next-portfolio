@@ -67,6 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
 .headerContent > *:not(.heroGridBg) {
@@ -107,7 +108,6 @@
   font-size: 20px;
   max-width: 350px;
   color: #5a5a52;
-  margin-top: 1rem;
 }
 
 .socialList {
@@ -166,6 +166,7 @@
   .headerMeta {
     width: min(360px, 45%);
     align-items: flex-start;
+    margin-bottom: 1rem;
   }
 
   .headerPara {
@@ -216,7 +217,7 @@
 }
 
 @media (max-width: 480px) {
-  .header{
+  .header {
     padding: 0 32px;
   }
   .heroTitle {
