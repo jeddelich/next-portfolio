@@ -13,30 +13,23 @@ function About() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutProse}>
               <p>
-                I am a frontend engineer with a deep passion for building
-                websites that are both visually engaging like this one and
-                genuinely user-friendly.
+                I don't just have the technical skills to build great products, <strong>but also</strong> the communication and collaboration skills to create intuitive UI/UX.
               </p>
               <p>
-                My path into the dev world was not traditional — I came from counseling bringing my passion for both people and
-                problem-solving. Reigniting what started as tinkering with HTML and CSS in
+                My path into the dev world was not traditional — I came from counseling dragging my passion for problem-solving and people with me. Reigniting what started as simply tinkering with HTML, CSS, and Javascript in
                 high school, I am now building production-grade
                 applications with <strong>React</strong>,{" "}
-                <strong>Next.js</strong>, and <strong>TypeScript</strong>. Along
-                the way I have shipped everything from{" "}
-                <a className={styles.accentLink} href="#projects">
-                  streaming clones
-                </a>{" "}
-                with real authentication and payments, to subscription products
-                with dynamic audio players and search bars.
+                <strong>Next.js</strong>, and <strong>TypeScript</strong>.
               </p>
               <p>
-                I care about the parts of the job that do not always show up in
-                screenshots: typed APIs that catch bugs at compile time, loading
-                states that never feel jarring, components that compose cleanly
-                instead of becoming a tangle. I think great frontend work
-                happens at the intersection of design and engineering — and I
-                live in the middle.
+                Along
+                the way I have shipped everything from{" "}
+                  streaming clones
+                with real authentication and payments, to subscription products
+                with dynamic audio players and search bars. I also have experience developing for <a className={styles.accentLink} href="#projects">a real-time AI skincare analysis platform</a>.
+              </p>
+              <p>
+                Having traveled to 35+ countries, to me learning is not just a thing you do; it's a lifestyle. I am not afraid to ask questions, or to approach things from a different point of view. <strong>It is only when we understand people and problems properly that we can write good code</strong>.
               </p>
               <p>
                 When I am not coding, you will find me exploring Facebook marketplace,
