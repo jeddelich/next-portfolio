@@ -89,3 +89,45 @@ scroll-margin-top: 56px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
+
+:global(.dark-theme) .stackChip {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+:global(.dark-theme) .stackChipActive {
+  background: var(--color-light);
+  color: var(--color-dark);
+  border-color: var(--color-light);
+}
+
+:global(.dark-theme) .stackChip:hover:not(.stackChipActive) {
+  color: var(--color-light);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+:global(.dark-theme) .stackGrid {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+}
+
+:global(.dark-theme) .stackCell {
+  background: #1c1c1c;
+}
+
+:global(.dark-theme) .stackCell:hover {
+  background: #232323;
+}
+
+:global(.dark-theme) .stackIcon {
+  background: #232323;
+  color: var(--color-light);
+}
+
+:global(.dark-theme) .stackName {
+  color: var(--color-light);
+}
+
+:global(.dark-theme) .stackCat {
+  color: rgba(255, 255, 255, 0.62);
+}
