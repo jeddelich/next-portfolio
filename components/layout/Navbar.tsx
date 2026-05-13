@@ -106,7 +106,7 @@ function Navbar() {
         <li className={styles.navLink}>
           <a
             href="#stack"
-            className={`${styles.numberedNavLink} ${styles.numberedNavLinkDisabled} ${jetBrainsMono.className}`}
+            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
             aria-disabled="true"
           >
             <span className={styles.numberedNavLinkNum}>02.</span>
