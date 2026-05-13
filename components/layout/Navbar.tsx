@@ -107,7 +107,6 @@ function Navbar() {
           <a
             href="#stack"
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-            aria-disabled="true"
           >
             <span className={styles.numberedNavLinkNum}>02.</span>
             <span>Stack</span>
@@ -125,8 +124,7 @@ function Navbar() {
         <li className={styles.navLink}>
           <a
             href="#experience"
-            className={`${styles.numberedNavLink} ${styles.numberedNavLinkDisabled} ${jetBrainsMono.className}`}
-            aria-disabled="true"
+            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
             <span className={styles.numberedNavLinkNum}>04.</span>
             <span>Experience</span>
@@ -211,9 +209,8 @@ function Navbar() {
               <li>
                 <a
                   href="#tech-stack"
-                  className={`${styles.numberedNavLink} ${styles.numberedNavLinkDisabled} ${jetBrainsMono.className}`}
+                  className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
                   onClick={handleLinkClick}
-                  aria-disabled="true"
                 >
                   <span className={styles.numberedNavLinkNum}>02.</span>
                   <span>Stack</span>
@@ -232,9 +229,8 @@ function Navbar() {
               <li>
                 <a
                   href="#experience"
-                  className={`${styles.numberedNavLink} ${styles.numberedNavLinkDisabled} ${jetBrainsMono.className}`}
+                  className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
                   onClick={handleLinkClick}
-                  aria-disabled="true"
                 >
                   <span className={styles.numberedNavLinkNum}>04.</span>
                   <span>Experience</span>
