@@ -1,0 +1,167 @@
+.experienceSection {
+  position: relative;
+  z-index: 3;
+  scroll-margin-top: 56px;
+}
+
+.expList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+}
+
+.expTabs {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e6e4dc;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.expTab {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 13px;
+  text-align: left;
+  padding: 14px 20px;
+  color: #5a5a52;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.expTab:hover {
+  color: var(--color-dark);
+  background: var(--color-light);
+}
+
+.expTabActive {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  background: var(--color-light);
+}
+
+.expTabActive:hover {
+  color: var(--color-primary);
+}
+
+.expPane {
+  padding: 8px 0;
+}
+
+.expRole {
+  font-family: var(--font-fraunces), serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+
+.at {
+  color: var(--color-primary);
+    font-family: var(--font-fraunces), serif;
+  font-style: italic;
+}
+
+.expMeta {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 13px;
+  color: #6e6b60;
+  margin-bottom: 24px;
+}
+
+.expBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.expBullets li {
+  position: relative;
+  padding-left: 28px;
+  color: #5a5a52;
+  line-height: 1.6;
+}
+
+.expBullets li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+:global(.dark-theme) .expTabs {
+  border-left-color: #3a3a3a;
+}
+
+:global(.dark-theme) .expTab {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+:global(.dark-theme) .expTab:hover {
+  color: var(--color-light);
+  background: #2a2a2a;
+}
+
+:global(.dark-theme) .expTabActive {
+  background: #232323;
+}
+
+:global(.dark-theme) .expTabActive:hover {
+  color: rgba(255, 255, 255, 0.72);
+  background: #232323;
+}
+
+:global(.dark-theme) .expRole {
+  color: var(--color-light);
+}
+
+:global(.dark-theme) .expMeta,
+:global(.dark-theme) .expBullets li {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (max-width: 900px) {
+  .expList {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .expTabs {
+    position: static;
+    top: auto;
+    border-left: none;
+    border-bottom: 1px solid #e6e4dc;
+    padding-bottom: 8px;
+    overflow-x: auto;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .expTab {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    margin-left: 0;
+  }
+
+  .expTabActive {
+    border-left-color: transparent;
+    border-bottom-color: var(--color-primary);
+  }
+
+  :global(.dark-theme) .expTabs {
+    border-bottom-color: #3a3a3a;
+  }
+}

@@ -152,40 +152,6 @@
   background: rgba(36, 36, 36, 0.05);
 }
 
-.numberedNavLinkDisabled {
-  cursor: not-allowed;
-  position: relative;
-}
-
-.numberedNavLinkDisabled::after {
-  content: "Section in development. Check resume";
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-4px);
-  background: var(--color-dark);
-  color: var(--color-light);
-  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
-  font-size: 11px;
-  white-space: nowrap;
-  padding: 4px 8px;
-  border-radius: 6px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 10000;
-}
-
-.numberedNavLinkDisabled:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-:global(.dark-theme) .numberedNavLinkDisabled::after {
-  background: var(--color-light);
-  color: var(--color-dark);
-}
-
 .navCta {
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
