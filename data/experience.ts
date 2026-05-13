@@ -1,49 +1,47 @@
 export type ExperienceItem = {
   role: string;
-  company: string;
-  period: string;
+  company?: string;
+  period?: string;
   bullets: string[];
 };
 
 const experience: ExperienceItem[] = [
   {
-    role: "Frontend Engineer",
-    company: "Freelance",
-    period: "Jan 2024 — Present",
+    role: "Where I Am Now",
+    company: "Current",
     bullets: [
-      "Building production web applications for early-stage startups using Next.js, React, and TypeScript.",
-      "Architected and shipped a subscription audio platform with Firebase auth and Stripe billing — Summarist.",
-      "Translate Figma designs into pixel-perfect, accessible interfaces with a focus on Core Web Vitals.",
+      "Freelancing for small businesses like Alicia Joy Design rebuilding their site with Next.js and TypeScript.",
+      "Skillfully utilizing AI tools such as CoPilot and Claude, and exploring Notion with a certified admin.",
+      "Optimizing and performance testing my old projects with React Testing Library and Jest.",
+      "Growing daily as a Full-Stack Developer, deepening my Node.js and other backend skills.",
     ],
   },
   {
-    role: "Frontend Developer",
-    company: "Loom Studio",
-    period: "Jun 2022 — Dec 2023",
+    role: "My Return To Tech",
+    company: "Internships",
     bullets: [
-      "Owned the design system migration from styled-components to Tailwind, cutting bundle size 38%.",
-      "Built reusable component primitives (modals, toasts, comboboxes) used across 4 product surfaces.",
-      "Mentored two junior developers through pair-programming and weekly code review sessions.",
+      "At Skinstric.ai, I shipped a real-time AI skincare analysis platform with React, Next.js, and Typescript.",
+      "I worked with Figma translating the designs into responsive UI/UX and key features assisting the pipeline.",
+      "Thrived in a git environment, with PR reviews, and best practices while working on products for FES.",
     ],
   },
   {
-    role: "Junior Developer",
-    company: "Cipher Labs",
-    period: "Aug 2020 — May 2022",
+    role: "Then Continued",
+    company: "Other Jobs",
     bullets: [
-      "Shipped landing pages, marketing sites, and internal tools using React and Next.js.",
-      "Worked closely with designers to refine animation, micro-interactions, and accessibility patterns.",
-      "Set up CI/CD pipelines and Lighthouse performance budgets for the marketing team.",
+      "I worked on a sailboat named Renewal for two years teaching students technical nautical terms.",
+      "Traveled to 35+ countries, attending conferences, counseling MKs, and exploring the world!",
+      "For four years as Pastoral Assistant, I planned and led meetings on a weekly basis.",
+      "Refereed multiple sports, developing my communication and decision-making under pressure."
     ],
   },
   {
-    role: "Becoming a developer",
-    company: "Self-taught",
-    period: "2018 — 2020",
+    role: "How My Journey Started",
+    company: "Origins",
     bullets: [
-      "Pivoted into engineering through self-directed study, freeCodeCamp, and weekend projects.",
-      "Built dozens of throwaway side projects to internalize JavaScript fundamentals and the DOM.",
-      "Open-sourced first npm package — a small accessibility helper for keyboard focus rings.",
+      "As a high schooler, spent countless hours learning and building JavaScript projects on Khan Academy.",
+      "Then worked under Udacity to pick up two nanodegrees in programming and business analytics.",
+      "Eventually became proficient in React, Next.js, and TypeScript, earning my certificate from FES.",
     ],
   },
 ];

@@ -36,9 +36,9 @@
   border-bottom: none;
 }
 
- .expTab:hover {
-    color: var(--fg);
-    background: var(--color-light);
+.expTab:hover {
+  color: var(--color-dark);
+  background: var(--color-light);
 }
 
 .expTabActive {
@@ -110,7 +110,17 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
+:global(.dark-theme) .expTab:hover {
+  color: var(--color-light);
+  background: #2a2a2a;
+}
+
 :global(.dark-theme) .expTabActive {
+  background: #232323;
+}
+
+:global(.dark-theme) .expTabActive:hover {
+  color: rgba(255, 255, 255, 0.72);
   background: #232323;
 }
 
