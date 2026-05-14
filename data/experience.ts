@@ -8,7 +8,7 @@ export type ExperienceItem = {
 const experience: ExperienceItem[] = [
   {
     role: "Where I Am Now",
-    company: "Current",
+    company: "Current Work",
     bullets: [
       "Freelancing for small businesses like Alicia Joy Design rebuilding their site with Next.js and TypeScript.",
       "Skillfully utilizing AI tools such as CoPilot and Claude, and exploring Notion with a certified admin.",
@@ -27,7 +27,7 @@ const experience: ExperienceItem[] = [
   },
   {
     role: "Then Continued",
-    company: "Other Jobs",
+    company: "Past Jobs",
     bullets: [
       "I worked on a sailboat named Renewal for two years teaching students technical nautical terms.",
       "Traveled to 35+ countries, attending conferences, counseling MKs, and exploring the world!",
