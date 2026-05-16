@@ -1,6 +1,7 @@
 export type ExperienceItem = {
   role: string;
   company?: string;
+  number?: number;
   period?: string;
   bullets: string[];
 };
@@ -8,7 +9,8 @@ export type ExperienceItem = {
 const experience: ExperienceItem[] = [
   {
     role: "Where I Am Now",
-    company: "Current",
+    company: "Current Work",
+    number: 4,
     bullets: [
       "Freelancing for small businesses like Alicia Joy Design rebuilding their site with Next.js and TypeScript.",
       "Skillfully utilizing AI tools such as CoPilot and Claude, and exploring Notion with a certified admin.",
@@ -19,6 +21,7 @@ const experience: ExperienceItem[] = [
   {
     role: "My Return To Tech",
     company: "Internships",
+    number: 3,  
     bullets: [
       "At Skinstric.ai, I shipped a real-time AI skincare analysis platform with React, Next.js, and Typescript.",
       "I worked with Figma translating the designs into responsive UI/UX and key features assisting the pipeline.",
@@ -27,7 +30,8 @@ const experience: ExperienceItem[] = [
   },
   {
     role: "Then Continued",
-    company: "Other Jobs",
+    company: "Past Jobs",
+    number: 2,
     bullets: [
       "I worked on a sailboat named Renewal for two years teaching students technical nautical terms.",
       "Traveled to 35+ countries, attending conferences, counseling MKs, and exploring the world!",
@@ -38,6 +42,7 @@ const experience: ExperienceItem[] = [
   {
     role: "How My Journey Started",
     company: "Origins",
+    number: 1,
     bullets: [
       "As a high schooler, spent countless hours learning and building JavaScript projects on Khan Academy.",
       "Then worked under Udacity to pick up two nanodegrees in programming and business analytics.",

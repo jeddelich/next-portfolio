@@ -27,7 +27,7 @@ function Experience() {
                   className={`${styles.expTab} ${activePane === index ? styles.expTabActive : ""}`}
                   onClick={() => onPaneChange(index)}
                 >
-                  {pane.company}
+                 0{pane.number}. {pane.company}
                 </button>
               ))}
             </div>
