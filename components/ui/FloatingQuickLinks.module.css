@@ -62,8 +62,7 @@
   right: 1.5rem;
   bottom: 1.25rem;
   width: min(420px, calc(100vw - 2rem));
-  height: 60vh;
-  max-height: 60vh;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
@@ -163,7 +162,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #6f6f67;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .messageText {
