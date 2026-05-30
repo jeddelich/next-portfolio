@@ -1,3 +1,20 @@
+/* Centered session ended message */
+.sessionEnded {
+  width: 100%;
+  text-align: center;
+  color: #888;
+  font-size: 0.98rem;
+  font-weight: 500;
+  padding: 0.7rem 0 0.5rem 0;
+  letter-spacing: 0.01em;
+}
+/* Overlay for chatbot background */
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1199;
+  background: transparent;
+}
 .fabWrap {
   position: fixed;
   right: 1.5rem;
@@ -23,16 +40,17 @@
   background: color-mix(in srgb, var(--color-light) 90%, white 10%);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transform-origin: bottom center;
+  transform-origin: center;
   transition:
-    height 260ms ease,
     border-color 200ms ease,
-    box-shadow 220ms ease;
+    box-shadow 220ms ease,
+    transform 220ms ease;
 }
 
-.fabWrap:hover .menuShell,
-.fabWrap:focus-within .menuShell {
-  height: 266px;
+.menuButton {
+  appearance: none;
+  border-width: 1px;
+  cursor: pointer;
 }
 
 .triggerButton {
@@ -48,86 +66,200 @@
   display: grid;
   place-items: center;
   line-height: 1;
-  cursor: default;
-  transition: color 200ms ease;
+  transition: 300ms ease;
 }
-
-.linkPill {
-  position: absolute;
-  inset: 0;
-  padding: 0.6rem 0.45rem 3.9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.3rem;
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    opacity 160ms ease,
-    transform 220ms ease;
-}
-
-.linkPill::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 3.2rem;
-  width: 1px;
-  height: 20px;
-  background: rgba(36, 36, 36, 0.3);
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 120ms ease;
-}
-
-.fabWrap:hover .linkPill,
-.fabWrap:focus-within .linkPill {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.fabWrap:hover .linkPill::after,
-.fabWrap:focus-within .linkPill::after {
-  opacity: 1;
-  transition-delay: 260ms;
-}
-
-.linkIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  font-size: 1.3rem;
-  color: #5a5a52;
-  opacity: 0;
-  transform: translateY(6px) scale(0.94);
-  transition:
-    opacity 120ms ease,
-    transform 180ms ease,
-    color 180ms ease,
-    background-color 180ms ease;
-}
-
-.fabWrap:hover .linkIcon,
-.fabWrap:focus-within .linkIcon {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition-delay: 260ms, 260ms, 0ms, 0ms;
-}
-
-.linkIcon:hover,
-.linkIcon:focus-visible {
-  color: var(--color-primary);
-  background-color: color-mix(in srgb, var(--color-primary) 14%, transparent);
-  transform: scale(1.06);
+.triggerButton:hover,
+.triggerButton:focus-visible {
   outline: none;
 }
 
-:global(.dark-theme) .linkPill,
+.drawerPanel {
+  position: fixed;
+  z-index: 1200;
+  right: 1.5rem;
+  bottom: 1.25rem;
+  width: min(420px, calc(100vw - 2rem));
+  max-height: 80vh;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  border: 1px solid rgba(36, 36, 36, 0.16);
+  background: color-mix(in srgb, var(--color-light) 93%, white 7%);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.14);
+}
+
+.modalTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.drawerSubtitle {
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: #6a6a63;
+}
+
+.closeButton {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: #5a5a52;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  outline: none;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.emptyState {
+  color: #6a6a63;
+  font-size: 0.95rem;
+}
+
+.faqList {
+  margin: 0.35rem 0 0 1.05rem;
+  padding: 0;
+  list-style: disc;
+  color: #6a6a63;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.faqList li {
+  list-style: disc;
+}
+
+.message {
+  max-width: min(92%, 460px);
+  border-radius: 14px;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(36, 36, 36, 0.14);
+}
+
+.userMessage {
+  align-self: flex-end;
+  background: color-mix(in srgb, var(--color-primary) 18%, white 82%);
+}
+
+.aiMessage {
+  align-self: flex-start;
+  background: color-mix(in srgb, var(--color-light) 86%, white 14%);
+}
+
+
+.messageRolePill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #989898;
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  margin-bottom: 0.32rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  position: relative;
+  top: -0.7em;
+  z-index: 1;
+}
+
+.userMessage .messageRolePill {
+  background: var(--color-primary, #3b82f6);
+  color: #fff;
+}
+
+.aiMessage .messageRolePill {
+  background: #6f6f67;
+  color: #fff;
+}
+
+.messageText {
+  font-size: 0.95rem;
+  color: #2d2d2d;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chatForm {
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem 1rem;
+  border-top: 1px solid rgba(36, 36, 36, 0.14);
+}
+
+.chatInput {
+  width: 100%;
+  height: auto;
+  min-height: 42px;
+  border: 1px solid rgba(36, 36, 36, 0.26);
+  border-radius: 10px;
+  background: transparent;
+  color: #2d2d2d;
+  padding: 0.65rem 0.8rem;
+}
+
+.chatInput:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-primary) 45%, transparent);
+  outline-offset: 1px;
+}
+
+.sendButton {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.6rem 0.95rem;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.sendButton:hover,
+.sendButton:focus-visible {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  outline: none;
+}
+
+.sendButton:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  transform: none;
+}
+
 :global(.dark-theme) .menuShell {
   border-color: rgba(255, 255, 255, 0.26);
   background: color-mix(in srgb, var(--color-dark) 78%, black 22%);
@@ -136,13 +268,49 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-:global(.dark-theme) .linkIcon,
 :global(.dark-theme) .triggerButton {
   color: rgba(255, 255, 255, 0.92);
 }
 
-:global(.dark-theme) .linkPill::after {
-  background: rgba(255, 255, 255, 0.28);
+:global(.dark-theme) .drawerPanel {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: color-mix(in srgb, var(--color-dark) 90%, black 10%);
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+:global(.dark-theme) .drawerHeader,
+:global(.dark-theme) .chatForm {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+:global(.dark-theme) .modalTitle,
+:global(.dark-theme) .drawerSubtitle,
+:global(.dark-theme) .messageText,
+:global(.dark-theme) .chatInput,
+:global(.dark-theme) .closeButton {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+:global(.dark-theme) .chatInput {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+:global(.dark-theme) .emptyState,
+:global(.dark-theme) .faqList,
+:global(.dark-theme) .messageRole {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+:global(.dark-theme) .userMessage {
+  background: color-mix(in srgb, var(--color-primary) 28%, #282828 72%);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+:global(.dark-theme) .aiMessage {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -158,27 +326,28 @@
     height: 52px;
   }
 
-  .fabWrap:hover .menuShell,
-  .fabWrap:focus-within .menuShell {
-    height: 256px;
-  }
-
   .triggerButton {
     width: 100%;
     aspect-ratio: 1;
     font-size: 1.45rem;
   }
 
-  .linkPill {
-    padding-bottom: 3.6rem;
+  .drawerPanel {
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+    bottom: 0.75rem;
   }
 
-  .linkPill::after {
-    bottom: 3rem;
+  .drawerHeader {
+    padding: 0.8rem 0.9rem;
   }
 
-  .linkIcon {
-    width: 38px;
-    height: 38px;
+  .messages {
+    padding: 0.85rem;
+  }
+
+  .chatForm {
+    padding: 0.75rem 0.85rem 0.85rem;
   }
 }
