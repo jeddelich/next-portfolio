@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, useRef, type FormEvent } from "react";
+import ReactMarkdown from "react-markdown";
 import { useChat } from "@ai-sdk/react";
 import { SiOpenai } from "react-icons/si";
 
@@ -10,11 +11,27 @@ function FloatingQuickLinks() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
 
-const { messages, sendMessage, status, error } = useChat({
+const {
+  messages,
+  sendMessage,
+  status,
+  error,
+  reload,
+  setMessages,
+} = useChat({
   api: "/api/chat",
 });
 
+  // Ref for messages container
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
   // Status logging
+    // Scroll to bottom when messages change
+    useEffect(() => {
+      if (messagesEndRef.current) {
+        messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+      }
+    }, [messages, isOpen]);
   useEffect(() => {
     console.log("[status]", status);
   }, [status]);
@@ -63,6 +80,27 @@ const { messages, sendMessage, status, error } = useChat({
     return () => window.removeEventListener("keydown", handleEscape);
   }, [isOpen]);
 
+  // Track if session ended was shown
+  const sessionEnded =
+    messages.length > 0 &&
+    messages[messages.length - 1]?.role === "assistant" &&
+    messages[messages.length - 1]?.parts?.some(
+      (part) =>
+        part.type === "text" &&
+        /session ended|have a great day|goodbye|bye/i.test(part.text)
+    );
+
+  // Reset chat if closed after session ended
+  const handleClose = () => {
+    setIsOpen(false);
+    if (sessionEnded) {
+      // Reset messages to empty (start fresh)
+      setTimeout(() => {
+        setMessages([]);
+      }, 300); // Wait for close animation if any
+    }
+  };
+
   return (
     <>
       <div className={styles.fabWrap}>
@@ -80,11 +118,17 @@ const { messages, sendMessage, status, error } = useChat({
       </div>
 
       {isOpen ? (
-        <aside className={styles.drawerPanel}>
+        <>
+          <div
+            className={styles.drawerOverlay}
+            aria-label="Close chat overlay"
+            onClick={handleClose}
+          />
+          <aside className={styles.drawerPanel}>
           <div className={styles.drawerHeader}>
             <div>
               <h2 className={styles.modalTitle}>
-                How can my AI Assistant help you?
+                How can my AI assistant help you?
               </h2>
               <p className={styles.drawerSubtitle}>
                 Ask about my projects, experience, tech stack, etc.
@@ -94,50 +138,93 @@ const { messages, sendMessage, status, error } = useChat({
             <button
               type="button"
               className={styles.closeButton}
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
             >
               x
             </button>
           </div>
 
-          <div className={styles.messages}>
+          <div className={styles.messages} ref={messagesEndRef}>
             {messages.length === 0 ? (
               <>
                 <p className={styles.emptyState}>
-                  Some examples of FAQ:
+                  Some frequently asked questions:
                 </p>
                 <ul className={styles.faqList}>
-                  <li>&quot;Can I view your resume?&quot;</li>
-                  <li>&quot;Do you have LinkedIn?&quot;</li>
+                  <li>&quot;Can I see your resume?&quot;</li>
+                  <li>&quot;What ways can we connect?&quot;</li>
+                  <li>&quot;Are you currently available for work?&quot;</li>
+                  <li>&quot;How much does a website cost?&quot;</li>
                 </ul>
               </>
             ) : (
-              messages.map((message) => (
-                <article
-                  key={message.id}
-                  className={`${styles.message} ${
-                    message.role === "user"
-                      ? styles.userMessage
-                      : styles.aiMessage
-                  }`}
-                >
-                  <p className={styles.messageRole}>
-                    {message.role === "user" ? "Your Message" : "AI Assistant"}
-                  </p>
-
-                  <p className={styles.messageText}>
-                    {message.parts?.map((part, index) => {
-                      console.log("[part]", part);
-
-                      if (part.type === "text") {
-                        return <span key={index}>{part.text}</span>;
-                      }
-
-                      return null;
-                    })}
-                  </p>
-                </article>
-              ))
+              <>
+                {messages.map((message, idx) => {
+                  // Check if this is the last message and a session end
+                  const isLast = idx === messages.length - 1;
+                  const isSessionEnd =
+                    message.role === "assistant" &&
+                    message.parts?.some(
+                      (part) =>
+                        part.type === "text" &&
+                        /session ended|have a great day|goodbye|bye/i.test(part.text)
+                    );
+                  if (isLast && isSessionEnd) {
+                    // Don't render as a normal message bubble
+                    return null;
+                  }
+                  return (
+                    <article
+                      key={message.id}
+                      style={{ display: 'flex', flexDirection: 'column', alignItems: message.role === 'user' ? 'flex-end' : 'flex-start' }}
+                    >
+                      <span className={styles.messageRolePill}>
+                        {message.role === "user" ? "You" : "AI assistant"}
+                      </span>
+                      <div className={`${styles.message} ${
+                        message.role === "user"
+                          ? styles.userMessage
+                          : styles.aiMessage
+                      }`}>
+                        <p className={styles.messageText}>
+                          {message.parts?.map((part, index) => {
+                            if (part.type === "text") {
+                              if (message.role === "assistant") {
+                                return (
+                                  <ReactMarkdown key={index} components={{ a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" /> }}>
+                                    {part.text}
+                                  </ReactMarkdown>
+                                );
+                              }
+                              return <span key={index}>{part.text}</span>;
+                            }
+                            return null;
+                          })}
+                        </p>
+                      </div>
+                    </article>
+                  );
+                })}
+                {/* Show session ended at the bottom if last message is a session end */}
+                {(() => {
+                  const last = messages[messages.length - 1];
+                  if (
+                    last?.role === "assistant" &&
+                    last.parts?.some(
+                      (part) =>
+                        part.type === "text" &&
+                        /session ended|have a great day|goodbye|bye/i.test(part.text)
+                    )
+                  ) {
+                    return (
+                      <div className={styles.sessionEnded}>
+                        Session ended
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
+              </>
             )}
           </div>
 
@@ -158,6 +245,7 @@ const { messages, sendMessage, status, error } = useChat({
             </button>
           </form>
         </aside>
+        </>
       ) : null}
     </>
   );

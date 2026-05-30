@@ -1,3 +1,20 @@
+/* Centered session ended message */
+.sessionEnded {
+  width: 100%;
+  text-align: center;
+  color: #888;
+  font-size: 0.98rem;
+  font-weight: 500;
+  padding: 0.7rem 0 0.5rem 0;
+  letter-spacing: 0.01em;
+}
+/* Overlay for chatbot background */
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1199;
+  background: transparent;
+}
 .fabWrap {
   position: fixed;
   right: 1.5rem;
@@ -63,6 +80,7 @@
   bottom: 1.25rem;
   width: min(420px, calc(100vw - 2rem));
   max-height: 80vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
@@ -118,7 +136,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem;
   padding: 1rem;
 }
 
@@ -157,12 +175,34 @@
   background: color-mix(in srgb, var(--color-light) 86%, white 14%);
 }
 
-.messageRole {
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
+
+.messageRolePill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #6f6f67;
-  margin-bottom: 0.5rem;
+  color: #fff;
+  background: #989898;
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  margin-bottom: 0.32rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  position: relative;
+  top: -0.7em;
+  z-index: 1;
+}
+
+.userMessage .messageRolePill {
+  background: var(--color-primary, #3b82f6);
+  color: #fff;
+}
+
+.aiMessage .messageRolePill {
+  background: #6f6f67;
+  color: #fff;
 }
 
 .messageText {
@@ -297,8 +337,6 @@
     left: 0.75rem;
     width: auto;
     bottom: 0.75rem;
-    height: 60vh;
-    max-height: 60vh;
   }
 
   .drawerHeader {
