@@ -1,15 +1,15 @@
 import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
 
-export async function POST(req: Request) {
+export async function POST(req) {
   const body = await req.json();
 
   // 🔥 normalize UI messages → plain model messages
-  const messages = body.messages.map((m: any) => ({
+  const messages = body.messages.map((m) => ({
     role: m.role,
     content: m.parts
-      .filter((p: any) => p.type === "text")
-      .map((p: any) => p.text)
+      .filter((p) => p.type === "text")
+      .map((p) => p.text)
       .join(" "),
   }));
 
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
   - Node.js
   - OpenAI API
 
-  If they ask for my resume, share this link in markdown format: [jeddelich.com/Jed-Delich-Resume.pdf](https://jeddelich.com/Jed-Delich-Resume.pdf)
+  If they ask for my resume, share this link in markdown format: [jeddelich.com/Jed_Delich_Resume.pdf](https://jeddelich.com/Jed_Delich_Resume.pdf)
   If they ask for my LinkedIn, share this link in markdown format: [linkedin.com/in/jed-delich](https://www.linkedin.com/in/jed-delich/)
   If they ask for my GitHub, share this link in markdown format: [github.com/jeddelich](https://github.com/jeddelich).
   If they ask for my email, share this address in markdown format: [jeddelich@gmail.com](mailto:jeddelich@gmail.com)
