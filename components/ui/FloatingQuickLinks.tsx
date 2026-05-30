@@ -16,11 +16,8 @@ const {
   sendMessage,
   status,
   error,
-  reload,
   setMessages,
-} = useChat({
-  api: "/api/chat",
-});
+} = useChat();
 
   // Ref for messages container
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -186,21 +183,21 @@ const {
                           ? styles.userMessage
                           : styles.aiMessage
                       }`}>
-                        <p className={styles.messageText}>
-                          {message.parts?.map((part, index) => {
-                            if (part.type === "text") {
-                              if (message.role === "assistant") {
-                                return (
-                                  <ReactMarkdown key={index} components={{ a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" /> }}>
-                                    {part.text}
-                                  </ReactMarkdown>
-                                );
+                          <div className={styles.messageText}>
+                            {message.parts?.map((part, index) => {
+                              if (part.type === "text") {
+                                if (message.role === "assistant") {
+                                  return (
+                                    <ReactMarkdown key={index} components={{ a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" /> }}>
+                                      {part.text}
+                                    </ReactMarkdown>
+                                  );
+                                }
+                                return <span key={index}>{part.text}</span>;
                               }
-                              return <span key={index}>{part.text}</span>;
-                            }
-                            return null;
-                          })}
-                        </p>
+                              return null;
+                            })}
+                          </div>
                       </div>
                     </article>
                   );
