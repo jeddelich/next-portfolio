@@ -7,9 +7,13 @@ import { SiOpenai } from "react-icons/si";
 
 import styles from "./FloatingQuickLinks.module.css";
 
+import TypingIndicator from "./TypingIndicator";
+
+
 function FloatingQuickLinks() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [showTyping, setShowTyping] = useState(false);
 
 const {
   messages,
@@ -50,6 +54,7 @@ const {
     }
   }, [error]);
 
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -61,10 +66,19 @@ const {
     const nextInput = input;
     setInput("");
 
+    setShowTyping(true); // Show typing indicator immediately after submit
+
     console.log("[sending]", nextInput);
 
     await sendMessage({ text: nextInput });
   };
+
+  // Hide typing indicator when streaming starts
+  useEffect(() => {
+    if (status === "streaming") {
+      setShowTyping(false);
+    }
+  }, [status]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -77,15 +91,38 @@ const {
     return () => window.removeEventListener("keydown", handleEscape);
   }, [isOpen]);
 
-  // Track if session ended was shown
-  const sessionEnded =
-    messages.length > 0 &&
-    messages[messages.length - 1]?.role === "assistant" &&
-    messages[messages.length - 1]?.parts?.some(
-      (part) =>
-        part.type === "text" &&
-        /session ended|have a great day|goodbye|bye/i.test(part.text)
-    );
+
+  // Track if session ended was shown, with delay for session ended message
+  const [showSessionEnded, setShowSessionEnded] = useState(false);
+
+  useEffect(() => {
+    const last = messages[messages.length - 1];
+    const isSessionEnd =
+      last?.role === "assistant" &&
+      last.parts?.some(
+        (part) =>
+          part.type === "text" &&
+          /session ended|have a great day|goodbye|bye/i.test(part.text)
+      );
+    if (isSessionEnd) {
+      setShowSessionEnded(false);
+      const timeout = setTimeout(() => {
+        setShowSessionEnded(true);
+      }, 1500); // 1.5s delay
+      return () => clearTimeout(timeout);
+    } else {
+      setShowSessionEnded(false);
+    }
+  }, [messages]);
+
+  // Scroll to bottom when session ended message appears
+  useEffect(() => {
+    if (showSessionEnded && messagesEndRef.current) {
+      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+    }
+  }, [showSessionEnded]);
+
+  const sessionEnded = showSessionEnded;
 
   // Reset chat if closed after session ended
   const handleClose = () => {
@@ -156,74 +193,50 @@ const {
               </>
             ) : (
               <>
-                {messages.map((message, idx) => {
-                  // Check if this is the last message and a session end
-                  const isLast = idx === messages.length - 1;
-                  const isSessionEnd =
-                    message.role === "assistant" &&
-                    message.parts?.some(
-                      (part) =>
-                        part.type === "text" &&
-                        /session ended|have a great day|goodbye|bye/i.test(part.text)
-                    );
-                  if (isLast && isSessionEnd) {
-                    // Don't render as a normal message bubble
-                    return null;
-                  }
-                  return (
-                    <article
-                      key={message.id}
-                      style={{ display: 'flex', flexDirection: 'column', alignItems: message.role === 'user' ? 'flex-end' : 'flex-start' }}
-                    >
-                      <span className={styles.messageRolePill}>
-                        {message.role === "user" ? "You" : "AI assistant"}
-                      </span>
-                      <div className={`${styles.message} ${
-                        message.role === "user"
-                          ? styles.userMessage
-                          : styles.aiMessage
-                      }`}>
-                          <div className={styles.messageText}>
-                            {message.parts?.map((part, index) => {
-                              if (part.type === "text") {
-                                if (message.role === "assistant") {
-                                  return (
-                                    <ReactMarkdown key={index} components={{ a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" /> }}>
-                                      {part.text}
-                                    </ReactMarkdown>
-                                  );
-                                }
-                                return <span key={index}>{part.text}</span>;
+                {messages.map((message, idx) => (
+                  <article
+                    key={message.id}
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: message.role === 'user' ? 'flex-end' : 'flex-start' }}
+                  >
+                    <span className={styles.messageRolePill}>
+                      {message.role === "user" ? "You" : "AI assistant"}
+                    </span>
+                    <div className={`${styles.message} ${
+                      message.role === "user"
+                        ? styles.userMessage
+                        : styles.aiMessage
+                    }`}>
+                        <div className={styles.messageText}>
+                          {message.parts?.map((part, index) => {
+                            if (part.type === "text") {
+                              if (message.role === "assistant") {
+                                return (
+                                  <ReactMarkdown key={index} components={{ a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" /> }}>
+                                    {part.text}
+                                  </ReactMarkdown>
+                                );
                               }
-                              return null;
-                            })}
-                          </div>
-                      </div>
-                    </article>
-                  );
-                })}
-                {/* Show session ended at the bottom if last message is a session end */}
-                {(() => {
-                  const last = messages[messages.length - 1];
-                  if (
-                    last?.role === "assistant" &&
-                    last.parts?.some(
-                      (part) =>
-                        part.type === "text" &&
-                        /session ended|have a great day|goodbye|bye/i.test(part.text)
-                    )
-                  ) {
-                    return (
-                      <div className={styles.sessionEnded}>
-                        Session ended
-                      </div>
-                    );
-                  }
-                  return null;
-                })()}
+                              return <span key={index}>{part.text}</span>;
+                            }
+                            return null;
+                          })}
+                        </div>
+                    </div>
+                  </article>
+                ))}
+                {/* Show session ended at the bottom after a delay if last message is a session end */}
+                {showSessionEnded && (
+                  <div className={styles.sessionEnded}>
+                    Session ended
+                  </div>
+                )}
               </>
             )}
           </div>
+
+
+          {/* Typing indicator for AI assistant (shows after submit, hides when streaming starts) */}
+          {showTyping && <TypingIndicator />}
 
           <form className={styles.chatForm} onSubmit={handleSubmit}>
             <input
