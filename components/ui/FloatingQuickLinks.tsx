@@ -7,9 +7,13 @@ import { SiOpenai } from "react-icons/si";
 
 import styles from "./FloatingQuickLinks.module.css";
 
+import TypingIndicator from "./TypingIndicator";
+
+
 function FloatingQuickLinks() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [showTyping, setShowTyping] = useState(false);
 
 const {
   messages,
@@ -50,6 +54,7 @@ const {
     }
   }, [error]);
 
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -61,10 +66,19 @@ const {
     const nextInput = input;
     setInput("");
 
+    setShowTyping(true); // Show typing indicator immediately after submit
+
     console.log("[sending]", nextInput);
 
     await sendMessage({ text: nextInput });
   };
+
+  // Hide typing indicator when streaming starts
+  useEffect(() => {
+    if (status === "streaming") {
+      setShowTyping(false);
+    }
+  }, [status]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -224,6 +238,10 @@ const {
               </>
             )}
           </div>
+
+
+          {/* Typing indicator for AI assistant (shows after submit, hides when streaming starts) */}
+          {showTyping && <TypingIndicator />}
 
           <form className={styles.chatForm} onSubmit={handleSubmit}>
             <input
