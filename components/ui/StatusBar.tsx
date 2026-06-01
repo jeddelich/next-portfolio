@@ -4,7 +4,7 @@ export default function StatusBar() {
   return (
     <a href="#contact" className={`${styles.heroStatusBar} ${styles.heroStatusBarFullWidth}`}>
       <span className={styles.heroStatusDot} aria-hidden="true"></span>
-      <span>Currently open to new work opportunities! Let's connect.</span>
+      <span className={styles.heroStatusText}>Available for new work opportunities. Interested? Let's connect.</span>
     </a>
   );
 }

@@ -4,6 +4,13 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .landingPage {
+    height: auto;
+    min-height: 100dvh;
+  }
+}
+
 .landingPage::before{
   content: "";
   width: 100%;
