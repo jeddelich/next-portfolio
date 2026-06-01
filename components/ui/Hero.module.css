@@ -1,11 +1,11 @@
 @keyframes fade-in-left {
   from {
     opacity: 0;
-    transform: translate(-55%, -50%);
+    transform: translateX(-28px);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateX(0);
   }
 }
 
@@ -41,10 +41,7 @@
   width: 100%;
   max-width: 1180px;
   padding: 0 48px;
-  opacity: 0;
   visibility: visible;
-  transition: all 600ms 600ms;
-  animation: fade-in-left 1s 500ms ease forwards;
   z-index: 1;
   display: flex;
 }
@@ -55,6 +52,8 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+  opacity: 0;
+  animation: fade-in-left 800ms 300ms ease forwards;
 }
 
 .headerIntro {
@@ -71,6 +70,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  opacity: 0;
+  animation: fade-in-left 800ms 500ms ease forwards;
 }
 
 .featuredProjectEyebrow {
