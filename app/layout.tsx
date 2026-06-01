@@ -6,6 +6,7 @@ import "./globals.css";
 // Layout
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import StatusBar from "@/components/ui/StatusBar";
 
 // Contexts
 import { ThemeProvider } from "../contexts/ThemeContext";
@@ -81,6 +82,7 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <Navbar />
+          <StatusBar />
           {children}
           <Footer />
         </ThemeProvider>

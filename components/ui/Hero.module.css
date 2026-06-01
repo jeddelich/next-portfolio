@@ -69,7 +69,7 @@
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   opacity: 0;
   animation: fade-in-left 800ms 500ms ease forwards;
 }
@@ -102,7 +102,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 80%;
+  width: 75%;
 }
 
 .featuredProjectMedia {
@@ -130,7 +130,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
 }
 
 .headerContent > *:not(.heroGridBg) {
@@ -172,6 +171,7 @@
   font-size: 20px;
   max-width: 350px;
   color: #5a5a52;
+  margin-top: 1rem;
 }
 
 .socialList {
@@ -214,34 +214,8 @@
     padding: 0 40px;
   }
 
-  .headerContent {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-  }
-
-  .featuredProject {
-    display: block;
-    width: min(42vw, 420px);
-  }
-
   .heroTitle {
     font-size: 56px;
-  }
-
-  .headerMeta {
-    width: min(360px, 45%);
-    align-items: flex-start;
-    margin-bottom: 1rem;
-  }
-
-  .headerPara {
-    margin-top: 0;
-    font-size: 18px;
-    max-width: 100%;
   }
 
   .socialList {

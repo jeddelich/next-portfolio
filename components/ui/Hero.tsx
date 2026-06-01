@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { MdComputer } from "react-icons/md";
-import StatusBar from "@/components/ui/StatusBar";
 import styles from "./Hero.module.css";
 
 function Hero() {
@@ -21,7 +20,6 @@ function Hero() {
               <div className={styles.heroTitle}>Engineer</div>
             </div>
             <div className={styles.headerMeta}>
-              <StatusBar />
               <p className={styles.headerPara}>
                 I build optimized, accessible, user experiences with React,
                 Next.js, and TypeScript — turning complex product requirements

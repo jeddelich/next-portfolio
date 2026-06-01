@@ -1,12 +1,10 @@
 import styles from "./StatusBar.module.css";
 
-function StatusBar() {
+export default function StatusBar() {
   return (
-    <div className={styles.heroStatusBar}>
+    <a href="#contact" className={`${styles.heroStatusBar} ${styles.heroStatusBarFullWidth}`}>
       <span className={styles.heroStatusDot} aria-hidden="true"></span>
-      <span>Available for new projects · Summer 2026</span>
-    </div>
+      <span>Currently open to new work opportunities! Let's connect.</span>
+    </a>
   );
 }
-
-export default StatusBar;
