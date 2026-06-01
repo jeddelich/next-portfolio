@@ -27,7 +27,7 @@
 
 .nav {
   position: fixed;
-  top: 0;
+  top: 32px;
   left: 0;
   right: 0;
   display: flex;
@@ -296,7 +296,7 @@
 
 .mobileMenuOverlay {
   position: fixed;
-  top: 80px;
+  top: 116px;
   right: 0;
   bottom: 0;
   left: 0;
