@@ -193,7 +193,7 @@ const {
               </>
             ) : (
               <>
-                {messages.map((message, idx) => (
+                {messages.map((message) => (
                   <article
                     key={message.id}
                     style={{ display: 'flex', flexDirection: 'column', alignItems: message.role === 'user' ? 'flex-end' : 'flex-start' }}
