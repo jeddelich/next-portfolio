@@ -50,16 +50,27 @@
 }
 
 .headerContent {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.headerIntro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: min(100%, 560px);
+  width: fit-content;
 }
 
+
 .featuredProject {
-  display: none;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .featuredProjectEyebrow {
@@ -68,6 +79,12 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #6f6b5f;
+}
+
+.featuredProjectEyebrowIcon {
+  margin-left: 0.45rem;
+  font-size: 1rem;
+  vertical-align: text-top;
 }
 
 .featuredProjectTitle {
@@ -79,9 +96,17 @@
   color: var(--color-dark);
 }
 
+.featuredProjectDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+}
+
 .featuredProjectMedia {
   position: relative;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 25%);
@@ -221,17 +246,6 @@
   .socialList {
     margin-top: 1rem;
     margin-bottom: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .headerContent {
-    width: min(100%, 520px);
-  }
-
-  .featuredProject {
-    display: block;
-    width: min(38vw, 500px);
   }
 }
 
