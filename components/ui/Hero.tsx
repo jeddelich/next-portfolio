@@ -4,9 +4,9 @@ import styles from "./Hero.module.css";
 function Hero() {
   return (
     <div className={styles.hero}>
+    <div className={styles.heroGridBg} aria-hidden="true"></div>
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.heroGridBg} aria-hidden="true"></div>
           <div className={styles.heroTitles}>
             <div className={styles.heroTitle}>Jed Delich,</div>
             <div className={`orange ${styles.heroTitle}`} style={{ fontStyle: "italic" }}>
