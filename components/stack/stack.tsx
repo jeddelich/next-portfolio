@@ -1,5 +1,6 @@
 
 import SectionHeader from "@/components/ui/SectionHeader";
+import techStack from "@/data/techStack";
 import styles from "./stack.module.css";
 
 function Stack() {
@@ -20,104 +21,15 @@ function Stack() {
             <button className={styles.stackChip}>Tools</button>
           </div>
           <div className={styles.stackGrid}>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>R</div>
-              <div>
-                <div className={styles.stackName}>React</div>
-                <div className={styles.stackCat}>UI library</div>
+            {techStack.map((item) => (
+              <div key={item.name} className={styles.stackCell}>
+                <div className={styles.stackIcon}>{item.icon}</div>
+                <div>
+                  <div className={styles.stackName}>{item.name}</div>
+                  <div className={styles.stackCat}>{item.category}</div>
+                </div>
               </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>N</div>
-              <div>
-                <div className={styles.stackName}>Next.js</div>
-                <div className={styles.stackCat}>Full-stack React</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>TS</div>
-              <div>
-                <div className={styles.stackName}>TypeScript</div>
-                <div className={styles.stackCat}>Typed JavaScript</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>JS</div>
-              <div>
-                <div className={styles.stackName}>JavaScript</div>
-                <div className={styles.stackCat}>ES2024+</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>tw</div>
-              <div>
-                <div className={styles.stackName}>Tailwind CSS</div>
-                <div className={styles.stackCat}>Utility-first</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>#</div>
-              <div>
-                <div className={styles.stackName}>CSS</div>
-                <div className={styles.stackCat}>Modern CSS</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>M</div>
-              <div>
-                <div className={styles.stackName}>Material UI</div>
-                <div className={styles.stackCat}>Component library</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>F</div>
-              <div>
-                <div className={styles.stackName}>Firebase</div>
-                <div className={styles.stackCat}>Auth &amp; data</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>$</div>
-              <div>
-                <div className={styles.stackName}>Stripe</div>
-                <div className={styles.stackCat}>Payments</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>Z</div>
-              <div>
-                <div className={styles.stackName}>Zustand</div>
-                <div className={styles.stackCat}>State management</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>J</div>
-              <div>
-                <div className={styles.stackName}>Jest</div>
-                <div className={styles.stackCat}>Testing</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>V</div>
-              <div>
-                <div className={styles.stackName}>Vercel</div>
-                <div className={styles.stackCat}>Hosting</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>Fi</div>
-              <div>
-                <div className={styles.stackName}>Figma</div>
-                <div className={styles.stackCat}>Design handoff</div>
-              </div>
-            </div>
-            <div className={styles.stackCell}>
-              <div className={styles.stackIcon}>g</div>
-              <div>
-                <div className={styles.stackName}>Git</div>
-                <div className={styles.stackCat}>Version control</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
