@@ -31,50 +31,50 @@ const techStack: TechStackItem[] = [
     category: "Utility-first",
   },
   {
-    icon: "#",
-    name: "CSS",
-    category: "Modern CSS",
-  },
-  {
-    icon: "M",
-    name: "Material UI",
-    category: "Component library",
-  },
-  {
-    icon: "F",
-    name: "Firebase",
-    category: "Auth & data",
-  },
-  {
-    icon: "$",
-    name: "Stripe",
-    category: "Payments",
-  },
-  {
-    icon: "Z",
-    name: "Zustand",
-    category: "State management",
-  },
+      icon: "g",
+  name: "Git Environment",
+  category: "Version control",
+},
   {
     icon: "J",
     name: "Jest",
     category: "Testing",
   },
   {
-    icon: "V",
-    name: "Vercel",
-    category: "Hosting",
+      icon: "F",
+    name: "Firebase",
+    category: "Auth & data",
+},
+{
+  icon: "Fi",
+  name: "Figma",
+  category: "Design handoff",
+},  
+{
+    icon: "$",
+    name: "Stripe",
+    category: "Payments",
   },
   {
-    icon: "Fi",
-    name: "Figma",
-    category: "Design handoff",
-  },
+      icon: "V",
+      name: "Vercel",
+      category: "Hosting",
+    },
   {
-    icon: "g",
-    name: "Git",
-    category: "Version control",
+    icon: "Z",
+    name: "Zustand",
+    category: "State management",
   },
+    {
+      icon: "#",
+      name: "CSS",
+      category: "Modern CSS",
+    },  
+{
+  icon: "M",
+  name: "Material UI",
+  category: "Component library",
+},
 ];
 
 export default techStack;
