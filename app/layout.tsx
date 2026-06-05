@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Jed Delich | Frontend Engineer",
     description: SITE_DESCRIPTION,
     url: "https://jeddelich.com",
-    siteName: "Jed Delich Portfolio",
+    siteName: "Frontend Software Engineer Portfolio",
     images: [
       {
         url: "https://jeddelich.com/my-portfolio.png",
