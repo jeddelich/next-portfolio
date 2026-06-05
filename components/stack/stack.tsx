@@ -91,6 +91,20 @@ function Stack() {
               </div>
             </div>
             <div className={styles.stackCell}>
+              <div className={styles.stackIcon}>J</div>
+              <div>
+                <div className={styles.stackName}>Jest</div>
+                <div className={styles.stackCat}>Testing</div>
+              </div>
+            </div>
+            <div className={styles.stackCell}>
+              <div className={styles.stackIcon}>V</div>
+              <div>
+                <div className={styles.stackName}>Vercel</div>
+                <div className={styles.stackCat}>Hosting</div>
+              </div>
+            </div>
+            <div className={styles.stackCell}>
               <div className={styles.stackIcon}>Fi</div>
               <div>
                 <div className={styles.stackName}>Figma</div>
