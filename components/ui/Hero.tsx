@@ -39,11 +39,11 @@ function Hero() {
                 className={styles.featuredProjectEyebrowIcon}
                 aria-hidden="true"
               />
+              
             </p>
-            <h2 className={styles.featuredProjectTitle}>Alicia Joy Design</h2>
             <div className={styles.featuredProjectMedia}>
               <Image
-                src="/alicia_joy_design_ss.png"
+                src="/website_heros/alicia_joy_design.png"
                 alt="Alicia Joy Design project preview"
                 width={1893}
                 height={1076}

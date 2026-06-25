@@ -50,7 +50,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding-left: 2rem;
+  align-items: flex-start;
   width: 50%;
   opacity: 0;
   animation: fade-in-left 800ms 300ms ease forwards;
@@ -102,7 +103,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 75%;
+  width: 100%;
 }
 
 .featuredProjectMedia {
@@ -225,10 +226,6 @@
 
   .headerPara {
     font-size: 18px;
-  }
-
-  .featuredProjectDescription {
-    width: 80%;
   }
 }
 
