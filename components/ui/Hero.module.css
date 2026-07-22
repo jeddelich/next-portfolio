@@ -290,6 +290,7 @@
   .headerContent {
     align-items: center;
     animation-delay: 200ms;
+    padding-left: 0;
   }
 
   .headerIntro {
