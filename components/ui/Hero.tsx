@@ -43,8 +43,8 @@ function Hero() {
             </p>
             <div className={styles.featuredProjectMedia}>
               <Image
-                src="/website_heros/alicia_joy_design.png"
-                alt="Alicia Joy Design project preview"
+                src="/website_heros/beacon_growth_partners.png"
+                alt="Beacon Growth Partners project preview"
                 width={1893}
                 height={1076}
                 priority
