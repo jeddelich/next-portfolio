@@ -31,11 +31,11 @@ function Hero() {
         <aside className={styles.featuredProject} aria-label="Current project">
           <div className={styles.featuredProjectDescription}>
             <p className={styles.featuredProjectEyebrow}>
-              current build in progress
-              <MdComputer
+              current client: <br /><strong style={{ fontSize: "1.25rem" }}>Beacon Growth Partners</strong>
+              {/* <MdComputer
                 className={styles.featuredProjectEyebrowIcon}
                 aria-hidden="true"
-              />
+              /> */}
             </p>
             <div className={styles.featuredProjectMedia}>
               <Image
@@ -47,6 +47,16 @@ function Hero() {
                 className={styles.featuredProjectImage}
               />
             </div>
+            <ul
+              className={styles.featuredProjectStack}
+              aria-label="Beacon Growth Partners tech stack"
+            >
+              <li className={styles.featuredProjectStackItem}>WordPress (CMS)</li>
+              <li className={styles.featuredProjectStackItem}>SiteGround</li>
+              <li className={styles.featuredProjectStackItem}>Cloudfare</li>
+              <li className={styles.featuredProjectStackItem}>Custom CSS</li>
+            </ul>
+              
           </div>
         </aside>
       </header>

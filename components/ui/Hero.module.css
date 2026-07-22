@@ -85,7 +85,7 @@
 
 .featuredProjectEyebrowIcon {
   margin-left: 0.45rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   vertical-align: text-top;
 }
 
@@ -119,6 +119,29 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+.featuredProjectStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featuredProjectStackItem {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--color-light);
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .heroTitles {
@@ -207,6 +230,12 @@
 :global(.dark-theme) .headerPara,
 :global(.dark-theme) .socialLink {
   color: white;
+}
+
+:global(.dark-theme) .featuredProjectStackItem {
+  background: var(--color-dark);
+  color: var(--color-light);
+  border-color: var(--color-light);
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
@@ -313,6 +342,10 @@
   .featuredProjectEyebrow,
   .featuredProjectTitle {
     text-align: center;
+  }
+
+  .featuredProjectStack {
+    justify-content: center;
   }
 }
 
