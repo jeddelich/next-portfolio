@@ -25,7 +25,7 @@ function LandingClientShell({ children }: LandingClientShellProps) {
       className={`${styles.landingPage} ${darkMode ? styles.landingPageDark : ""} ${hasScrolled ? styles.landingPageScrolled : ""}`}
     >
       <>
-        <ScrollDown />
+        {/* <ScrollDown /> */}
         <FloatingQuickLinks />
         {children}
       </>

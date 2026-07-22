@@ -28,18 +28,14 @@ function Hero() {
             </div>
           </div>
         </div>
-          <aside
-            className={styles.featuredProject}
-            aria-label="Current project"
-          >
-        <div className={styles.featuredProjectDescription}>
+        <aside className={styles.featuredProject} aria-label="Current project">
+          <div className={styles.featuredProjectDescription}>
             <p className={styles.featuredProjectEyebrow}>
               current build in progress
               <MdComputer
                 className={styles.featuredProjectEyebrowIcon}
                 aria-hidden="true"
               />
-              
             </p>
             <div className={styles.featuredProjectMedia}>
               <Image
@@ -51,8 +47,8 @@ function Hero() {
                 className={styles.featuredProjectImage}
               />
             </div>
-        </div>
-          </aside>
+          </div>
+        </aside>
       </header>
     </div>
   );
