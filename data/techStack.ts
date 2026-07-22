@@ -61,6 +61,16 @@ const techStack: TechStackItem[] = [
       category: "Hosting",
     },
   {
+    icon: "WP",
+    name: "WordPress",
+    category: "CMS",
+  },
+  {
+    icon: "SG",
+    name: "SiteGround",
+    category: "Hosting",
+  },
+  {
     icon: "Z",
     name: "Zustand",
     category: "State management",
@@ -75,6 +85,7 @@ const techStack: TechStackItem[] = [
   name: "Material UI",
   category: "Component library",
 },
+
 ];
 
 export default techStack;
