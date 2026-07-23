@@ -3,7 +3,7 @@ import styles from "./contact.module.css";
 
 function contact() {
   return (
-    <section className={styles.contact} id="contact">
+    <section className={styles.contact} id="connect">
       <div className={`container ${styles.container}`}>
         <h2 className={styles.contactTitle}>
           Let&apos;s build something <em>worth shipping</em>.

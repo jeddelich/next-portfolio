@@ -7,7 +7,7 @@ function Stack() {
   return (
     <section
       className={`section fade-in visible ${styles.stackSection}`}
-      id="stack"
+      id="tech"
     >
       <div className="container">
         <div className="row">

@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { MdComputer } from "react-icons/md";
 import styles from "./Hero.module.css";
 
 function Hero() {
   return (
-    <div className={styles.hero}>
+    <div id="top" className={styles.hero}>
       <div className={styles.heroGridBg} aria-hidden="true"></div>
       <header className={styles.header}>
         <div className={styles.headerContent}>

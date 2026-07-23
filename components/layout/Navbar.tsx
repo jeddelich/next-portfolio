@@ -39,7 +39,7 @@ function Navbar() {
     toggleTheme();
     themeToggleTimeoutRef.current = setTimeout(() => {
       themeToggleTimeoutRef.current = null;
-    }, 500);
+    }, 300);
   };
 
   const handleContactClick = () => {
@@ -100,42 +100,42 @@ function Navbar() {
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
             <span className={styles.numberedNavLinkNum}>01.</span>
-            <span>About</span>
+            <span>About Me</span>
           </a>
         </li>
         <li className={styles.navLink}>
           <a
-            href="#stack"
+            href="#tech"
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
             <span className={styles.numberedNavLinkNum}>02.</span>
-            <span>Stack</span>
+            <span>Tech Used</span>
           </a>
         </li>
         <li className={styles.navLink}>
           <a
-            href="#projects"
+            href="#clients"
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
             <span className={styles.numberedNavLinkNum}>03.</span>
-            <span>Work</span>
+            <span>Past Clients</span>
           </a>
         </li>
         <li className={styles.navLink}>
           <a
-            href="#experience"
+            href="#resume"
             className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
           >
             <span className={styles.numberedNavLinkNum}>04.</span>
-            <span>Experience</span>
+            <span>My Résumé</span>
           </a>
         </li>
         <li className={styles.navLink}>
           <a
-            href="#contact"
+            href="#connect"
             className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
           >
-            <span>Get in touch ↗</span>
+            <span>Let&apos;s Connect ↗</span>
           </a>
         </li>
         <button
@@ -208,41 +208,41 @@ function Navbar() {
               </li>
               <li>
                 <a
-                  href="#tech-stack"
+                  href="#tech"
                   className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
                   onClick={handleLinkClick}
                 >
                   <span className={styles.numberedNavLinkNum}>02.</span>
-                  <span>Stack</span>
+                  <span>Tech Used</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="#projects"
+                  href="#clients"
                   className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
                   onClick={handleLinkClick}
                 >
                   <span className={styles.numberedNavLinkNum}>03.</span>
-                  <span>Work</span>
+                  <span>Past Clients</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="#experience"
+                  href="#resume"
                   className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
                   onClick={handleLinkClick}
                 >
                   <span className={styles.numberedNavLinkNum}>04.</span>
-                  <span>Experience</span>
+                  <span>My Résumé</span>
                 </a>
               </li>
               <li className={styles.mobileMenuCta}>
                 <a
-                  href="#contact"
+                  href="#connect"
                   className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
                   onClick={handleContactClick}
                 >
-                  <span>Get in touch ↗</span>
+                  <span>Let&apos;s Connect ↗</span>
                 </a>
               </li>
             </ul>

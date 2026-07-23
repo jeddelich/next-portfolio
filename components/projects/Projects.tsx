@@ -11,11 +11,11 @@ function Projects() {
   const [projectsDisplayed, setProjectsDisplayed] = useState<number>(2);
 
   return (
-    <section id="projects" className={styles.projects}>
+    <section id="clients" className={styles.projects}>
       <div className="container">
         <div className="row">
           <SectionHeader
-            eyebrow="03 — Selected Work"
+            eyebrow="03 — Clients"
             title="Things I've built."
           />
           <ul className={styles.project__list}>

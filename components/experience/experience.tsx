@@ -12,11 +12,11 @@ function Experience() {
   return (
     <section
       className={`section fade-in visible ${styles.experienceSection}`}
-      id="experience"
+      id="resume"
     >
       <div className="container">
         <div className="row">
-          <SectionHeader eyebrow="04 — Experience" title="Where I've worked." />
+          <SectionHeader eyebrow="04 — Résumé" title="Where I've worked." />
           <div className={styles.expList}>
             <div className={styles.expTabs} role="tablist">
               {panes.map((pane, index) => (
