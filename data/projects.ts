@@ -9,7 +9,7 @@ const projects: Project[] = [
     title: "Alicia Joy Design",
     subtitle: ["Next.js", "React", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5", "Figma", "Git", "Playwright"],
     description:
-      "Finished in July 2026, this modern portfolio website features 24 clients (both real and conceptual), dynamic galleries, multiple carousels (for logos, testimonials, etc), offered packages with FAQs, and a contact inquiry form.",
+      "Finished in July 2026, this modern portfolio website features 24 clients (both real and conceptual), dynamic galleries (100+ displayed images), multiple carousels (for logos, testimonials, etc), available price packages with FAQs, and a contact inquiry form for those interested.",
     githubLink: {
       href: "https://github.com/jeddelich/AliciaJoyDesign",
       text: "GitHub Repo",
@@ -22,12 +22,12 @@ const projects: Project[] = [
   {
     img: {
       src: "/projects/skinstric.ai-ss.png",
-      alt: "Skinstric AI",
+      alt: "Skinstric.ai",
     },
-    title: "Skinstric AI",
-    subtitle: ["Next.js", "React", "TypeScript", "JavaScript", "CSS3", "HTML5", "Figma", "Git"],
+    title: "Skinstric",
+    subtitle: ["Next.js", "React", "TypeScript", "JavaScript", "CSS3", "HTML5", "Figma", "Git", "Node.js"],
     description:
-      "Frontend Software Engineer (Intern), remote, March 2026. Shipped 5 responsive pages for a real-time AI skin analysis platform, built 10+ reusable components, engineered a validated multi-step form flow, and implemented camera capture and file upload for client-side image processing.",
+      "As part of an internship role in March 2026, I shipped 5 responsive pages for a real-time AI skin analysis platform, built 10+ reusable components, engineered a multi-step form flow, and provided file upload/camera capture functionality for mockup processing and future pipeline.",
     githubLink: {
       href: "https://github.com/jeddelich/skinstric.ai",
       text: "GitHub Repo",
