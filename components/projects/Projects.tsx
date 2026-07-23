@@ -28,12 +28,12 @@ function Projects() {
               />
             ))}
           </ul>
-          {projectsDisplayed < projects.length && (
+          {/* {projectsDisplayed < projects.length && (
             <Button
               text={`Explore More`}
               onClick={() => setProjectsDisplayed(projectsDisplayed + 2)}
             />
-          )}
+          )} */}
         </div>
       </div>
     </section>

@@ -3,6 +3,24 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     img: {
+      src: "/alicia_joy_design_ss.png",
+      alt: "AliciaJoyDesign",
+    },
+    title: "Alicia Joy Design",
+    subtitle: ["Next.js", "React", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5", "Figma", "Git", "Playwright"],
+    description:
+      "Finished in July 2026, this modern portfolio website features 24 clients (both real and conceptual), dynamic galleries, multiple carousels (for logos, testimonials, etc), offered packages with FAQs, and a contact inquiry form.",
+    githubLink: {
+      href: "https://github.com/jeddelich/AliciaJoyDesign",
+      text: "GitHub Repo",
+    },
+    vercelLink: {
+      href: "https://aliciajoydesign.studio/",
+      text: "Live Demo",
+    },
+  },
+  {
+    img: {
       src: "/projects/skinstric.ai-ss.png",
       alt: "Skinstric AI",
     },
