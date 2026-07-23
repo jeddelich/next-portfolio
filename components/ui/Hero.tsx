@@ -15,15 +15,13 @@ function Hero() {
                 className={`orange ${styles.heroTitle}`}
                 style={{ fontStyle: "italic" }}
               >
-                Frontend
+                Software
               </div>
-              <div className={styles.heroTitle}>Engineer</div>
+              <div className={styles.heroTitle}>Developer</div>
             </div>
             <div className={styles.headerMeta}>
               <p className={styles.headerPara}>
-                I build optimized, accessible, user experiences with React,
-                Next.js, and TypeScript — turning complex product requirements
-                into intuitive interfaces.
+                I build custom, optimized websites for businesses wanting to grow their online presence by providing their clients with the best user experience.
               </p>
             </div>
           </div>
