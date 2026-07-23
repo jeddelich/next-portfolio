@@ -12,7 +12,6 @@ function ExperiencePane({ role, company, period, bullets }: ExperiencePaneProps)
     <div className={styles.expPane}>
       <h3 className={styles.expRole}>
         {role}
-        {company && <span className={styles.at}> @ {company}</span>}
       </h3>
       {period && <div className={styles.expMeta}>{period}</div>}
       <ul className={styles.expBullets}>
