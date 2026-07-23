@@ -83,6 +83,10 @@
   color: #6f6b5f;
 }
 
+:global(.dark-theme) .featuredProjectEyebrow {
+  color: white;
+}
+
 .featuredProjectEyebrowIcon {
   margin-left: 0.45rem;
   font-size: 1.25rem;
@@ -115,10 +119,33 @@
   height: fit-content;
 }
 
+.featuredProjectHoverText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+  z-index: 2;
+  line-height: normal;
+}
+
+.featuredProjectMedia:hover .featuredProjectImage {
+  filter: brightness(0.75) blur(2px);
+}
+
+.featuredProjectMedia:hover .featuredProjectHoverText {
+  display: block;
+}
+
 .featuredProjectImage {
   width: 100%;
   height: auto;
   display: block;
+      transition: all 0.2s ease-in-out;
 }
 
 .featuredProjectStack {
@@ -368,7 +395,7 @@
     width: 100%;
   }
 
-  .featuredProjectTitle {
-    font-size: clamp(1.75rem, 9vw, 2.2rem);
+  .featuredProjectHoverText{
+    font-size: 1.5rem;
   }
 }
