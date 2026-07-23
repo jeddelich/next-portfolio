@@ -11,7 +11,7 @@ function Stack() {
     >
       <div className="container">
         <div className="row">
-          <SectionHeader eyebrow="02 — Stack" title="Tools I reach for daily." />
+          <SectionHeader eyebrow="02 — Tech Used" title="Tools I'm Experienced In." />
           <div className={styles.stackCats}>
             <button className={`${styles.stackChip} ${styles.stackChipActive}`}>All</button>
             <button className={styles.stackChip}>Frameworks</button>

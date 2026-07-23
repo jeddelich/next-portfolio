@@ -15,8 +15,8 @@ function Projects() {
       <div className="container">
         <div className="row">
           <SectionHeader
-            eyebrow="03 — Clients"
-            title="Things I've built."
+            eyebrow="03 — Past Clients"
+            title="Some Things I've Built."
           />
           <ul className={styles.project__list}>
             {projects.slice(0, projectsDisplayed).map((project, index) => (

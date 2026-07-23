@@ -16,7 +16,7 @@ function Experience() {
     >
       <div className="container">
         <div className="row">
-          <SectionHeader eyebrow="04 — Résumé" title="Where I've worked." />
+          <SectionHeader eyebrow="04 — My Résumé" title="Where I&apos;ve Worked & Learned." />
           <div className={styles.expList}>
             <div className={styles.expTabs} role="tablist">
               {panes.map((pane, index) => (

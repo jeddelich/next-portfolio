@@ -9,7 +9,7 @@ function About() {
       <Marquee />
       <div className="container">
         <div className="row">
-          <SectionHeader eyebrow="01 — About" title="Get to know me." />
+          <SectionHeader eyebrow="01 — About Me" title="Who You'll Work With." />
           <div className={styles.aboutGrid}>
             <div className={styles.aboutProse}>
               <p>
