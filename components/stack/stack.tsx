@@ -1,9 +1,22 @@
 
+"use client";
+
+import { useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import techStack from "@/data/techStack";
 import styles from "./stack.module.css";
 
+const filterOptions = ["All", "Frameworks", "Languages", "Styling", "Backend", "Tools"] as const;
+type FilterOption = (typeof filterOptions)[number];
+
 function Stack() {
+  const [activeFilter, setActiveFilter] = useState<FilterOption>("All");
+
+  const visibleTechStack =
+    activeFilter === "All"
+      ? techStack
+      : techStack.filter((item) => item.group === activeFilter);
+
   return (
     <section
       className={`section fade-in visible ${styles.stackSection}`}
@@ -13,15 +26,19 @@ function Stack() {
         <div className="row">
           <SectionHeader eyebrow="02 — Tech Used" title="Tools I'm Experienced In." />
           <div className={styles.stackCats}>
-            <button className={`${styles.stackChip} ${styles.stackChipActive}`}>All</button>
-            <button className={styles.stackChip}>Frameworks</button>
-            <button className={styles.stackChip}>Languages</button>
-            <button className={styles.stackChip}>Styling</button>
-            <button className={styles.stackChip}>Backend</button>
-            <button className={styles.stackChip}>Tools</button>
+            {filterOptions.map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                className={`${styles.stackChip} ${activeFilter === filter ? styles.stackChipActive : ""}`}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
           <div className={styles.stackGrid}>
-            {techStack.map((item) => (
+            {visibleTechStack.map((item) => (
               <div key={item.name} className={styles.stackCell}>
                 <div className={styles.stackIcon}>{item.icon}</div>
                 <div>

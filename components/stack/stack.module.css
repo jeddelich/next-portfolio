@@ -23,7 +23,7 @@ scroll-margin-top: 56px;
   background: transparent;
   border: 1px solid #d6d3c8;
   color: #5a5a52;
-    cursor: not-allowed;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
