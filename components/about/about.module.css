@@ -20,15 +20,6 @@
   margin: 0 0 20px;
 }
 
-.aboutProse p:first-child {
-  font-family: "Fraunces", serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.45;
-  color: #252836;
-  letter-spacing: -0.01em;
-}
-
 .aboutProse strong {
   color: #252836;
   font-weight: 600;

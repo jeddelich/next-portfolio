@@ -13,9 +13,6 @@ function About() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutProse}>
               <p>
-                I don't just have the technical skills to build great products, <strong>but also</strong> the communication and collaboration skills to create intuitive UI/UX.
-              </p>
-              <p>
                 My path into the dev world was not traditional — I came from counseling dragging my passion for problem-solving and people with me. Reigniting what started as simply tinkering with HTML, CSS, and Javascript in
                 high school, I am now building production-grade
                 applications with <strong>React</strong>,{" "}
@@ -40,10 +37,10 @@ function About() {
             <aside className={styles.aboutCard}>
               <div className={styles.aboutCardImg}>
                 <Image
-                  src="/about-me-picture.png"
+                  src="/about-me-no-background-landscape.png"
                   alt="Jed Delich"
                   fill
-                  style={{ objectFit: "contain", objectPosition: "bottom", filter: "grayscale(25%)" }}
+                    style={{ objectFit: "contain", objectPosition: "bottom", filter: "grayscale(25%)" }}
                   sizes="(max-width: 900px) 100vw, 380px"
                   priority
                 />
