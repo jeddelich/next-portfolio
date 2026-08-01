@@ -13,10 +13,7 @@ function About() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutProse}>
               <p>
-                My path into the dev world was not traditional — I came from counseling dragging my passion for problem-solving and people with me. Reigniting what started as simply tinkering with HTML, CSS, and Javascript in
-                high school, I am now building production-grade
-                applications with <strong>React</strong>,{" "}
-                <strong>Next.js</strong>, and <strong>TypeScript</strong>.
+                Hey! My name is Jed. My path into the tech world wasn&apos;t traditional—it started with my education and experience in counseling. You see, it was there I developed my passion for people and their problems. I learned how to truly listen and communicate effectively, so I could provide specific solutions for their specific needs.
               </p>
               <p>
                 Along
