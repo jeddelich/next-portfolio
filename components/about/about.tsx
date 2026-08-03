@@ -37,7 +37,11 @@ function About() {
                   src="/about-me-no-background-landscape.png"
                   alt="Jed Delich"
                   fill
-                    style={{ objectFit: "contain", objectPosition: "bottom", filter: "grayscale(25%)" }}
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "bottom",
+                    zIndex: 1,
+                  }}
                   sizes="(max-width: 900px) 100vw, 380px"
                   priority
                 />
