@@ -35,7 +35,7 @@ function Hero() {
               /> */}
             </p>
             <div className={styles.featuredProjectMedia}>
-              <p className={styles.featuredProjectHoverText} >Coming Online In August</p>
+              <a className={styles.featuredProjectHoverText} href="https://beacongrowth.ai" target="_blank" rel="noopener noreferrer">Go to the live website here</a>
               <Image
                 src="/website_heros/beacon_growth_partners.png"
                 alt="Beacon Growth Partners project preview"

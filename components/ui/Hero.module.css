@@ -125,16 +125,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
   font-weight: bold;
   text-align: center;
   display: none;
   z-index: 2;
-  line-height: normal;
+  line-height: 1.5;
+}
+
+.featuredProjectHoverText:hover {
+  text-decoration: underline;
 }
 
 .featuredProjectMedia:hover .featuredProjectImage {
-  filter: brightness(0.75) blur(2px);
+  filter: brightness(0.60) blur(3px);
 }
 
 .featuredProjectMedia:hover .featuredProjectHoverText {
