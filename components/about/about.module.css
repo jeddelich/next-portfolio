@@ -41,8 +41,21 @@
   border-radius: 16px;
   background: #ffffff;
   padding: 32px;
-  position: sticky;
+  position: relative;
   top: 110px;
+}
+
+.aboutCard::after {
+  content: "Last Updated: August 2026";
+  bottom: -32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: inherit;
+  pointer-events: none;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  opacity: 0.5;
 }
 
 .aboutCardImg {
