@@ -48,20 +48,20 @@ function About() {
               </div>
               <div className={styles.aboutCardStats}>
                 <div>
-                  <div className={styles.statNum}>14+</div>
+                  <div className={styles.statNum}>15+</div>
                   <div className={styles.statLabel}>Tech Proficiencies</div>
                 </div>
                 <div>
-                  <div className={styles.statNum}>12+</div>
-                  <div className={styles.statLabel}>Shipped projects</div>
+                  <div className={styles.statNum}>10+</div>
+                  <div className={styles.statLabel}>Built Websites</div>
                 </div>
                 <div>
-                  <div className={styles.statNum}>8+</div>
-                  <div className={styles.statLabel}>Production apps</div>
+                  <div className={styles.statNum}>1,024</div>
+                  <div className={styles.statLabel}>Git Contributions</div>
                 </div>
                 <div>
-                  <div className={styles.statNum}>∞</div>
-                  <div className={styles.statLabel}>Cups of coffee</div>
+                  <div className={styles.statNum}>3</div>
+                  <div className={styles.statLabel}>Current clients</div>
                 </div>
               </div>
             </aside>
