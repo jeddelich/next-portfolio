@@ -60,7 +60,7 @@ function About() {
                   <div className={styles.statLabel}>Git Contributions</div>
                 </div>
                 <div>
-                  <div className={styles.statNum}>3</div>
+                  <div className={styles.statNum}>2</div>
                   <div className={styles.statLabel}>Current clients</div>
                 </div>
               </div>
