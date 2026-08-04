@@ -28,7 +28,7 @@ function Hero() {
         <aside className={styles.featuredProject} aria-label="Current project">
           <div className={styles.featuredProjectDescription}>
             <p className={styles.featuredProjectEyebrow}>
-              current client: <br /><strong style={{ fontSize: "1.25rem" }}>Beacon Growth Partners</strong>
+              most recent client (july 2026): <br /><strong style={{ fontSize: "1.25rem" }}>Beacon Growth Partners</strong>
               {/* <MdComputer
                 className={styles.featuredProjectEyebrowIcon}
                 aria-hidden="true"
