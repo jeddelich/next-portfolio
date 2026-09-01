@@ -66,4 +66,8 @@
     align-items: center;
     text-align: center;
   }
+
+  .sectionTitle {
+    max-width: 240px;
+  }
 }
