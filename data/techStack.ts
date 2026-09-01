@@ -61,6 +61,12 @@ const techStack: TechStackItem[] = [
     group: "Tools",
   },
   {
+    icon: "GA",
+    name: "Google Analytics",
+    category: "Realtime data",
+    group: "Tools",
+  },
+  {
     icon: "$",
     name: "Stripe",
     category: "Payments",
@@ -102,6 +108,7 @@ const techStack: TechStackItem[] = [
     category: "Component library",
     group: "Frameworks",
   },
+  
 ];
 
 export default techStack;

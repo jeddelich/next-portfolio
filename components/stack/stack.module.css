@@ -1,7 +1,7 @@
 .stackSection {
   position: relative;
   z-index: 3;
-scroll-margin-top: 56px;
+  scroll-margin-top: 56px;
 }
 
 .stackSection :global(.row) {
@@ -16,7 +16,7 @@ scroll-margin-top: 56px;
 }
 
 .stackChip {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 12px;
   padding: 6px 12px;
   border-radius: 100px;
@@ -31,63 +31,79 @@ scroll-margin-top: 56px;
   background: var(--color-dark);
   color: var(--color-light);
   border-color: var(--color-dark);
-    cursor: default;
+  cursor: default;
 }
 
- .stackChip:hover:not(.stackChipActive) {
-    color: var(--color-dark);
-    border-color: var(--color-dark);
+.stackChip:hover:not(.stackChipActive) {
+  color: var(--color-dark);
+  border-color: var(--color-dark);
 }
 
 .stackGrid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1px;
-    background: #e6e4dc;
-    border: 1px solid #e6e4dc;
-    border-radius: 16px;
-    overflow: hidden;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1px;
+  background: #e6e4dc;
+  border: 1px solid #e6e4dc;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .stackCell {
-    background: #ffffff;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: background 0.2s ease;
+  background: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.2s ease;
 }
 
 .stackCell:hover {
-    background: #f3f2ed;
+  background: #f3f2ed;
 }
 
 .stackIcon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: #f3f2ed;
-    display: grid;
-    place-items: center;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 500;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f3f2ed;
+  display: grid;
+  place-items: center;
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .stackName {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--color-dark);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-dark);
 }
 
 .stackCat {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 11px;
-    color: #8a8a82;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  color: #8a8a82;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.loadMoreButton {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: transparent;
+  border: 1px solid #d6d3c8;
+  color: #5a5a52;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 :global(.dark-theme) .stackChip {
@@ -130,4 +146,31 @@ scroll-margin-top: 56px;
 
 :global(.dark-theme) .stackCat {
   color: rgba(255, 255, 255, 0.62);
+}
+
+:global(.dark-theme) .loadMoreButton {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 768px) {
+  .stackCell:hover {
+    background: #ffffff;
+  }
+  :global(.dark-theme) .stackCell:hover {
+    background: #1c1c1c;
+  }
+}
+
+@media (max-width: 480px) {
+  .stackCell {
+    align-items: center;
+  }
+
+  .stackName {
+    text-align: center;
+  }
+  .stackCat {
+    text-align: center;
+  }
 }

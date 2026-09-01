@@ -59,11 +59,6 @@
 @media (max-width: 480px) {
   .heroStatusBar {
     font-size: 12px;
-    padding: 5px 12px 5px 8px;
-  }
-
-  .heroStatusBarFullWidth {
-    padding: 6px 16px;
   }
 
   .heroStatusText {
