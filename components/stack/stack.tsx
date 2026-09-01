@@ -11,11 +11,22 @@ type FilterOption = (typeof filterOptions)[number];
 
 function Stack() {
   const [activeFilter, setActiveFilter] = useState<FilterOption>("All");
+  const [visibleCount, setVisibleCount] = useState(16);
 
-  const visibleTechStack =
+  const filteredTechStack =
     activeFilter === "All"
       ? techStack
       : techStack.filter((item) => item.group === activeFilter);
+
+  const visibleTechStack = filteredTechStack.slice(0, visibleCount);
+
+  const handleLoadMoreToggle = () => {
+    if (visibleCount >= filteredTechStack.length) {
+      setVisibleCount(16);
+    } else {
+      setVisibleCount((prev) => prev + 16);
+    }
+  };
 
   return (
     <section
@@ -31,7 +42,10 @@ function Stack() {
                 key={filter}
                 type="button"
                 className={`${styles.stackChip} ${activeFilter === filter ? styles.stackChipActive : ""}`}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => {
+                  setActiveFilter(filter);
+                  setVisibleCount(16);
+                }}
               >
                 {filter}
               </button>
@@ -50,6 +64,15 @@ function Stack() {
           </div>
         </div>
       </div>
+      {filteredTechStack.length > 16 && (
+      <button
+        type="button"
+        className={styles.loadMoreButton}
+        onClick={handleLoadMoreToggle}
+      >
+        {visibleCount < filteredTechStack.length ? "Load More" : "Show Less"}
+      </button>
+      )}
     </section>
   );
 }

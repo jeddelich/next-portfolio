@@ -90,6 +90,22 @@ scroll-margin-top: 56px;
     letter-spacing: 0.06em;
 }
 
+.loadMoreButton {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: transparent;
+  border: 1px solid #d6d3c8;
+  color: #5a5a52;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
 :global(.dark-theme) .stackChip {
   border-color: rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.72);
@@ -130,4 +146,9 @@ scroll-margin-top: 56px;
 
 :global(.dark-theme) .stackCat {
   color: rgba(255, 255, 255, 0.62);
+}
+
+:global(.dark-theme) .loadMoreButton {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.72);
 }
