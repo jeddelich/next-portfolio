@@ -299,7 +299,7 @@
 
 .mobileMenuOverlay {
   position: fixed;
-  top: 116px;
+  top: 80px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -400,4 +400,5 @@
   .navLogoText {
     display: none;
   }
+
 }
