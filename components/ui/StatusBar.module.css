@@ -58,8 +58,8 @@
 
 :global(.dark-theme) .heroStatusBar {
   color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.2);
-  background: color-mix(in srgb, var(--color-dark) 78%, black 22%);
+  border-color: rgba(118, 160, 146, 0.35);
+  background: color-mix(in srgb, #123d35 72%, #0c221d 28%);
 }
 
 @media (max-width: 480px) {
