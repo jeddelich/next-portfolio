@@ -12,8 +12,8 @@ function contact() {
           I&apos;m currently taking on new freelance and full-time opportunities. If
           you have a project in mind - or just want to connect - my inbox is always open!
         </p>
-        <a href="mailto:hello@jeddelich.dev" className={styles.contactEmail}>
-          jeddelich@gmail.com
+        <a href="mailto:dev@jeddelich.com" className={styles.contactEmail}>
+          dev@jeddelich.com
           <svg
             width="20"
             height="20"

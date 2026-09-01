@@ -23,7 +23,7 @@ function About() {
                 with dynamic audio players and search bars. I also have experience developing for <a className={styles.accentLink} href="#projects">a real-time AI skincare analysis platform</a>.
               </p>
               <p>
-                Having traveled to 35+ countries, to me learning is not just a thing you do; it's a lifestyle. I am not afraid to ask questions, or to approach things from a different point of view. <strong>It is only when we understand people and problems properly that we can write good code</strong>.
+                Having traveled to 35+ countries, to me learning is not just a thing you do; it&apos;s a lifestyle. I am not afraid to ask questions, or to approach things from a different point of view. <strong>It is only when we understand people and problems properly that we can write good code</strong>.
               </p>
               <p>
                 When I am not coding, you will find me exploring Facebook marketplace,
