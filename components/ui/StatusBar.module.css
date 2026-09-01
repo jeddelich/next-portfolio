@@ -49,6 +49,12 @@
   animation: pulse 2s ease-in-out infinite;
   display: inline-block;
 }
+  
+.heroStatusText {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
 
 :global(.dark-theme) .heroStatusBar {
   color: rgba(255, 255, 255, 0.9);
