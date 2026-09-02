@@ -13,22 +13,13 @@ function About() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutProse}>
               <p>
-                Hey! My name is Jed. My path into the tech world wasn&apos;t traditional—it started with my education and experience in counseling. You see, it was there I developed my passion for people and their problems. I learned how to truly listen and communicate effectively, so I could provide specific solutions for their specific needs.
+                Hey! My name is Jed. My path into the tech world wasn&apos;t like everyone else—it started with my background in counseling. It was there I first developed my passion for people and their problems. I believe specific needs require specific solutions, which are achieved through effective listening and communication.
               </p>
               <p>
-                Along
-                the way I have shipped everything from{" "}
-                  streaming clones
-                with real authentication and payments, to subscription products
-                with dynamic audio players and search bars. I also have experience developing for <a className={styles.accentLink} href="#projects">a real-time AI skincare analysis platform</a>.
+                Now I utilize those skills in the online world to create superior website experiences for businesses and their users. What I do is truly custom for every client. For those who want more control, I&apos;ll leave them with a content management system. For those who want more of a hands-off approach and unlimited potential, I&apos;ll create something completely from scratch and maintain it for them.
               </p>
               <p>
-                Having traveled to 35+ countries, to me learning is not just a thing you do; it&apos;s a lifestyle. I am not afraid to ask questions, or to approach things from a different point of view. <strong>It is only when we understand people and problems properly that we can write good code</strong>.
-              </p>
-              <p>
-                When I am not coding, you will find me exploring Facebook marketplace,
-                camping with my local troop of Trail Life boys, or experimenting
-                with side projects that probably do not need to exist.
+                Let me help you bring your vision to life. All it takes is a conversation. Also, feel free to scroll down and check out some of my past work.
               </p>
             </div>
             <aside className={styles.aboutCard}>

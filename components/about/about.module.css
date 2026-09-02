@@ -160,10 +160,6 @@
     font-size: 16px;
   }
 
-  .aboutProse p:first-child {
-    font-size: 21px;
-  }
-
   .aboutCardStats {
     grid-template-columns: 1fr 1fr;
   }
@@ -172,10 +168,6 @@
 @media (max-width: 480px) {
   .aboutProse p {
     font-size: 15px;
-  }
-
-  .aboutProse p:first-child {
-    font-size: 18px;
   }
 
   .aboutCardImg {
