@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Fraunces, JetBrains_Mono } from "next/font/google";
+import { FiArrowUpRight } from "react-icons/fi";
 import { useTheme } from "@/contexts/ThemeContext";
 import useHasScrolled from "@/hooks/useHasScrolled";
 import styles from "./Navbar.module.css";
@@ -132,7 +133,13 @@ function Navbar() {
             href="#connect"
             className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
           >
-            <span>Let&apos;s Connect ↗</span>
+            <span className={styles.navCtaContent}>
+              Let&apos;s Connect
+              <FiArrowUpRight
+                className={styles.navCtaIcon}
+                aria-hidden="true"
+              />
+            </span>
           </a>
         </li>
         {/* <button
@@ -239,7 +246,13 @@ function Navbar() {
                   className={`${styles.numberedNavLink} ${styles.navCta} ${jetBrainsMono.className}`}
                   onClick={handleContactClick}
                 >
-                  <span>Let&apos;s Connect ↗</span>
+                  <span className={styles.navCtaContent}>
+                    Let&apos;s Connect
+                    <FiArrowUpRight
+                      className={styles.navCtaIcon}
+                      aria-hidden="true"
+                    />
+                  </span>
                 </a>
               </li>
             </ul>

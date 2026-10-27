@@ -34,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 100px;
   padding: 20px 32px;
   z-index: 9999;
   --bg: var(--color-light);
@@ -61,14 +61,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
   opacity: 0;
   animation: fade-in 1s ease forwards;
   transition: color 0.3s ease;
 }
 
 .navLogoSubmark {
-  width: 48px;
-  height: 48px;
+  width: auto;
+  height: 100%;
 }
   
 .navLinkList {
@@ -107,22 +108,16 @@
   animation-delay: 1250ms;
 }
 
-.navLinkAnchor {
-  font-size: 18px;
-  color: var(--color-dark);
-  font-weight: 700;
-}
-
 .numberedNavLink {
   font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
-  font-size: 13px;
-  padding: 8px 14px;
+  font-size: 16px;
+  padding: 8px 20px;
   border-radius: 8px;
   color: rgba(36, 36, 36, 0.75);
   transition: color 0.3s ease, background 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .numberedNavLink span {
@@ -137,8 +132,20 @@
 .navCta {
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
-  margin: 0 8px;
+  margin: 0 8px 0 16px;
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navCtaContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navCtaIcon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 .numberedNavLink.navCta:hover {
@@ -153,7 +160,7 @@
 
 .numberedNavLinkNum {
   color: var(--color-primary);
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .themeToggleIcon {
@@ -201,7 +208,6 @@
   background: rgb(32, 32, 32);
 }
 
-:global(.dark-theme) .navLinkAnchor,
 :global(.dark-theme .fa-circle-half-stroke),
 :global(.dark-theme) .themeToggleButton,
 :global(.dark-theme) .numberedNavLink {
@@ -329,10 +335,21 @@
   border-top-color: rgba(255, 255, 255, 0.1);
 }
 
+@media (max-width: 1280px) {
+  .nav {
+    height: 80px;
+    padding: 16px 28px;
+  }
+  .numberedNavLink {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 1024px) {
   .navCta {
     display: none;
   }
+
 }
 
 @media (max-width: 768px) {
