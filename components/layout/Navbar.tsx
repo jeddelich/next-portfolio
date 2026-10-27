@@ -88,10 +88,7 @@ function Navbar() {
       style={navBackdropStyle}
     >
       <a href="#top" className={styles.navLogo}>
-        <span className={styles.navLogoMark}>JD</span>
-        <span className={`${styles.navLogoText} ${fraunces.className}`}>
-          Jed Delich
-        </span>
+        <img src="/branding/JD_SUBMARK_RUST.svg" alt="Logo" className={styles.navLogoSubmark} />
       </a>
       <ul className={styles.navLinkList}>
         <li className={styles.navLink}>

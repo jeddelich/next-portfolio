@@ -58,39 +58,19 @@
 }
 
 .navLogo {
-  font-weight: 500;
-  font-style: italic;
-  font-size: 22px;
-  letter-spacing: -0.01em;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: var(--color-dark);
+  justify-content: center;
   opacity: 0;
   animation: fade-in 1s ease forwards;
   transition: color 0.3s ease;
 }
 
-.navLogoText {
-  font-weight: 400;
+.navLogoSubmark {
+  width: 48px;
+  height: 48px;
 }
-
-.navLogoMark {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--color-dark);
-  color: var(--color-light);
-  display: grid;
-  place-items: center;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
+  
 .navLinkList {
   display: flex;
   align-items: center;
@@ -230,11 +210,6 @@
 
 :global(.dark-theme) .navLogo {
   color: white;
-}
-
-:global(.dark-theme) .navLogoMark {
-  background: var(--color-light);
-  color: var(--color-dark);
 }
 
 :global(.dark-theme) .numberedNavLink:hover {
@@ -397,8 +372,4 @@
     max-height: 100vh;
     border-radius: 0;
   }
-  .navLogoText {
-    display: none;
-  }
-
 }
