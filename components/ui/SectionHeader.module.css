@@ -8,8 +8,8 @@
 
 .sectionEyebrow {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 13px;
-  color: var(--color-primary);
+  font-size: 16px;
+  color: var(--cool-gray);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -19,25 +19,26 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-primary);
+  background: var(--cool-gray);
   vertical-align: middle;
   margin-right: 12px;
 }
 
 .sectionTitle {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-zen-dots), ui-serif, serif;
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 400;
   letter-spacing: -0.02em;
   margin: 0;
   line-height: 1.05;
-  color: var(--color-dark);
+  color: var(--soft-blue);
 }
 
 .sectionRule {
   flex: 1;
   height: 1px;
-  background: #e6e4dc;
+  background: var(--cool-gray);
+  opacity: 0.5;
 }
 
 :global(.dark-theme) .sectionTitle {
