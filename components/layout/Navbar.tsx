@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Fraunces, JetBrains_Mono } from "next/font/google";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useTheme } from "@/contexts/ThemeContext";
+import navLinks from "@/data/navLinks";
 // import useHasScrolled from "@/hooks/useHasScrolled";
 import styles from "./Navbar.module.css";
 
@@ -92,42 +93,17 @@ function Navbar() {
         <img src="/branding/JD_SUBMARK_RUST.svg" alt="Logo" className={styles.navLogoSubmark} />
       </a>
       <ul className={styles.navLinkList}>
-        <li className={styles.navLink}>
-          <a
-            href="#about"
-            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-          >
-            <span className={styles.numberedNavLinkNum}>01.</span>
-            <span>About Me</span>
-          </a>
-        </li>
-        <li className={styles.navLink}>
-          <a
-            href="#tech"
-            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-          >
-            <span className={styles.numberedNavLinkNum}>02.</span>
-            <span>Tech Used</span>
-          </a>
-        </li>
-        <li className={styles.navLink}>
-          <a
-            href="#clients"
-            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-          >
-            <span className={styles.numberedNavLinkNum}>03.</span>
-            <span>Past Clients</span>
-          </a>
-        </li>
-        <li className={styles.navLink}>
-          <a
-            href="#resume"
-            className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-          >
-            <span className={styles.numberedNavLinkNum}>04.</span>
-            <span>My Résumé</span>
-          </a>
-        </li>
+        {navLinks.map(({ number, href, label }) => (
+          <li key={href} className={styles.navLink}>
+            <a
+              href={href}
+              className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
+            >
+              <span className={styles.numberedNavLinkNum}>{number}</span>
+              <span>{label}</span>
+            </a>
+          </li>
+        ))}
         <li className={styles.navLink}>
           <a
             href="#connect"
@@ -142,43 +118,6 @@ function Navbar() {
             </span>
           </a>
         </li>
-        {/* <button
-          type="button"
-          className={`${styles.themeToggleButton} theme-toggle`}
-          onClick={handleThemeToggle}
-          aria-label="Toggle theme"
-        >
-          {darkMode ? (
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-            </svg>
-          ) : (
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          )}
-        </button> */}
       </ul>
       <button
         type="button"
@@ -200,46 +139,18 @@ function Navbar() {
             onClick={(event) => event.stopPropagation()}
           >
             <ul className={styles.mobileMenuList}>
-              <li>
-                <a
-                  href="#about"
-                  className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-                  onClick={handleLinkClick}
-                >
-                  <span className={styles.numberedNavLinkNum}>01.</span>
-                  <span>About</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#tech"
-                  className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-                  onClick={handleLinkClick}
-                >
-                  <span className={styles.numberedNavLinkNum}>02.</span>
-                  <span>Tech Used</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#clients"
-                  className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-                  onClick={handleLinkClick}
-                >
-                  <span className={styles.numberedNavLinkNum}>03.</span>
-                  <span>Past Clients</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#resume"
-                  className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
-                  onClick={handleLinkClick}
-                >
-                  <span className={styles.numberedNavLinkNum}>04.</span>
-                  <span>My Résumé</span>
-                </a>
-              </li>
+              {navLinks.map(({ number, href, label, mobileLabel }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`${styles.numberedNavLink} ${jetBrainsMono.className}`}
+                    onClick={handleLinkClick}
+                  >
+                    <span className={styles.numberedNavLinkNum}>{number}</span>
+                    <span>{mobileLabel ?? label}</span>
+                  </a>
+                </li>
+              ))}
               <li className={styles.mobileMenuCta}>
                 <a
                   href="#connect"
