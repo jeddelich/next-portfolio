@@ -35,14 +35,14 @@ function Hero() {
         <aside className={styles.featuredProject} aria-label="Current project">
           <div className={styles.featuredProjectDescription}>
             <p className={styles.featuredProjectEyebrow}>
-              client highlight (july 2026): <br /><strong style={{ fontSize: "1.25rem" }}>Beacon Growth Partners</strong>
+              latest client highlight: <br /><strong style={{ fontSize: "1.5rem" }}>Beacon Growth Partners</strong>
               {/* <MdComputer
                 className={styles.featuredProjectEyebrowIcon}
                 aria-hidden="true"
               /> */}
             </p>
             <div className={styles.featuredProjectMedia}>
-              <a className={styles.featuredProjectHoverText} href="https://beacongrowth.ai" target="_blank" rel="noopener noreferrer">Go to the live website here</a>
+              <a className={styles.featuredProjectHoverText} href="https://beacongrowth.ai" target="_blank" rel="noopener noreferrer">View Website</a>
               <Image
                 src="/website_heros/beacon_growth_partners.png"
                 alt="Beacon Growth Partners project preview"
@@ -58,7 +58,7 @@ function Hero() {
             >
               <li className={styles.featuredProjectStackItem}>WordPress (CMS)</li>
               <li className={styles.featuredProjectStackItem}>SiteGround</li>
-              <li className={styles.featuredProjectStackItem}>Cloudfare</li>
+              <li className={styles.featuredProjectStackItem}>Cloudflare</li>
               <li className={styles.featuredProjectStackItem}>Custom CSS</li>
             </ul>
               
