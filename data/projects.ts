@@ -3,7 +3,7 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     img: {
-      src: "/alicia_joy_design_ss.png",
+      src: "/alicia_joy_design_website_ss.png",
       alt: "AliciaJoyDesign",
     },
     title: "Alicia Joy Design",
