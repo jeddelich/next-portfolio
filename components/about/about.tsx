@@ -13,15 +13,16 @@ function About() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutProse}>
               <p>
-                Hey! My name is Jed. My path into the tech world wasn&apos;t like everyone else—it started with my background in counseling. It was there I first developed my passion for people and their problems. I believe specific needs require specific solutions, which are achieved through effective listening and communication.
+                Hey! My name is Jed. My path into the tech world was a little unorthodox as I started my journey in the field of counseling. It was there I developed my passion for both people and their problems.
               </p>
               <p>
-                Now I utilize those skills in the online world to create superior website experiences for businesses and their users. What I do is truly custom for every client. For those who want more control, I&apos;ll leave them with a content management system. For those who want more of a hands-off approach and unlimited potential, I&apos;ll create something completely from scratch and maintain it for them.
+                Now I utilize those skills in the online world to create websites for businesses. What I do is custom for each client. For those who want simplicity and control, I&apos;ll setup a content management system. For those who want more complex features and distance from admin work, I&apos;ll mess with integrations and handle all future maintenance!
               </p>
               <p>
-                Let me help you bring your vision to life. All it takes is a conversation. Also, feel free to scroll down and check out some of my past work.
+                Let me help you bring your vision to life. All it takes is a conversation. Schedule your free 30-minute consultation with me below to see!
               </p>
             </div>
+            <div className={styles.aboutCardWrapper}>
             <aside className={styles.aboutCard}>
               <div className={styles.aboutCardImg}>
                 <Image
@@ -37,25 +38,8 @@ function About() {
                   priority
                 />
               </div>
-              <div className={styles.aboutCardStats}>
-                <div>
-                  <div className={styles.statNum}>15+</div>
-                  <div className={styles.statLabel}>Tech Proficiencies</div>
-                </div>
-                <div>
-                  <div className={styles.statNum}>10+</div>
-                  <div className={styles.statLabel}>Built Websites</div>
-                </div>
-                <div>
-                  <div className={styles.statNum}>1,024</div>
-                  <div className={styles.statLabel}>Git Contributions</div>
-                </div>
-                <div>
-                  <div className={styles.statNum}>2</div>
-                  <div className={styles.statLabel}>Current clients</div>
-                </div>
-              </div>
             </aside>
+             </div>
           </div>
         </div>
       </div>
