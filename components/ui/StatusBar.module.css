@@ -1,24 +1,23 @@
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 3px color-mix(in srgb, #2ecc71 25%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-light) 25%, transparent);
   }
   50% {
-    box-shadow: 0 0 0 6px color-mix(in srgb, #2ecc71 10%, transparent);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-light) 10%, transparent);
   }
 }
 
 .heroStatusBar {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 13px;
-  color: #5a5a52;
+  font-size: 16px;
+  color: var(--color-light);
   padding: 6px 14px 6px 10px;
-  border: 1px solid #e6e4dc;
   border-radius: 100px;
-  background: #eafaf1;
+  background: var(--cool-gray);
   margin: 1rem 0;
 }
 
@@ -45,7 +44,7 @@
   min-height: 8px;
   flex: 0 0 8px;
   border-radius: 50%;
-  background: #2ecc71;
+  background: var(--color-light);
   animation: pulse 2s ease-in-out infinite;
   display: inline-block;
 }
@@ -53,7 +52,7 @@
 .heroStatusText {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
 }
 
 :global(.dark-theme) .heroStatusBar {

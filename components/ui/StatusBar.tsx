@@ -8,7 +8,7 @@ export default function StatusBar() {
     >
       <span className={styles.heroStatusDot} aria-hidden="true"></span>
       <span className={styles.heroStatusText}>
-        Open to new work opportunities! Let&apos;s connect
+        Currently available for new clients. Let&apos;s connect
         <svg
           width="14"
           height="14"
