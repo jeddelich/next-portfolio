@@ -26,7 +26,7 @@ function LandingClientShell({ children }: LandingClientShellProps) {
     >
       <>
         {/* <ScrollDown /> */}
-        <FloatingQuickLinks />
+        {/* <FloatingQuickLinks /> */}
         {children}
       </>
     </section>
