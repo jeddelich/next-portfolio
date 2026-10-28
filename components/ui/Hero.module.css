@@ -61,7 +61,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   width: fit-content;
 }
 
@@ -224,9 +224,11 @@
 }
 
 .headerPara {
-  font-size: 20px;
   max-width: 350px;
-  color: #5a5a52;
+  font: 400 26px 'Metal', sans-serif;
+  color: #252B2C;
+  opacity: 75%;
+  line-height: 1.5;
   margin-top: 1rem;
 }
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono, Roboto } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono, Metal, Roboto } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -27,11 +27,19 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+
+
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["300", "700"],
   style: ["italic", "normal"],
+});
+
+const metal = Metal({
+  variable: "--font-metal",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const SITE_DESCRIPTION =
@@ -72,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${inter.variable} ${jetBrainsMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${roboto.variable} ${inter.variable} ${jetBrainsMono.variable} ${fraunces.variable} ${metal.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Script

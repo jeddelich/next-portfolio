@@ -8,7 +8,7 @@ function Hero() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.headerIntro}>
-            <div className={styles.heroTitles}>
+            {/* <div className={styles.heroTitles}>
               <div className={styles.heroTitle}>Jed Delich,</div>
               <div
                 className={`orange ${styles.heroTitle}`}
@@ -17,10 +17,17 @@ function Hero() {
                 Software
               </div>
               <div className={styles.heroTitle}>Developer</div>
-            </div>
+            </div> */}
+            <Image
+               src="/branding/JD_WORDMARKW-TAG_NAVY.svg"
+                alt="Jed Delich — [your catchphrase]"
+                 width={400}
+                 height={150}
+                 priority
+            />
             <div className={styles.headerMeta}>
               <p className={styles.headerPara}>
-                I build custom, optimized websites for businesses wanting to grow their online presence by providing their clients with the best user experience.
+                I build modern, intuitive websites for businesses wanting to increase their online presence by providing their staff and clients with an experience.
               </p>
             </div>
           </div>
