@@ -1,14 +1,7 @@
 .contact {
     text-align: center;
-    padding: 120px 0;
     position: relative;
     z-index: 999;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 32px;
 }
 
 .contactTitle {

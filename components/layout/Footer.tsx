@@ -33,7 +33,7 @@ const iconMap = {
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.footerInner}`}>
+      <div className={`${styles.footerInner}`}>
         <div className={styles.footerMeta}>
           <span>Jed Delich © 2026 — All rights reserved · v3.0</span>
         </div>
