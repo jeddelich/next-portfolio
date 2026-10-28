@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Fraunces, JetBrains_Mono } from "next/font/google";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useTheme } from "@/contexts/ThemeContext";
-import useHasScrolled from "@/hooks/useHasScrolled";
+// import useHasScrolled from "@/hooks/useHasScrolled";
 import styles from "./Navbar.module.css";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -24,7 +24,7 @@ const navBackdropStyle = {
 
 function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
-  const hasScrolled = useHasScrolled();
+  // const hasScrolled = useHasScrolled();
   const [menuOpen, setMenuOpen] = useState(false);
   const burgerMenuRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
@@ -85,7 +85,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`${styles.nav} ${hasScrolled ? styles.navScrolled : ""}`}
+      className={`${styles.nav} ${styles.navScrolled}`}
       style={navBackdropStyle}
     >
       <a href="#top" className={styles.navLogo}>
