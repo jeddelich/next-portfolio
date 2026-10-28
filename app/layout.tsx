@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono, Metal, Roboto } from "next/font/google";
+import {
+  Fraunces,
+  Inter,
+  JetBrains_Mono,
+  Metal,
+  Roboto,
+  Zen_Dots,
+} from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -42,6 +49,12 @@ const metal = Metal({
   weight: ["400"],
 });
 
+const zenDots = Zen_Dots({
+  variable: "--font-zen-dots",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 const SITE_DESCRIPTION =
   "Frontend Engineer specializing in React, Next.js, and TypeScript. I build optimized, accessible user experiences that turn complex product requirements into intuitive interfaces.";
 
@@ -80,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${inter.variable} ${jetBrainsMono.variable} ${fraunces.variable} ${metal.variable} h-full antialiased`}
+      className={`${roboto.variable} ${inter.variable} ${jetBrainsMono.variable} ${fraunces.variable} ${metal.variable} ${zenDots.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Script
