@@ -25,7 +25,7 @@ const navLinks: NavLink[] = [
   {
     number: "04.",
     href: "#resume",
-    label: "My Résumé",
+    label: "Experience",
   },
 ];
 
