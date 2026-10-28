@@ -35,7 +35,7 @@ function Stack() {
     >
       <div className="container">
         <div className="row">
-          <SectionHeader eyebrow="02 — Tech Used" title="Tools I'm Experienced In." />
+          <SectionHeader eyebrow="03 — Tech Used" title="Tools I'm Experienced In." />
           <div className={styles.stackCats}>
             {filterOptions.map((filter) => (
               <button

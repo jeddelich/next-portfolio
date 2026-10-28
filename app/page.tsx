@@ -13,8 +13,8 @@ export default function Home() {
         <Hero />
       </LandingClientShell>
       <About />
-      <Stack />
       <Projects />
+      <Stack />
       <Experience /> 
       <Contact />
     </>

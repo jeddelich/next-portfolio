@@ -14,13 +14,13 @@ const navLinks: NavLink[] = [
   },
   {
     number: "02.",
-    href: "#tech",
-    label: "Tech Used",
+    href: "#clients",
+    label: "Past Clients",
   },
   {
     number: "03.",
-    href: "#clients",
-    label: "Past Clients",
+    href: "#tech",
+    label: "Tech Used",
   },
   {
     number: "04.",
