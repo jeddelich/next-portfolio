@@ -39,21 +39,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 1180px;
   padding: 0 16px;
   visibility: visible;
   z-index: 1;
   display: flex;
+  justify-content: center;
 }
 
 .headerContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
-  align-items: flex-start;
+  align-items: center;
   width: 50%;
   opacity: 0;
+  padding: 0 2rem;
   animation: fade-in-left 800ms 300ms ease forwards;
 }
 
@@ -69,9 +69,10 @@
 .featuredProject {
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   opacity: 0;
+  padding: 0 2rem;
   animation: fade-in-left 800ms 500ms ease forwards;
 }
 
@@ -108,7 +109,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
+  max-width: 600px;
 }
 
 .featuredProjectMedia {
@@ -230,12 +231,13 @@
 }
 
 .headerPara {
-  max-width: 350px;
+  max-width: 520px;
   font: 400 26px 'Metal', sans-serif;
   color: #252B2C;
   opacity: 75%;
   line-height: 1.5;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .socialList {
