@@ -56,10 +56,10 @@ function Hero() {
               className={styles.featuredProjectStack}
               aria-label="Beacon Growth Partners tech stack"
             >
-              <li className={styles.featuredProjectStackItem}>WordPress (CMS)</li>
-              <li className={styles.featuredProjectStackItem}>SiteGround</li>
-              <li className={styles.featuredProjectStackItem}>Cloudflare</li>
-              <li className={styles.featuredProjectStackItem}>Custom CSS</li>
+              <a href="#tech"><li className={styles.featuredProjectStackItem}>WordPress (CMS)</li></a>
+              <a href="#tech"><li className={styles.featuredProjectStackItem}>SiteGround</li></a>
+              <a href="#tech"><li className={styles.featuredProjectStackItem}>Cloudflare</li></a>
+              <a href="#tech"><li className={styles.featuredProjectStackItem}>Custom CSS</li></a>
             </ul>
               
           </div>
