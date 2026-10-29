@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FiArrowUpRight } from "react-icons/fi";
 import styles from "./Hero.module.css";
 
 function Hero() {
@@ -42,7 +43,15 @@ function Hero() {
               /> */}
             </p>
             <div className={styles.featuredProjectMedia}>
-              <a className={styles.featuredProjectHoverText} href="https://beacongrowth.ai" target="_blank" rel="noopener noreferrer">View Website</a>
+              <a
+                className={styles.featuredProjectHoverText}
+                href="https://beacongrowth.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Website
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
               <Image
                 src="/website_heros/beacon_growth_partners.png"
                 alt="Beacon Growth Partners project preview"

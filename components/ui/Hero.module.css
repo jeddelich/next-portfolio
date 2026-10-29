@@ -126,13 +126,23 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  border: 1px solid var(--color-dark);
+  border-radius: 8px;
+  background: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 16px;
   text-align: center;
-  display: none;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
   z-index: 2;
-  line-height: 1.5;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .featuredProjectClient {
@@ -142,15 +152,25 @@
 }
 
 .featuredProjectHoverText:hover {
-  text-decoration: underline;
+  background: var(--soft-blue);
+  border-color: var(--cool-gray);
+  color: var(--color-light);
 }
 
-.featuredProjectMedia:hover .featuredProjectImage {
-  filter: brightness(0.60) blur(3px);
+.featuredProjectMedia:hover .featuredProjectImage,
+.featuredProjectMedia:focus-within .featuredProjectImage {
+  filter: brightness(0.90) blur(6px);
 }
 
-.featuredProjectMedia:hover .featuredProjectHoverText {
-  display: block;
+.featuredProjectMedia:hover .featuredProjectHoverText,
+.featuredProjectMedia:focus-within .featuredProjectHoverText {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.featuredProjectHoverText:focus-visible {
+  outline: 2px solid var(--color-light);
+  outline-offset: 3px;
 }
 
 .featuredProjectImage {
@@ -420,7 +440,7 @@
     width: 100%;
   }
 
-  .featuredProjectHoverText{
-    font-size: 1.5rem;
+  .featuredProjectHoverText {
+    font-size: 14px;
   }
 }
