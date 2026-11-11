@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & sleep 3 && open -a 'Google Chrome' --args --profile-directory=`/Users/jed/Library/Application Support/Google/Chrome/Default`",
+    "dev": "next dev & sleep 3 && open -a 'Google Chrome' --args --profile-directory=`Default`",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
